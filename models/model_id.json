@@ -1,0 +1,748 @@
+[
+    {
+        "modelname": "U_Net",
+        "id": 1,
+        "备注": "经典的 U 型网络结构，常用于图像分割任务。",
+        "state": "已验证",
+        "filename": "U_Net/U_Net.py"
+    },
+    {
+        "modelname": "UNeXt",
+        "id": 2,
+        "备注": "基于 U 型结构的改进网络，可能在性能上有优化。",
+        "state": "已验证",
+        "filename": "UNeXt/UNeXt.py"
+    },
+    {
+        "modelname": "AttU_Net",
+        "id": 3,
+        "state": "已验证",
+        "备注": "带有注意力机制的 U 型网络，通过注意力机制聚焦关键特征。",
+        "filename": "AttU_Net/AttU_Net.py"
+    },
+    {
+        "modelname": "CMU_Net",
+        "id": 4,
+        "state": "已验证",
+        "备注": "可能是特定机构或团队提出的 U 型网络变种。",
+        "filename": "CMU_Net/CMU_Net.py"
+    },
+    {
+        "modelname": "CMUNeXt",
+        "id": 5,
+        "state": "已验证",
+        "备注": "CMUNet 的改进版本，可能引入了新的模块或技术。",
+        "filename": "CMUNeXt/CMUNeXt.py"
+    },
+    {
+        "modelname": "UNet3plus",
+        "id": 6,
+        "state": "已验证",
+        "备注": "在 UNet 基础上的 3+ 改进版本，增强了特征融合能力。",
+        "filename": "UNet3plus/UNet3plus.py"
+    },
+    {
+        "modelname": "UCTransNet",
+        "id": 7,
+        "state": "已验证",
+        "filename": "Hybrid/UCTransNet/UCTransNet"
+    },
+    {
+        "modelname": "Tinyunet",
+        "id": 8,
+        "state": "已验证",
+        "备注": "轻量级的 U 型网络，适合资源受限的场景。",
+        "filename": "TinyUNet.py"
+    },
+    {
+        "modelname": "MissFormer",
+        "id": 9,
+        "state": "已验证",
+
+        "备注": "基于 Transformer 的分割模型，可能有独特的特征处理方式。",
+        "filename": "MISSFormer.py"
+    },
+    {
+        "modelname": "TransUnet",
+        "id": 10,
+        "state": "已验证",
+        "备注": "结合 Transformer 和 U 型网络的模型，利用 Transformer 提取全局特征。"
+    },
+    {
+        "modelname": "MedT",
+        "id": 11,
+        "state": "已验证",
+
+        "备注": "专门用于医学图像任务的 Transformer 模型。"
+    },
+    {
+        "modelname": "ResNet34UnetPlus",
+        "id": 12,
+        "state": "已验证",
+        "备注": "基于 ResNet34 作为编码器的 UNet+ 模型，利用 ResNet 强大的特征提取能力。",
+        "filename": "UNetplus.py"
+    },
+    {
+        "modelname": "SwinUnet",
+        "id": 13,
+        "state": "已验证",
+        "备注": "基于 Swin Transformer 的 U 型网络，利用 Swin Transformer 的优势。"
+    },
+    {
+        "modelname": "MFMSNet",
+        "id": 15,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "可能是特定任务或数据集上优化的网络，具有多尺度特征融合能力。",
+        "filename": "IS2D_models"
+    },
+    {
+        "modelname": "MultiResUNet",
+        "id": 16,
+        "state": "已验证",
+        "备注": "",
+        "filename": "MultiResUNet/MultiResUNet.py"
+    },
+    {
+        "modelname": "R2U_Net",
+        "id": 17,
+        "state": "已验证",
+        "备注": "R2U-Net 是一种改进的 U-Net 结构",
+        "filename": "R2U_Net/R2U_Net.py"
+    },
+    {
+        "modelname": "CE_Net",
+        "id": 18,
+        "state": "已验证",
+        "备注": "CE-Net 是一种用于医学图像分割的网络结构，",
+        "filename": "CE_Net"
+    },
+    {
+        "modelname": "ResUNetPlusPlus",
+        "id": 19,
+        "state": "已验证",
+        "备注": "ResUNet++ 是一种改进的 ResNet 结构",
+        "filename": "ResUNetPlusPlus/ResUNetPlusPlus.py"
+    },
+    {
+        "modelname": "MBSNet",
+        "id": 20,
+        "state": "已验证",
+        "备注": "MBSNet 是一种基于多分支结构的网络",
+        "filename": "MBSNet"
+    },
+    {
+        "modelname": "CA_Net",
+        "id": 21,
+        "state": "已验证",
+        "备注": "CA-Net 是一种用于医学图像分割的网络结构",
+        "filename": "CA_Net"
+    },
+    {
+        "modelname": "LFU_Net",
+        "id": 23,
+        "state": "已验证",
+        "备注": "LFU-Net 是一种用于医学图像分割的网络结构",
+        "filename": "LFU_Net"
+    },
+    {
+        "modelname": "DC_UNet",
+        "id": 24,
+        "state": "已验证",
+        "备注": "DC-UNet 是一种用于医学图像分割的网络结构"
+    },
+    {
+        "modelname": "ColonSegNet",
+        "id": 25,
+        "state": "已验证",
+        "备注": " ColonSegNet 是一种用于 Colon 图像分割的网络结构",
+        "filename": "ColonSegNet"
+    },
+    {
+        "modelname": "LV_UNet",
+        "id": 26,
+        "state": "已验证",
+        "备注": "LV_UNet 是一种用于医学图像分割的网络结构",
+        "filename": "LV_UNet"
+    },
+    {
+        "modelname": "CPCANet",
+        "id": 27,
+        "state": "已验证",
+        "备注": "显存会爆",
+        "filename": "CPCANet"
+    },
+    {
+        "modelname": "Perspective_Unet",
+        "id": 28,
+        "state": "已验证",
+        "备注": "LFU-Net 是一种用于医学图像分割的网络结构",
+        "filename": "Perspective_Unet"
+    },
+    {
+        "modelname": "ESKNet",
+        "id": 29,
+        "state": "已验证",
+        "备注": "DC-UNet 是一种用于医学图像分割的网络结构",
+        "filename": "ESKNet"
+    },
+
+    {
+        "modelname": "MALUNet",
+        "id": 30,
+        "state": "已验证",
+        "备注": "MALUNet 是一种用于医学图像分割的网络结构",
+        "filename": "MALUNet"
+    },
+    {
+        "modelname": "DCSAU_Net",
+        "id": 31,
+        "state": "已验证",
+        "备注": "DCSAU-Net 是一种用于医学图像分割的网络结构",
+        "filename": "DCSAU_Net"
+    },
+    {
+        "modelname": "FAT_Net",
+        "id": 32,
+        "state": "未验证",
+        "备注": "FAT-Net 是一种用于医学图像分割的网络结构",
+        "filename": "FAT_Net"
+    },
+    {
+        "modelname": "CFPNet_M",
+        "id": 33,
+        "state": "已验证",
+        "备注": "CFPNet-M 是一种用于医学图像分割的网络结构",
+        "filename": "CFPNet_M"
+    },
+    {
+        "modelname": "EMCAD",
+        "id": 34,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "EMCADNet 是一种用于医学图像分割的网络结构",
+        "filename": "other/emcad"
+
+    },
+    {
+        "modelname": "CaraNet",
+        "id": 36,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "",
+        "filename": "CaraNet/CaraNet.py"
+    },
+    {
+        "modelname": "DDANet",
+        "id": 37,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "",
+        "filename": "DDANet/DDANet.py"
+    },
+    {
+        "modelname": "PraNet",
+        "id": 39,
+        "state": "已验证",
+        "备注": "",
+        "deeps_supervision": 1,
+        "filename": "PraNet/PraNet.py"
+    },
+    {
+        "modelname": "TA_Net",
+        "id": 40,
+        "state": "已验证",
+        "备注": "TA-Net",
+        "filename": "TANet/TANet.py"
+    },
+    {
+        "modelname": "Egeunet",
+        "id": 42,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "",
+        "filename": "Egeunet.py"
+    },
+    {
+        "modelname": "ERDUnet",
+        "id": 43,
+        "state": "已验证",
+        "备注": "",
+        "filename": "ERDUnet.py"
+    },
+    {
+        "modelname": "DoubleUNet",
+        "id": 45,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": " ",
+        "filename": "dobuleunet.py"
+    },
+    {
+        "modelname": "RollingUnet",
+        "id": 46,
+        "state": "已验证",
+        "备注": "Rolling-Unet",
+        "filename": "RollingUnet.py"
+    },
+    {
+        "modelname": "UNetV2",
+        "id": 47,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "UNetV2 原文可选",
+        "filename": "UNet_v2/UNet_v2.py"
+    },
+    {
+        "modelname": "CSCAUNet",
+        "id": 48,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "CSCAUNet",
+        "filename": "CSCAUNet.py"
+    },
+    {
+        "modelname": "UACANet",
+        "id": 49,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "UACANet",
+        "filename": "UACANet"
+    },
+    {
+        "modelname": "MMUNet",
+        "id": 50,
+        "state": "已验证",
+        "备注": "MMUNet",
+        "filename": "MMUNet.py"
+    },
+    {
+        "modelname": "ULite",
+        "id": 51,
+        "state": "已验证",
+        "备注": "ULite",
+        "filename": "ULite.py"
+    },
+    {
+        "modelname": "SimpleUNet",
+        "id": 52,
+        "state": "已验证",
+        "备注": "SimpleUNet",
+        "filename": "SimpleUNet.py"
+    },
+    {
+        "modelname": "MEGANet",
+        "id": 53,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "MEGANet",
+        "filename": "MEGANet_ResNet"
+    },
+    {
+        "modelname": "LM_Net",
+        "id": 54,
+        "state": "未验证",
+        "备注": "LMNet",
+        "filename": "LMNet"
+    },
+
+
+    {
+        "modelname": "AURA_Net",
+        "id": 55,
+        "state": "已验证",
+        "备注": "AURA-Net",
+        "filename": "Hybrid/AURA_Net/AURA_Net.py"
+    },
+    {
+        "modelname": "BEFUnet",
+        "id": 56,
+        "state": "已验证",
+        "备注": "BEFUnet",
+        "filename": "Hybrid/BEFUnet/BEFUnet.py"
+    },
+    {
+        "modelname": "CASCADE",
+        "id": 57,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "CASCADE",
+        "filename": "Hybrid/CASCADE/CASCADE.py"
+    },
+    {
+        "modelname": "G_CASCADE",
+        "id": 58,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "G-CASCADE",
+        "filename": "Hybrid/G_CASCADE/G_CASCADE.py"
+    },
+    {
+        "modelname": "ConvFormer",
+        "id": 59,
+        "state": "已验证",
+        "备注": "ConvFormer",
+        "filename": "Hybrid/ConvFormer/ConvFormer.py"
+    },
+    {
+        "modelname": "DA_TransUNet",
+        "id": 60,
+        "state": "已验证",
+        "备注": "DA-Transformer",
+        "filename": "Hybrid/DA_Transformer/DA_Transformer.py"
+    },
+    {
+        "modelname": "DAEFormer",
+        "id": 61,
+        "state": "已验证",
+        "备注": "DAEFormer",
+        "filename": "Hybrid/DAEFormer/DAEFormer.py"
+    },
+    {
+        "modelname": "DS_TransUNet",
+        "id": 62,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "DS-TransUNet",
+        "filename": "Hybrid/DS_TransUNet/DS_TransUNet.py"
+    },
+    {
+        "modelname": "FCBFormer",
+        "id": 63,
+        "state": "已验证",
+        "备注": "FCBFormer",
+        "filename": "Hybrid/FCBFormer/FCBFormer.py"
+    },
+    {
+        "modelname": "LeViT_UNet",
+        "id": 64,
+        "state": "已验证",
+        "备注": "LeViT-UNet",
+        "filename": "Hybrid/LeViT_UNet/LeViT_UNet.py"
+    },
+    {
+        "modelname": "HiFormer",
+        "id": 65,
+        "state": "已验证",
+        "备注": "HiFormer",
+        "filename": "Hybrid/HiFormer/HiFormer.py"
+    },
+    {
+        "modelname": "MERIT",
+        "id": 66,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "MERIT",
+        "filename": "Hybrid/MERIT/MERIT.py"
+    },
+    {
+        "modelname": "MT_UNet",
+        "id": 67,
+        "state": "已验证",
+        "备注": "MT-UNet",
+        "filename": "Hybrid/MT_UNet/MT_UNet.py"
+    },
+    {
+        "modelname": "TransAttUnet",
+        "id": 68,
+        "state": "已验证",
+        "备注": "TransAttUNet",
+        "filename": "Hybrid/TransAttUnet/TransAttUnet.py"
+    },
+    {
+        "modelname": "TransFuse",
+        "id": 69,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "TransFuse",
+        "filename": "Hybrid/TransFuse/TransFuse.py"
+    },
+    {
+        "modelname": "TransNorm",
+        "id": 70,
+        "state": "已验证",
+        "备注": "TransNorm",
+        "filename": "Hybrid/TransNorm/TransNorm.py"
+    },
+    {
+        "modelname": "TransResUNet",
+        "id": 71,
+        "state": "已验证",
+        "备注": "TransResUNet",
+        "filename": "Hybrid/TransResUNet/TransResUNet.py"
+    },
+    {
+        "modelname": "UTNet",
+        "id": 73,
+        "state": "已验证",
+        "备注": "UTNet",
+        "filename": "Hybrid/UTNet/UTNet.py"
+
+    },
+    {
+        "modelname": "GH_UNet",
+        "id": 74,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "GH_UNet",
+        "filename": "CNN/GH_UNet/GH_UNet.py"
+    },
+    {
+        "modelname": "MSRFNet",
+        "id": 75,
+        "deeps_supervision": 1,
+        "state": "已验证",
+        "备注": "MSRFNet",
+        "filename": "CNN/MSRFNet/MSRFNet.py"
+    },
+    {
+        "modelname": "braunet_plus_plus",
+        "id": 76,
+        "state": "已验证",
+        "备注": "BRAUnet++",
+        "filename": "Hybrid/BRAUnet_plus_plus/bra_unet.py"
+    },
+    {
+        "modelname": "CSWin_UNet",
+        "id": 77,
+        "state": "已验证",
+        "备注": "CSWin_UNet",
+        "filename": "Hybrid/CSWin_UNet/CSWin_UNet.py"
+    },
+    {
+        "modelname": "D_TrAttUnet",
+        "id": 78,
+        "state": "已验证",
+        "备注": "D_TrAttUnet",
+        "deeps_supervision": 1,
+        "filename": "Hybrid/D_TrAttUnet/D_TrAttUnet.py"
+    },
+    {
+        "modelname": "EViT_UNet",
+        "id": 79,
+        "state": "已验证",
+        "备注": "EViT_UNet",
+        "filename": "Hybrid/EViT_UNet/EViT_UNet.py"
+    },
+    {
+        "modelname": "MedFormer",
+        "id": 80,
+        "state": "已验证",
+        "备注": "MedFormer",
+        "filename": "Hybrid/MedFormer/MedFormer.py"
+    },
+    {
+        "modelname": "MSLAU_Net",
+        "id": 81,
+        "state": "未验证",
+        "备注": "MSLAU_Net",
+        "filename": "Hybrid/MSLAU_Net/MSLAU_Net.py"
+    },
+    {
+        "modelname": "BATFormer",
+        "id": 82,
+        "state": "未验证",
+        "备注": "BATFormer",
+        "filename": "Transformer/BATFormer/BATFormer.py"
+    },
+    {
+        "modelname": "Polyp_PVT",
+        "id": 83,
+        "state": "已验证",
+        "deeps_supervision": 1,
+        "备注": "Polyp_PVT",
+        "filename": "Transformer/Polyp_PVT/Polyp_PVT.py"
+    },
+    {
+        "modelname": "SCUNet_plus_plus",
+        "id": 84,
+        "state": "已验证",
+        "备注": "SCUNet++",
+        "filename": "Transformer/SCUNet_plus_plus/SCUNet_plus_plus.py"
+    },
+    {
+        "modelname": "LM_Net",
+        "id": 85,
+        "state": "已验证",
+        "备注": "LM_Net",
+        "filename": "conv_based/LMNet/LMNet.py"
+    },
+    {
+        "modelname": "MobileUViT",
+        "id": 86,
+        "state": "已验证",
+        "备注": "ACM MM 2025",
+        "filename": "conv_based/MobileUViT/MobileUViT.py"
+    },
+    {
+        "modelname": "LGMSNet",
+        "id": 87,
+        "state": "已验证",
+        "备注": "ECAI 2025",
+        "filename": "conv_based/LGMSNet/LGMSNet.py"
+    },
+    {
+        "modelname": "AC_MambaSeg",
+        "id": 88,
+        "state": "已验证",
+        "filename": "Mamba/AC_MambaSeg/AC_MambaSeg.py"
+    },
+    {
+        "modelname": "H_vmunet",
+        "id": 89,
+        "state": "已验证",
+        "filename": "Mamba/H_vmunet/H_vmunet.py"
+    },
+    {
+        "modelname": "MambaUnet",
+        "id": 90,
+        "state": "已验证",
+        "filename": "Mamba/MambaUnet/MambaUnet.py"
+    },
+    {
+        "modelname": "MUCM_Net",
+        "id": 91,
+        "state": "已验证",
+        "filename": "Mamba/MUCM_Net/MUCM_Net.py"
+    },
+    {
+        "modelname": "Swin_umamba",
+        "id": 92,
+        "state": "已验证",
+        "filename": "Mamba/Swin_umamba/Swin_umamba.py"
+    },
+    {
+        "modelname": "Swin_umambaD",
+        "id": 93,
+        "state": "已验证",
+        "filename": "Mamba/Swin_umambaD/Swin_umambaD.py"
+    },
+    {
+        "modelname": "UltraLight_VM_UNet",
+        "id": 94,
+        "state": "已验证",
+        "filename": "Mamba/UltraLight_VM_UNet/UltraLight_VM_UNet.py"
+    },
+    {
+        "modelname": "VMUNet",
+        "id": 95,
+        "state": "已验证",
+        "filename": "Mamba/VMUNet/VMUNet.py"
+    },
+    {
+        "modelname": "VMUNetV2",
+        "id": 96,
+        "state": "已验证",
+        "filename": "Mamba/VMUNetV2/VMUNetV2.py"
+    },
+    {
+        "modelname": "UTANet",
+        "id": 97,
+        "state": "已验证",
+        "filename": "UTANet.py"
+    },
+    {
+        "modelname": "DDS_UNet",
+        "id": 98,
+        "state": "已验证",
+        "filename": "DDS_UNet.py"
+    },
+    {
+        "modelname": "MCA_UNet",
+        "id": 99,
+        "deeps_supervision": 1,
+        "state": "已验证",
+        "filename": "MCA_UNet.py"
+    },
+    {
+        "modelname": "MDSA_UNet",
+        "id": 100,
+        "state": "已验证",
+        "filename": "MDSA_UNet.py"
+    },
+    {
+        "modelname": "U_KAN",
+        "id": 101,
+        "state": "已验证",
+        "filename": "U_KAN.py"
+    },
+    {
+        "modelname": "ResU_KAN",
+        "id": 102,
+        "state": "已验证",
+        "filename": "ResU_KAN.py"
+    },
+    {
+        "modelname": "SwinUNETR",
+        "id": 103,
+        "state": "已验证",
+        "filename": "SwinUNETR.py"
+    },
+    {
+        "modelname": "UNETR",
+        "id": 104,
+        "state": "已验证",
+        "filename": "UNETR.py"
+    },
+    {
+        "modelname": "CFFormer",
+        "id": 105,
+        "state": "已验证",
+        "filename": "CFFormer.py"
+    },
+    {
+        "modelname": "CENet",
+        "id": 106,
+        "state": "已验证",
+        "filename": "CENet.py"
+    },
+    {
+        "modelname": "CFM_UNet",
+        "id": 107,
+        "state": "已验证",
+        "filename": "CFM_UNet.py"
+    },
+    {
+        "modelname": "H2Former",
+        "id": 108,
+        "state": "已验证",
+        "filename": "H2Former.py"
+    },
+    {
+        "modelname": "ScribFormer",
+        "id": 109,
+        "deeps_supervision": 1,
+        "state": "已验证",
+        "filename": "ScribFormer.py"
+    },
+    {
+        "modelname": "RAT_Net",
+        "id": 110,
+        "state": "已验证",
+        "filename": "RAT_Net.py"
+    },
+    {
+        "modelname": "Zig_RiR",
+        "id": 111,
+        "state": "已验证",
+        "filename": "Zig_RiR.py"
+    },
+    {
+        "modelname": "RWKV_UNet",
+        "id": 112,
+        "state": "已验证",
+        "filename": "RWKV_UNet.py"
+    },
+    {
+        "modelname": "U_RWKV",
+        "id": 113,
+        "state": "已验证",
+        "filename": "U_RWKV.py"
+    },
+    {
+        "modelname": "MedVKAN",
+        "id": 114,
+        "state": "已验证",
+        "filename": "MedVKAN.py"
+    }
+]
