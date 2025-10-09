@@ -1,8 +1,8 @@
 """ Visformer
 
-Paper: Visformer: The Vision-friendly Transformer - [URL]
+Paper: Visformer: The Vision-friendly Transformer - https://arxiv.org/abs/2104.12533
 
-From original at [URL]
+From original at https://github.com/danczs/Visformer
 
 Modifications and additions for timm hacked together by / Copyright 2021, Ross Wightman
 """
@@ -35,7 +35,7 @@ def _cfg(url='', **kwargs):
 default_cfgs = dict(
     visformer_tiny=_cfg(),
     visformer_small=_cfg(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/visformer_small-839e1f5b.pth'
     ),
 )
 
@@ -423,6 +423,7 @@ def visformer_small(pretrained=False, **kwargs):
 #         pos_embed=False, spatial_conv='111', conv_init=True, **kwargs)
 #     model.default_cfg = _cfg()
 #     return model
+
 
 
 

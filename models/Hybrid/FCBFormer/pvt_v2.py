@@ -1,4 +1,4 @@
-#Ported from [URL] (unmodified)
+#Ported from https://github.com/whai362/PVT (unmodified)
 
 import torch
 import torch.nn as nn

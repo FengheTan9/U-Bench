@@ -3,14 +3,14 @@
 PyTorch implementations of DropBlock and DropPath (Stochastic Depth) regularization layers.
 
 Papers:
-DropBlock: A regularization method for convolutional networks ([URL]
+DropBlock: A regularization method for convolutional networks (https://arxiv.org/abs/1810.12890)
 
-Deep Networks with Stochastic Depth ([URL]
+Deep Networks with Stochastic Depth (https://arxiv.org/abs/1603.09382)
 
 Code:
 DropBlock impl inspired by two Tensorflow impl that I liked:
- - [URL]
- - [URL]
+ - https://github.com/tensorflow/tpu/blob/master/models/official/resnet/resnet_model.py#L74
+ - https://github.com/clovaai/assembled-cnn/blob/master/nets/blocks.py
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -22,7 +22,7 @@ import torch.nn.functional as F
 def drop_block_2d(
         x, drop_prob: float = 0.1, block_size: int = 7, gamma_scale: float = 1.0,
         with_noise: bool = False, inplace: bool = False, batchwise: bool = False):
-    """ DropBlock. See [URL]
+    """ DropBlock. See https://arxiv.org/pdf/1810.12890.pdf
 
     DropBlock with an experimental gaussian noise option. This layer has been tested on a few training
     runs with success, but needs further validation and possibly optimization for lower runtime impact.
@@ -70,7 +70,7 @@ def drop_block_2d(
 def drop_block_fast_2d(
         x: torch.Tensor, drop_prob: float = 0.1, block_size: int = 7,
         gamma_scale: float = 1.0, with_noise: bool = False, inplace: bool = False):
-    """ DropBlock. See [URL]
+    """ DropBlock. See https://arxiv.org/pdf/1810.12890.pdf
 
     DropBlock with an experimental gaussian noise option. Simplied from above without concern for valid
     block mask at edges.
@@ -102,7 +102,7 @@ def drop_block_fast_2d(
 
 
 class DropBlock2d(nn.Module):
-    """ DropBlock. See [URL]
+    """ DropBlock. See https://arxiv.org/pdf/1810.12890.pdf
     """
 
     def __init__(
@@ -139,7 +139,7 @@ def drop_path(x, drop_prob: float = 0., training: bool = False, scale_by_keep: b
 
     This is the same as the DropConnect impl I created for EfficientNet, etc networks, however,
     the original name is misleading as 'Drop Connect' is a different form of dropout in a separate paper...
-    See discussion: [URL] ... I've opted for
+    See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I've opted for
     changing the layer and argument names to 'drop path' rather than mix DropConnect as a layer name and use
     'survival rate' as the argument.
 

@@ -1,5 +1,5 @@
 """Pytorch Densenet implementation w/ tweaks
-This file is a copy of [URL] 'densenet.py' (BSD-3-Clause) with
+This file is a copy of https://github.com/pytorch/vision 'densenet.py' (BSD-3-Clause) with
 fixed kwargs passthrough and addition of dynamic global avg/max pool.
 """
 import re
@@ -31,16 +31,16 @@ def _cfg(url=''):
 
 default_cfgs = {
     'densenet121': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/densenet121_ra-50efcf5c.pth'),
     'densenet121d': _cfg(url=''),
     'densenetblur121d': _cfg(
-        url='[URL]'),
-    'densenet169': _cfg(url='[URL]'),
-    'densenet201': _cfg(url='[URL]'),
-    'densenet161': _cfg(url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/densenetblur121d_ra-100dcfbc.pth'),
+    'densenet169': _cfg(url='https://download.pytorch.org/models/densenet169-b2777c0a.pth'),
+    'densenet201': _cfg(url='https://download.pytorch.org/models/densenet201-c1103571.pth'),
+    'densenet161': _cfg(url='https://download.pytorch.org/models/densenet161-8d451a50.pth'),
     'densenet264': _cfg(url=''),
     'densenet264d_iabn': _cfg(url=''),
-    'tv_densenet121': _cfg(url='[URL]'),
+    'tv_densenet121': _cfg(url='https://download.pytorch.org/models/densenet121-a639ec97.pth'),
 }
 
 
@@ -151,7 +151,7 @@ class DenseTransition(nn.Sequential):
 
 class DenseNet(nn.Module):
     r"""Densenet-BC model class, based on
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`_
 
     Args:
         growth_rate (int) - how many filters to add each layer (`k` in paper)
@@ -161,7 +161,7 @@ class DenseNet(nn.Module):
         drop_rate (float) - dropout rate after each dense layer
         num_classes (int) - number of classification classes
         memory_efficient (bool) - If True, uses checkpointing. Much more memory efficient,
-          but slower. Default: *False*. See `"paper" <[URL]
+          but slower. Default: *False*. See `"paper" <https://arxiv.org/pdf/1707.06990.pdf>`_
     """
 
     def __init__(
@@ -309,7 +309,7 @@ def _create_densenet(variant, growth_rate, block_config, pretrained, **kwargs):
 @register_model
 def densenet121(pretrained=False, **kwargs):
     r"""Densenet-121 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet121', growth_rate=32, block_config=(6, 12, 24, 16), pretrained=pretrained, **kwargs)
@@ -319,7 +319,7 @@ def densenet121(pretrained=False, **kwargs):
 @register_model
 def densenetblur121d(pretrained=False, **kwargs):
     r"""Densenet-121 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenetblur121d', growth_rate=32, block_config=(6, 12, 24, 16), pretrained=pretrained, stem_type='deep',
@@ -330,7 +330,7 @@ def densenetblur121d(pretrained=False, **kwargs):
 @register_model
 def densenet121d(pretrained=False, **kwargs):
     r"""Densenet-121 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet121d', growth_rate=32, block_config=(6, 12, 24, 16), stem_type='deep',
@@ -341,7 +341,7 @@ def densenet121d(pretrained=False, **kwargs):
 @register_model
 def densenet169(pretrained=False, **kwargs):
     r"""Densenet-169 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet169', growth_rate=32, block_config=(6, 12, 32, 32), pretrained=pretrained, **kwargs)
@@ -351,7 +351,7 @@ def densenet169(pretrained=False, **kwargs):
 @register_model
 def densenet201(pretrained=False, **kwargs):
     r"""Densenet-201 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet201', growth_rate=32, block_config=(6, 12, 48, 32), pretrained=pretrained, **kwargs)
@@ -361,7 +361,7 @@ def densenet201(pretrained=False, **kwargs):
 @register_model
 def densenet161(pretrained=False, **kwargs):
     r"""Densenet-161 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet161', growth_rate=48, block_config=(6, 12, 36, 24), pretrained=pretrained, **kwargs)
@@ -371,7 +371,7 @@ def densenet161(pretrained=False, **kwargs):
 @register_model
 def densenet264(pretrained=False, **kwargs):
     r"""Densenet-264 model from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'densenet264', growth_rate=48, block_config=(6, 12, 64, 48), pretrained=pretrained, **kwargs)
@@ -393,7 +393,7 @@ def densenet264d_iabn(pretrained=False, **kwargs):
 @register_model
 def tv_densenet121(pretrained=False, **kwargs):
     r"""Densenet-121 model with original Torchvision weights, from
-    `"Densely Connected Convolutional Networks" <[URL]
+    `"Densely Connected Convolutional Networks" <https://arxiv.org/pdf/1608.06993.pdf>`
     """
     model = _create_densenet(
         'tv_densenet121', growth_rate=32, block_config=(6, 12, 24, 16), pretrained=pretrained, **kwargs)

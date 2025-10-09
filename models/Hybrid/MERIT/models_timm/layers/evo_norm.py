@@ -1,6 +1,6 @@
 """ EvoNorm in PyTorch
 
-Based on `Evolving Normalization-Activation Layers` - [URL]
+Based on `Evolving Normalization-Activation Layers` - https://arxiv.org/abs/2004.02967
 @inproceedings{NEURIPS2020,
  author = {Liu, Hanxiao and Brock, Andy and Simonyan, Karen and Le, Quoc},
  booktitle = {Advances in Neural Information Processing Systems},
@@ -8,7 +8,7 @@ Based on `Evolving Normalization-Activation Layers` - [URL]
  pages = {13539--13550},
  publisher = {Curran Associates, Inc.},
  title = {Evolving Normalization-Activation Layers},
- url = {[URL]
+ url = {https://proceedings.neurips.cc/paper/2020/file/9d4c03631b8b0c85ae08bf05eda37d0f-Paper.pdf},
  volume = {33},
  year = {2020}
 }

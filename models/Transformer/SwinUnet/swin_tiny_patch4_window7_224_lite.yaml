@@ -2,7 +2,7 @@ MODEL:
   TYPE: swin
   NAME: swin_tiny_patch4_window7_224
   DROP_PATH_RATE: 0.2
-  PRETRAIN_CKPT: "[URL]"
+  PRETRAIN_CKPT: "https://objects.githubusercontent.com/github-production-release-asset-2e65be/357198522/fd006b80-9bd3-11eb-8445-769d89efab4e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250714%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250714T152155Z&X-Amz-Expires=1800&X-Amz-Signature=b4d64967528ed30cffd31bc68e61d5f6ffcc478f43f7c95dc3c1c8bd2955a1a2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dswin_tiny_patch4_window7_224.pth&response-content-type=application%2Foctet-stream"
   SWIN:
     FINAL_UPSAMPLE: "expand_first"
     EMBED_DIM: 96

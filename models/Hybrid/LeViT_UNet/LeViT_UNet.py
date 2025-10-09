@@ -1,3 +1,11 @@
+# Copyright (c) 2015-present, Facebook, Inc.
+# All rights reserved.
+
+# Modified from
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+# Copyright 2020 Ross Wightman, Apache-2.0 License
+
+
 import torch
 import itertools
 import utils
@@ -13,7 +21,7 @@ from timm.models.registry import register_model
 specification = {
     'LeViT_192': {
         'C': '192_288_384', 'D': 32, 'N': '3_5_6', 'X': '4_4_4', 'drop_path': 0,
-        'weights': '[URL]'},
+        'weights': 'https://dl.fbaipublicfiles.com/LeViT/LeViT-192-92712e41.pth'},
 }
 
 __all__ = [specification.keys()]
@@ -612,3 +620,4 @@ class LeViT_UNet_192(torch.nn.Module):
 
 def levit_unet(num_classes, input_channel=3):
     return LeViT_UNet_192(input_channel=input_channel, num_classes=num_classes)
+

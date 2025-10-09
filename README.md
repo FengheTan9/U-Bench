@@ -1,12 +1,87 @@
 # U-Bench: A Comprehensive Understanding of U-Net through 100-Variant Benchmarking
 
+![Teaser](imgs/teaser2.jpg)
+
+<div align="center">
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=x1pODsMAAAAJ&hl=en" target="_blank">Fenghe Tang</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a target="_blank">Chengqi Dong</a>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=r0-tZ8cAAAAJ&hl=en" target="_blank">Wenxin Ma</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=TxjqAY0AAAAJ&hl=en" target="_blank">Zikang Xu</a><sup>3</sup>,</span>
+    <br>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=YkfSFekAAAAJ&hl=en" target="_blank">Heqin Zhu</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=Wo8tMSMAAAAJ&hl=en" target="_blank">Zihang Jiang</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=rYP1nFEAAAAJ&hl=en" target="_blank">Rongsheng Wang</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=wi016FcAAAAJ&hl=en" target="_blank">Yuhao Wang</a><sup>1,2</sup>,</span>
+    <span class="author-block">
+    <a href="https://scholar.google.com/citations?user=tI39ThgAAAAJ&hl=en" target="_blank">Chenxu Wu</a><sup>1,2</sup>,</span>
+    <span class="author-block">        
+    <a href="https://scholar.google.com/citations?user=8eNm2GMAAAAJ&hl=en" target="_blank">Shaohua Kevin Zhou</a><sup>1,2</sup>
+    </span>
+</div>
+
+<br>
+
+<div align="center">
+    <sup>1</sup>
+    <a href='https://en.ustc.edu.cn/' target='_blank'>School of Biomedical Engineering, University of Science and Technology of China</a>&emsp;
+    <br>
+    <sup>2</sup> <a href='http://english.ict.cas.cn/' target='_blank'>Suzhou Institute for Advanced Research, University of Science and Technology of China</a>&emsp;
+    <br>
+    <sup>3</sup> <a target='_blank'>Anhui Province Key Laboratory of Biomedical Imaging and Intelligent Processing</a>
+</div>
+
+<br>
+
+   [![arXiv](https://img.shields.io/badge/arxiv-2510.07041-b31b1b)](https://arxiv.org/pdf/2510.07041)   [![github](https://img.shields.io/badge/github-U_Bench-black)](https://github.com/FengheTan9/U-Bench)  [![huggingface](https://img.shields.io/badge/Huggingface-U_Bench-yellow)](https://huggingface.co/FengheTan9/U-Bench)   <a href="#LICENSE--citation"><img alt="License: Apache2.0" src="https://img.shields.io/badge/LICENSE-Apache%202.0-blue.svg"/></a>
+
+
+
+### Catalog🚀🚀🚀
+
+- [ ] U-Bench data released 🤗🤗🤗
+- [ ] U-Bench model weights released 🤗🤗🤗
+- [x] U-Bench Code released 🤗🤗🤗
+- [x] U-Bench paper released 🤗🤗🤗
+
 ### Abstract
 
 Over the past decade, U-Net has been the dominant architecture in medical image segmentation, leading to the development of thousands of U-shaped variants. Despite its widespread adoption, a comprehensive benchmark to systematically assess the performance and utility of these models is lacking, primarily due to insufficient statistical validation and limited attention to efficiency and generalization across diverse datasets. To address this gap, we present U-Bench, the first large-scale, statistically rigorous benchmark that evaluates 100 U-Net variants across 28 datasets and 10 imaging modalities. Our contributions are threefold: (1) Comprehensive Evaluation: U-Bench evaluates models along three key dimensions: statistical robustness, zero-shot generalization, and computational efficiency. We introduce a novel metric, U-Score, which jointly captures the performance-efficiency trade-off, offering a deployment-oriented perspective on model progress. (2) Systematic Analysis and Model Selection Guidance: We summarize key findings from the large-scale evaluation and systematically analyze the impact of dataset characteristics and architectural paradigms on model performance. Based on these insights, we propose a model advisor agent to guide researchers in selecting the most suitable models for specific datasets and tasks. (3) Public Availability: We provide all code, models, protocols, and weights, enabling the community to reproduce our results and extend the benchmark with future methods. In summary, U-Bench not only exposes gaps in previous evaluations but also establishes a foundation for fair, reproducible, and practically relevant benchmarking in the next decade of U-Net-based segmentation models.
 
-### Quick Start
+### Anaylsis🧐
 
-#### 1. Datasets
+##### (1) Trends Analysis
+
+![Teaser](imgs/trends.jpg)
+
+##### (2) Significance Analysis
+
+![Teaser](imgs/significance.jpg)
+
+##### (3) Data Characteristics Analysis
+
+![Teaser](imgs/data_analysis.jpg)
+
+### Quick Start 🤩🤩🤩
+
+#### 1. Installation
+
+```
+git clone https://github.com/FengheTan9/U-Bench.git
+cd U-Bench
+conda create -n ubench python=3.9 -y  
+conda activate ubench  
+pip install -r requirements.txt  
+```
+
+#### 2. Datasets
 
 Please put the dataset (e.g. BUSI) or your own dataset as the following architecture:
 
@@ -41,11 +116,52 @@ Please put the dataset (e.g. BUSI) or your own dataset as the following architec
     └── main_multi3d.py
 ```
 
-#### 2. Training & Validation
+#### 3. Training & Validation
 
-Please refer script.
+```python
+# BUSI (in-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi
 
-We have **removed all sensitive URLs** from the repository to comply with anonymity and privacy rules.  
-The **pre-trained weights, datasets, and benchmark results** will be released **after the acceptance of our paper**.
+# Synapse (3D-Slice)
+python main_multi3d.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/synapse --dataset_name synapse --num_classes 9 --input_channel 3 --val_interval 100
+# ACDC (3D-Slice)
+python main_multi3d.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/ACDC--dataset_name ACDC --num_classes 4 --input_channel 3 --val_interval 100
+```
 
-update
+#### 4. Zero-shot
+
+```python
+# BUSI -> BUS (zero-shot)
+python inference_case.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi --zero_shot_base_dir ./data/bus --zero_shot_dataset_name bus --just_for_test True
+```
+
+#### 5. Results
+
+![Teaser](imgs/iou.jpg)
+
+![Teaser](imgs/uscore.jpg)
+
+## Citation
+
+If you use this work, please cite:
+
+```
+@misc{tang2025ubench,
+      title={U-Bench: A Comprehensive Understanding of U-Net through 100-Variant Benchmarking}, 
+      author={Fenghe Tang and Chengqi Dong and Wenxin Ma and Zikang Xu and Heqin Zhu and Zihang Jiang and Rongsheng Wang and Yuhao Wang and Chenxu Wu and Shaohua Kevin Zhou},
+      year={2025},
+      eprint={2510.07041},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.07041}, 
+}
+```
+
+## Contact
+
+For questions or collaborations:
+
+- Email: [fhtan9@mail.ustc.edu.cn](mailto:fhtan9@mail.ustc.edu.cn)
+- GitHub Issues: [Open Issue](https://github.com/FengheTan9/U-Bench/issues)
+
+⭐ Star this repo if you find it useful!

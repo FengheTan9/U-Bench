@@ -277,9 +277,9 @@ class EfficientNetBuilder:
     """ Build Trunk Blocks
 
     This ended up being somewhat of a cross between
-    [URL]
+    https://github.com/tensorflow/tpu/blob/master/models/official/mnasnet/mnasnet_models.py
     and
-    [URL]
+    https://github.com/facebookresearch/maskrcnn-benchmark/blob/master/maskrcnn_benchmark/modeling/backbone/fbnet_builder.py
 
     """
     def __init__(self, output_stride=32, pad_type='', round_chs_fn=round_channels, se_from_exp=False,
@@ -438,8 +438,8 @@ def _init_weight_goog(m, n='', fix_group_fanout=True):
         fix_group_fanout (bool): enable correct (matching Tensorflow TPU impl) fanout calculation w/ group convs
 
     Handles layers in EfficientNet, EfficientNet-CondConv, MixNet, MnasNet, MobileNetV3, etc:
-    * [URL]
-    * [URL]
+    * https://github.com/tensorflow/tpu/blob/master/models/official/mnasnet/mnasnet_model.py
+    * https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/efficientnet_model.py
     """
     if isinstance(m, CondConv2d):
         fan_out = m.kernel_size[0] * m.kernel_size[1] * m.out_channels
@@ -474,3 +474,4 @@ def efficientnet_init_weights(model: nn.Module, init_fn=None):
     init_fn = init_fn or _init_weight_goog
     for n, m in model.named_modules():
         init_fn(m, n)
+

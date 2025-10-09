@@ -135,3 +135,4 @@ class UCTransNet(nn.Module):
             return logits, att_weights
         else:
             return logits
+

@@ -1,9 +1,9 @@
 """ EdgeNeXt
 
 Paper: `EdgeNeXt: Efficiently Amalgamated CNN-Transformer Architecture for Mobile Vision Applications`
- - [URL]
+ - https://arxiv.org/abs/2206.10589
 
-Original code and weights from [URL]
+Original code and weights from https://github.com/mmaaz60/EdgeNeXt
 
 Modifications and additions for timm by / Copyright 2022, Ross Wightman
 """
@@ -39,26 +39,26 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     edgenext_xx_small=_cfg(
-        url="[URL]",
+        url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.0/edgenext_xx_small.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     edgenext_x_small=_cfg(
-        url="[URL]",
+        url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.0/edgenext_x_small.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     # edgenext_small=_cfg(
-    #     url="[URL]"),
+    #     url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.0/edgenext_small.pth"),
     edgenext_small=_cfg(  # USI weights
-        url="[URL]",
+        url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.1/edgenext_small_usi.pth",
         crop_pct=0.95, test_input_size=(3, 320, 320), test_crop_pct=1.0,
     ),
     # edgenext_base=_cfg(
-    #     url="[URL]"),
+    #     url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.2/edgenext_base_usi.pth"),
     edgenext_base=_cfg(  # USI weights
-        url="[URL]",
+        url="https://github.com/mmaaz60/EdgeNeXt/releases/download/v1.2/edgenext_base_usi.pth",
         crop_pct=0.95, test_input_size=(3, 320, 320), test_crop_pct=1.0,
     ),
 
     edgenext_small_rw=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/edgenext_small_rw-sw-b00041bb.pth',
         test_input_size=(3, 320, 320), test_crop_pct=1.0,
     ),
 )
@@ -569,3 +569,4 @@ def edgenext_small_rw(pretrained=False, **kwargs):
         depths=(3, 3, 9, 3), dims=(48, 96, 192, 384),
         downsample_block=True, conv_bias=False, stem_type='overlap', **kwargs)
     return _create_edgenext('edgenext_small_rw', pretrained=pretrained, **model_kwargs)
+

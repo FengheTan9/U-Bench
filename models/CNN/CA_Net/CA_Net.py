@@ -127,3 +127,4 @@ class Comprehensive_Atten_Unet(nn.Module):
 
 def ca_net(input_channel,num_classes):
     return Comprehensive_Atten_Unet(input_channel=input_channel,n_classes=num_classes)
+

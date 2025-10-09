@@ -1,8 +1,8 @@
 """ Gather-Excite Attention Block
 
-Paper: `Gather-Excite: Exploiting Feature Context in CNNs` - [URL]
+Paper: `Gather-Excite: Exploiting Feature Context in CNNs` - https://arxiv.org/abs/1810.12348
 
-Official code here, but it's only partial impl in Caffe: [URL]
+Official code here, but it's only partial impl in Caffe: https://github.com/hujie-frank/GENet
 
 I've tried to support all of the extent both w/ and w/o params. I don't believe I've seen another
 impl that covers all of the cases.

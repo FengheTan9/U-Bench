@@ -649,3 +649,4 @@ class UMLP(nn.Module):
 
 def resu_kan(input_channel=3, num_classes=1):
     return ResUKAN(input_channels=input_channel, num_classes=num_classes)
+

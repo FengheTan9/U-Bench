@@ -61,7 +61,7 @@ class BasicConv2d(nn.Module):
 
 
 class Encoder(nn.Module):
-    def __init__(self, pretrain_path="[URL]"):
+    def __init__(self, pretrain_path="https://drive.usercontent.google.com/download?id=1l60Nzd2EQNZWbMHkvItDUUUp6KTlD0vt&export=download&authuser=0&confirm=t&uuid=5d180c6f-7198-45f1-9c9d-8d3da368d624&at=AN8xHoryoBlKHMU5bWKsn0x4n5UW:1752332826897"):
         super().__init__()
         self.backbone = pvt_v2_b2()
 
@@ -113,7 +113,7 @@ class UNetV2(nn.Module):
     """
     use SpatialAtt + ChannelAtt
     """
-    def __init__(self,input_channel=3, channel=32, num_classes=1, deep_supervision=True, pretrained_path="[URL]"):
+    def __init__(self,input_channel=3, channel=32, num_classes=1, deep_supervision=True, pretrained_path="https://drive.usercontent.google.com/download?id=1l60Nzd2EQNZWbMHkvItDUUUp6KTlD0vt&export=download&authuser=0&confirm=t&uuid=5d180c6f-7198-45f1-9c9d-8d3da368d624&at=AN8xHoryoBlKHMU5bWKsn0x4n5UW:1752332826897"):
         super().__init__()
         self.deep_supervision = deep_supervision
 

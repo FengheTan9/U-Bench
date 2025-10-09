@@ -274,3 +274,4 @@ class CDFormer(nn.Module):
 
 def cfformer(input_channel=3, num_classes=1):
     return CDFormer(input_channel=input_channel, num_classes=num_classes)
+

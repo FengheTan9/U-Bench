@@ -282,7 +282,7 @@ class PVT_GCASCADE(nn.Module):
         
         # backbone network initialization with pretrained weight
         self.backbone = pvt_v2_b2()  # [64, 128, 320, 512]
-        save_model = load_state_dict_from_url('[URL]', progress=True)
+        save_model = load_state_dict_from_url('https://huggingface.co/FengheTan9/U-Stone/resolve/main/pvt_v2_b2.pth', progress=True)
         model_dict = self.backbone.state_dict()
         state_dict = {k: v for k, v in save_model.items() if k in model_dict.keys()}
         model_dict.update(state_dict)
@@ -457,3 +457,4 @@ class MERIT_GCASCADE(nn.Module):
 def g_cascade(num_classes, input_channel=3):
     model = PVT_GCASCADE(num_classes=num_classes, input_channel=input_channel)
     return model
+

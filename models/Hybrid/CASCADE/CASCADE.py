@@ -38,7 +38,7 @@ class PVT_CASCADE(nn.Module):
         
         
         
-        save_model = load_state_dict_from_url('[URL]', progress=True)
+        save_model = load_state_dict_from_url('https://huggingface.co/FengheTan9/U-Stone/resolve/main/pvt_v2_b2.pth', progress=True)
         #save_model = torch.load(path)
         model_dict = self.backbone.state_dict()
         state_dict = {k: v for k, v in save_model.items() if k in model_dict.keys()}
@@ -201,3 +201,4 @@ class TransCASCADE(nn.Module):
 def cascade(num_classes, input_channel=3):
     model = PVT_CASCADE(num_classes=num_classes, input_channel=input_channel)
     return model
+

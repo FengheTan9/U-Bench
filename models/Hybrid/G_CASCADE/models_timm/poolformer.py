@@ -1,8 +1,8 @@
 """ PoolFormer implementation
 
-Paper: `PoolFormer: MetaFormer is Actually What You Need for Vision` - [URL]
+Paper: `PoolFormer: MetaFormer is Actually What You Need for Vision` - https://arxiv.org/abs/2111.11418
 
-Code adapted from official impl at [URL] original copyright in comment below
+Code adapted from official impl at https://github.com/sail-sg/poolformer, original copyright in comment below
 
 Modifications and additions for timm by / Copyright 2022, Ross Wightman
 """
@@ -12,7 +12,7 @@ Modifications and additions for timm by / Copyright 2022, Ross Wightman
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     [URL]
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,19 +43,19 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     poolformer_s12=_cfg(
-        url='[URL]',
+        url='https://github.com/sail-sg/poolformer/releases/download/v1.0/poolformer_s12.pth.tar',
         crop_pct=0.9),
     poolformer_s24=_cfg(
-        url='[URL]',
+        url='https://github.com/sail-sg/poolformer/releases/download/v1.0/poolformer_s24.pth.tar',
         crop_pct=0.9),
     poolformer_s36=_cfg(
-        url='[URL]',
+        url='https://github.com/sail-sg/poolformer/releases/download/v1.0/poolformer_s36.pth.tar',
         crop_pct=0.9),
     poolformer_m36=_cfg(
-        url='[URL]',
+        url='https://github.com/sail-sg/poolformer/releases/download/v1.0/poolformer_m36.pth.tar',
         crop_pct=0.95),
     poolformer_m48=_cfg(
-        url='[URL]',
+        url='https://github.com/sail-sg/poolformer/releases/download/v1.0/poolformer_m48.pth.tar',
         crop_pct=0.95),
 )
 
@@ -98,8 +98,8 @@ class PoolFormerBlock(nn.Module):
         act_layer: activation
         norm_layer: normalization
         drop: dropout rate
-        drop path: Stochastic Depth, refer to [URL]
-        use_layer_scale, --layer_scale_init_value: LayerScale, refer to [URL]
+        drop path: Stochastic Depth, refer to https://arxiv.org/abs/1603.09382
+        use_layer_scale, --layer_scale_init_value: LayerScale, refer to https://arxiv.org/abs/2103.17239
     """
 
     def __init__(

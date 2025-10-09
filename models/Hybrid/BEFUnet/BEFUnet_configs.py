@@ -17,7 +17,7 @@ def get_BEFUnet_configs():
     #if not os.path.isfile('./weights/swin_tiny_patch4_window7_224.pth'):
     #    print('Downloading Swin-transformer model ...')
     #    wget.download(
-    #        "[URL]",
+    #        "https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth",
     #        "./weights/swin_tiny_patch4_window7_224.pth")
     cfg.swin_pretrained_path = './weights/swin_tiny_patch4_window7_224.pth'
 

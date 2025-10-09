@@ -23,7 +23,7 @@ class PatchEmbed2D(nn.Module):
         in_chans (int): Number of input image channels. Default: 3.
         embed_dim (int): Number of linear projection output channels. Default: 96.
         norm_layer (nn.Module, optional): Normalization layer. Default: None
-    Reference: [URL]
+    Reference: http://arxiv.org/abs/2401.10166
     """
     def __init__(self, patch_size=4, in_chans=3, embed_dim=96, norm_layer=None, **kwargs):
         super().__init__()
@@ -44,7 +44,7 @@ class PatchEmbed2D(nn.Module):
 
 class PatchExpand(nn.Module):
     """
-    Reference: [URL]
+    Reference: https://arxiv.org/pdf/2105.05537.pdf
     """
     def __init__(self, input_resolution, dim, dim_scale=2, norm_layer=nn.LayerNorm):
         super().__init__()
@@ -69,8 +69,8 @@ class PatchExpand(nn.Module):
 class FinalPatchExpand_X4(nn.Module):
     """
     Reference:
-        - GitHub: [URL]
-        - Paper: [URL]
+        - GitHub: https://github.com/HuCaoFighting/Swin-Unet/blob/main/networks/swin_transformer_unet_skip_expand_decoder_sys.py
+        - Paper: https://arxiv.org/pdf/2105.05537.pdf
     """
     def __init__(self, input_resolution, dim, dim_scale=4, norm_layer=nn.LayerNorm):
         super().__init__()
@@ -233,7 +233,7 @@ class SS2D(nn.Module):
             torch.rand(d_inner, **factory_kwargs) * (math.log(dt_max) - math.log(dt_min))
             + math.log(dt_min)
         ).clamp(min=dt_init_floor)
-        # Inverse of softplus: [URL]
+        # Inverse of softplus: https://github.com/pytorch/pytorch/issues/72759
         inv_dt = dt + torch.log(-torch.expm1(-dt))
         with torch.no_grad():
             dt_proj.bias.copy_(inv_dt)
@@ -653,7 +653,7 @@ class SwinUMambaD(nn.Module):
 
 
 def load_pretrained_ckpt(model, input_channel=3):
-    pretrained_path = "[URL]"
+    pretrained_path = "https://huggingface.co/FengheTan9/U-Stone/resolve/main/vmamba_tiny_e292.pth"
     print(f"Loading weights from: {pretrained_path}")
     skip_params = ["norm.weight", "norm.bias", "head.weight", "head.bias"]
 
@@ -686,4 +686,5 @@ def swin_umambad(num_classes, input_channel=3):
     model = SwinUMambaD(input_channel=input_channel, num_classes=num_classes)
     model = load_pretrained_ckpt(model)
     return model 
+
 

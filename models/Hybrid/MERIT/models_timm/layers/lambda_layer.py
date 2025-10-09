@@ -1,7 +1,7 @@
 """ Lambda Layer
 
 Paper: `LambdaNetworks: Modeling Long-Range Interactions Without Attention`
-    - [URL]
+    - https://arxiv.org/abs/2102.08602
 
 @misc{2102.08602,
 Author = {Irwan Bello},
@@ -16,7 +16,7 @@ good chance some details are missing/wrong.
 I've only implemented local lambda conv based pos embeddings.
 
 For a PyTorch impl that includes other embedding options checkout
-[URL]
+https://github.com/lucidrains/lambda-networks
 
 Hacked together by / Copyright 2021 Ross Wightman
 """
@@ -41,7 +41,7 @@ class LambdaLayer(nn.Module):
     """Lambda Layer
 
     Paper: `LambdaNetworks: Modeling Long-Range Interactions Without Attention`
-        - [URL]
+        - https://arxiv.org/abs/2102.08602
 
     NOTE: intra-depth parameter 'u' is fixed at 1. It did not appear worth the complexity to add.
 

@@ -299,8 +299,8 @@ Attention_model={
 
 class Transformer(nn.Module):
     """Transformer block described in ViT.
-    Paper: [URL]
-    Based on: [URL]
+    Paper: https://arxiv.org/abs/2010.11929
+    Based on: https://github.com/lucidrains/vit-pytorch
     """
 
     def __init__(self, dim, depth, heads, dim_head, mlp_dim, dropout=0.,attention="Attention"):
@@ -357,3 +357,4 @@ class MobileViTBlocktem_CT(nn.Module):
         x = torch.cat((x, y), 1)
         x = self.conv4(x)
         return x
+

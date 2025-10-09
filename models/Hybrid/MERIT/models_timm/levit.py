@@ -1,7 +1,7 @@
 """ LeViT
 
 Paper: `LeViT: a Vision Transformer in ConvNet's Clothing for Faster Inference`
-    - [URL]
+    - https://arxiv.org/abs/2104.01136
 
 @article{graham2021levit,
   title={LeViT: a Vision Transformer in ConvNet's Clothing for Faster Inference},
@@ -10,7 +10,7 @@ Paper: `LeViT: a Vision Transformer in ConvNet's Clothing for Faster Inference`
   year={2021}
 }
 
-Adapted from official impl at [URL] original copyright bellow.
+Adapted from official impl at https://github.com/facebookresearch/LeViT, original copyright bellow.
 
 This version combines both conv/linear models and fixes torchscript compatibility.
 
@@ -21,7 +21,7 @@ Modifications and additions for timm hacked together by / Copyright 2021, Ross W
 # All rights reserved.
 
 # Modified from
-# [URL]
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 # Copyright 2020 Ross Wightman, Apache-2.0 License
 import itertools
 from copy import deepcopy
@@ -51,19 +51,19 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     levit_128s=_cfg(
-        url='[URL]'
+        url='https://dl.fbaipublicfiles.com/LeViT/LeViT-128S-96703c44.pth'
     ),
     levit_128=_cfg(
-        url='[URL]'
+        url='https://dl.fbaipublicfiles.com/LeViT/LeViT-128-b88c2750.pth'
     ),
     levit_192=_cfg(
-        url='[URL]'
+        url='https://dl.fbaipublicfiles.com/LeViT/LeViT-192-92712e41.pth'
     ),
     levit_256=_cfg(
-        url='[URL]'
+        url='https://dl.fbaipublicfiles.com/LeViT/LeViT-256-13b5763e.pth'
     ),
     levit_384=_cfg(
-        url='[URL]'
+        url='https://dl.fbaipublicfiles.com/LeViT/LeViT-384-9bdaf2e2.pth'
     ),
 
     levit_256d=_cfg(url='', classifier='head.l'),
@@ -589,3 +589,4 @@ def create_levit(variant, pretrained=False, distilled=True, **kwargs):
         pretrained_filter_fn=checkpoint_filter_fn,
         **model_cfg)
     return model
+

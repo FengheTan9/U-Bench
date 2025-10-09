@@ -483,9 +483,10 @@ CONFIGS = {
 
 def da_transformer(num_classes, input_channel=3):
     model = DA_Transformer(config = CONFIGS['R50-ViT-B_16'], num_classes=num_classes, img_size=256)
-    #url = "[URL]"  # 确保是直链
+    #url = "https://huggingface.co/FengheTan9/U-Stone/resolve/main/R50%2BViT-B_16.npz"  # 确保是直链
     #response = requests.get(url)
     npz_data = np.load("./R50_ViT-B_16.npz")
     model.load_from(weights=npz_data)
     return model
+
 

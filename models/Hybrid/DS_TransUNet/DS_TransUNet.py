@@ -502,7 +502,7 @@ class MultiEmbed(nn.Module):
 class SwinTransformer(nn.Module):
     """ Swin Transformer backbone.
         A PyTorch impl of : `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`  -
-          [URL]
+          https://arxiv.org/pdf/2103.14030
     Args:
         pretrain_img_size (int): Input image size for training the pretrained model,
             used in absolute postion embedding. Default 224.
@@ -936,8 +936,8 @@ class UNet(nn.Module):
         self.encoder = SwinTransformer(depths=[2, 2, 18, 2], num_heads=[ 4, 8, 16, 32 ], drop_path_rate=0.5, embed_dim=128)
         self.encoder2 = SwinTransformer(depths=[2, 2, 6, 2], num_heads=[ 3, 6, 12, 24 ], drop_path_rate=0.2, patch_size=8, embed_dim=96)
         
-        checkpoint1 = load_state_dict_from_url('[URL]', progress=True)['model']
-        checkpoint2 = load_state_dict_from_url('[URL]', progress=True)['model']
+        checkpoint1 = load_state_dict_from_url('https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22k.pth', progress=True)['model']
+        checkpoint2 = load_state_dict_from_url('https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth', progress=True)['model']
         checkpoint2.pop('patch_embed.proj.weight')
         
         
@@ -1016,3 +1016,4 @@ class UNet(nn.Module):
 def ds_transunet(num_classes, input_channel=3):
     model = UNet(num_classes=num_classes, input_channel=input_channel)
     return model
+

@@ -123,8 +123,8 @@ class BaseBlock(nn.Module):
 class UnetResBlock(BaseBlock):
     """
     A skip-connection based module that can be used for DynUNet, based on:
-    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <[URL]
-    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <[URL]
+    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <https://arxiv.org/abs/1904.08128>`_.
+    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <https://arxiv.org/abs/1809.10486>`_.
 
     Args:
         spatial_dims: number of spatial dimensions.
@@ -217,8 +217,8 @@ class UnetResBlock(BaseBlock):
 class UnetBasicBlock(BaseBlock):
     """
     A CNN module module that can be used for DynUNet, based on:
-    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <[URL]
-    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <[URL]
+    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <https://arxiv.org/abs/1904.08128>`_.
+    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <https://arxiv.org/abs/1809.10486>`_.
 
     Args:
         spatial_dims: number of spatial dimensions.
@@ -288,8 +288,8 @@ class UnetBasicBlock(BaseBlock):
 class UnetUpBlock(BaseBlock):
     """
     An upsampling module that can be used for DynUNet, based on:
-    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <[URL]
-    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <[URL]
+    `Automated Design of Deep Learning Methods for Biomedical Image Segmentation <https://arxiv.org/abs/1904.08128>`_.
+    `nnU-Net: Self-adapting Framework for U-Net-Based Medical Image Segmentation <https://arxiv.org/abs/1809.10486>`_.
 
     Args:
         spatial_dims: number of spatial dimensions.
@@ -379,3 +379,4 @@ class UnetOutBlock(BaseBlock):
 
     def forward(self, inp):
         return self.conv(inp)
+

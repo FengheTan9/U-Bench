@@ -1,7 +1,7 @@
 """ PyTorch Conditionally Parameterized Convolution (CondConv)
 
 Paper: CondConv: Conditionally Parameterized Convolutions for Efficient Inference
-([URL]
+(https://arxiv.org/abs/1904.04971)
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -33,10 +33,10 @@ def get_condconv_initializer(initializer, num_experts, expert_shape):
 
 class CondConv2d(nn.Module):
     """ Conditionally Parameterized Convolution
-    Inspired by: [URL]
+    Inspired by: https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/condconv/condconv_layers.py
 
     Grouped convolution hackery for parallel execution of the per-sample kernel filters inspired by this discussion:
-    [URL]
+    https://github.com/pytorch/pytorch/issues/17983
     """
     __constants__ = ['in_channels', 'out_channels', 'dynamic_padding']
 

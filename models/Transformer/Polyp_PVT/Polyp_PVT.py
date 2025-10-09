@@ -160,7 +160,7 @@ class PolypPVT(nn.Module):
         super(PolypPVT, self).__init__()
 
         self.backbone = pvt_v2_b2()  # [64, 128, 320, 512]
-        pretrained_path = '[URL]'
+        pretrained_path = 'https://huggingface.co/FengheTan9/U-Stone/resolve/main/pvt_v2_b2.pth'
         save_model = load_state_dict_from_url(pretrained_path, progress=True)
         model_dict = self.backbone.state_dict()
         state_dict = {k: v for k, v in save_model.items() if k in model_dict.keys()}

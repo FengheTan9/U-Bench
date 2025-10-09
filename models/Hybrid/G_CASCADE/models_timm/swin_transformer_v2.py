@@ -1,8 +1,8 @@
 """ Swin Transformer V2
 A PyTorch impl of : `Swin Transformer V2: Scaling Up Capacity and Resolution`
-    - [URL]
+    - https://arxiv.org/abs/2111.09883
 
-Code/weights from [URL] original copyright/license info below
+Code/weights from https://github.com/microsoft/Swin-Transformer, original copyright/license info below
 
 Modifications and additions for timm hacked together by / Copyright 2022, Ross Wightman
 """
@@ -40,52 +40,52 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'swinv2_tiny_window8_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_tiny_patch4_window8_256.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_tiny_window16_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_tiny_patch4_window16_256.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_small_window8_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_small_patch4_window8_256.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_small_window16_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_small_patch4_window16_256.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_base_window8_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_base_patch4_window8_256.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_base_window16_256': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_base_patch4_window16_256.pth',
         input_size=(3, 256, 256)
     ),
 
     'swinv2_base_window12_192_22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_base_patch4_window12_192_22k.pth',
         num_classes=21841, input_size=(3, 192, 192)
     ),
     'swinv2_base_window12to16_192to256_22kft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_base_patch4_window12to16_192to256_22kto1k_ft.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_base_window12to24_192to384_22kft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_base_patch4_window12to24_192to384_22kto1k_ft.pth',
         input_size=(3, 384, 384), crop_pct=1.0,
     ),
     'swinv2_large_window12_192_22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_large_patch4_window12_192_22k.pth',
         num_classes=21841, input_size=(3, 192, 192)
     ),
     'swinv2_large_window12to16_192to256_22kft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_large_patch4_window12to16_192to256_22kto1k_ft.pth',
         input_size=(3, 256, 256)
     ),
     'swinv2_large_window12to24_192to384_22kft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v2.0.0/swinv2_large_patch4_window12to24_192to384_22kto1k_ft.pth',
         input_size=(3, 384, 384), crop_pct=1.0,
     ),
 }
@@ -468,7 +468,7 @@ class BasicLayer(nn.Module):
 class SwinTransformerV2(nn.Module):
     r""" Swin Transformer V2
         A PyTorch impl of : `Swin Transformer V2: Scaling Up Capacity and Resolution`
-            - [URL]
+            - https://arxiv.org/abs/2111.09883
     Args:
         img_size (int | tuple(int)): Input image size. Default 224
         patch_size (int | tuple(int)): Patch size. Default: 4

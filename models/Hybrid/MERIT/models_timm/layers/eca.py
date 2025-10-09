@@ -2,12 +2,12 @@
 ECA module from ECAnet
 
 paper: ECA-Net: Efficient Channel Attention for Deep Convolutional Neural Networks
-[URL]
+https://arxiv.org/abs/1910.03151
 
-Original ECA model borrowed from [URL]
+Original ECA model borrowed from https://github.com/BangguWu/ECANet
 
 Modified circular ECA implementation and adaption for use in timm package
-by Chris Ha [URL]
+by Chris Ha https://github.com/VRandme
 
 Original License:
 
@@ -49,7 +49,7 @@ class EcaModule(nn.Module):
         channels: Number of channels of the input feature map for use in adaptive kernel sizes
             for actual calculations according to channel.
             gamma, beta: when channel is given parameters of mapping function
-            refer to original paper [URL]
+            refer to original paper https://arxiv.org/pdf/1910.03151.pdf
             (default=None. if channel size not given, use k_size given for kernel size.)
         kernel_size: Adaptive selection of kernel size (default=3)
         gamm: used in kernel_size calc, see above
@@ -109,7 +109,7 @@ class CecaModule(nn.Module):
         channels: Number of channels of the input feature map for use in adaptive kernel sizes
             for actual calculations according to channel.
             gamma, beta: when channel is given parameters of mapping function
-            refer to original paper [URL]
+            refer to original paper https://arxiv.org/pdf/1910.03151.pdf
             (default=None. if channel size not given, use k_size given for kernel size.)
         kernel_size: Adaptive selection of kernel size (default=3)
         gamm: used in kernel_size calc, see above
@@ -127,7 +127,7 @@ class CecaModule(nn.Module):
         assert kernel_size % 2 == 1
 
         # PyTorch circular padding mode is buggy as of pytorch 1.4
-        # see [URL]
+        # see https://github.com/pytorch/pytorch/pull/17240
         # implement manual circular padding
         self.padding = (kernel_size - 1) // 2
         self.conv = nn.Conv1d(1, 1, kernel_size=kernel_size, padding=0, bias=has_act)

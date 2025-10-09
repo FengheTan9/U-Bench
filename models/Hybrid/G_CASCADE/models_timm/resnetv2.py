@@ -1,17 +1,17 @@
 """Pre-Activation ResNet v2 with GroupNorm and Weight Standardization.
 
 A PyTorch implementation of ResNetV2 adapted from the Google Big-Transfoer (BiT) source code
-at [URL] to match timm interfaces. The BiT weights have
+at https://github.com/google-research/big_transfer to match timm interfaces. The BiT weights have
 been included here as pretrained models from their original .NPZ checkpoints.
 
 Additionally, supports non pre-activation bottleneck for use as a backbone for Vision Transfomers (ViT) and
 extra padding support to allow porting of official Hybrid ResNet pretrained weights from
-[URL]
+https://github.com/google-research/vision_transformer
 
 Thanks to the Google team for the above two repositories and associated papers:
-* Big Transfer (BiT): General Visual Representation Learning - [URL]
-* An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale - [URL]
-* Knowledge distillation: A good teacher is patient and consistent - [URL]
+* Big Transfer (BiT): General Visual Representation Learning - https://arxiv.org/abs/1912.11370
+* An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale - https://arxiv.org/abs/2010.11929
+* Knowledge distillation: A good teacher is patient and consistent - https://arxiv.org/abs/2106.05237
 
 Original copyright of Google code below, modifications by Ross Wightman, Copyright 2020.
 """
@@ -21,7 +21,7 @@ Original copyright of Google code below, modifications by Ross Wightman, Copyrig
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      [URL]
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -56,63 +56,63 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # pretrained on imagenet21k, finetuned on imagenet1k
     'resnetv2_50x1_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R50x1-ILSVRC2012.npz',
         input_size=(3, 448, 448), pool_size=(14, 14), crop_pct=1.0),
     'resnetv2_50x3_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R50x3-ILSVRC2012.npz',
         input_size=(3, 448, 448), pool_size=(14, 14), crop_pct=1.0),
     'resnetv2_101x1_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R101x1-ILSVRC2012.npz',
         input_size=(3, 448, 448), pool_size=(14, 14), crop_pct=1.0),
     'resnetv2_101x3_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R101x3-ILSVRC2012.npz',
         input_size=(3, 448, 448), pool_size=(14, 14), crop_pct=1.0),
     'resnetv2_152x2_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R152x2-ILSVRC2012.npz',
         input_size=(3, 448, 448), pool_size=(14, 14), crop_pct=1.0),
     'resnetv2_152x4_bitm': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R152x4-ILSVRC2012.npz',
         input_size=(3, 480, 480), pool_size=(15, 15), crop_pct=1.0),  # only one at 480x480?
 
     # trained on imagenet-21k
     'resnetv2_50x1_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R50x1.npz',
         num_classes=21843),
     'resnetv2_50x3_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R50x3.npz',
         num_classes=21843),
     'resnetv2_101x1_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R101x1.npz',
         num_classes=21843),
     'resnetv2_101x3_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R101x3.npz',
         num_classes=21843),
     'resnetv2_152x2_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R152x2.npz',
         num_classes=21843),
     'resnetv2_152x4_bitm_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/BiT-M-R152x4.npz',
         num_classes=21843),
 
     'resnetv2_50x1_bit_distilled': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/distill/R50x1_224.npz',
         interpolation='bicubic'),
     'resnetv2_152x2_bit_teacher': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/distill/R152x2_T_224.npz',
         interpolation='bicubic'),
     'resnetv2_152x2_bit_teacher_384': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/bit_models/distill/R152x2_T_384.npz',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0, interpolation='bicubic'),
 
     'resnetv2_50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnetv2_50_a1h-000cdf49.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnetv2_50d': _cfg(
         interpolation='bicubic', first_conv='stem.conv1'),
     'resnetv2_50t': _cfg(
         interpolation='bicubic', first_conv='stem.conv1'),
     'resnetv2_101': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnetv2_101_a1h-5d01f016.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnetv2_101d': _cfg(
         interpolation='bicubic', first_conv='stem.conv1'),
@@ -122,12 +122,12 @@ default_cfgs = {
         interpolation='bicubic', first_conv='stem.conv1'),
 
     'resnetv2_50d_gn': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/resnetv2_50d_gn_ah-c415c11a.pth',
         interpolation='bicubic', first_conv='stem.conv1', test_input_size=(3, 288, 288), crop_pct=0.95),
     'resnetv2_50d_evob': _cfg(
         interpolation='bicubic', first_conv='stem.conv1'),
     'resnetv2_50d_evos': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/resnetv2_50d_evos_ah-7c4dd548.pth',
         interpolation='bicubic', first_conv='stem.conv1', test_input_size=(3, 288, 288), crop_pct=0.95),
     'resnetv2_50d_frn': _cfg(
         interpolation='bicubic', first_conv='stem.conv1'),
@@ -146,7 +146,7 @@ class PreActBottleneck(nn.Module):
     """Pre-activation (v2) bottleneck block.
 
     Follows the implementation of "Identity Mappings in Deep Residual Networks":
-    [URL]
+    https://github.com/KaimingHe/resnet-1k-layers/blob/master/resnet-pre-act.lua
 
     Except it puts the stride on 3x3 conv when available.
     """
@@ -597,7 +597,7 @@ def resnetv2_152x4_bitm_in21k(pretrained=False, **kwargs):
 @register_model
 def resnetv2_50x1_bit_distilled(pretrained=False, **kwargs):
     """ ResNetV2-50x1-BiT Distilled
-    Paper: Knowledge distillation: A good teacher is patient and consistent - [URL]
+    Paper: Knowledge distillation: A good teacher is patient and consistent - https://arxiv.org/abs/2106.05237
     """
     return _create_resnetv2_bit(
         'resnetv2_50x1_bit_distilled', pretrained=pretrained, layers=[3, 4, 6, 3], width_factor=1, **kwargs)
@@ -606,7 +606,7 @@ def resnetv2_50x1_bit_distilled(pretrained=False, **kwargs):
 @register_model
 def resnetv2_152x2_bit_teacher(pretrained=False, **kwargs):
     """ ResNetV2-152x2-BiT Teacher
-    Paper: Knowledge distillation: A good teacher is patient and consistent - [URL]
+    Paper: Knowledge distillation: A good teacher is patient and consistent - https://arxiv.org/abs/2106.05237
     """
     return _create_resnetv2_bit(
         'resnetv2_152x2_bit_teacher', pretrained=pretrained, layers=[3, 8, 36, 3], width_factor=2, **kwargs)
@@ -615,7 +615,7 @@ def resnetv2_152x2_bit_teacher(pretrained=False, **kwargs):
 @register_model
 def resnetv2_152x2_bit_teacher_384(pretrained=False, **kwargs):
     """ ResNetV2-152xx-BiT Teacher @ 384x384
-    Paper: Knowledge distillation: A good teacher is patient and consistent - [URL]
+    Paper: Knowledge distillation: A good teacher is patient and consistent - https://arxiv.org/abs/2106.05237
     """
     return _create_resnetv2_bit(
         'resnetv2_152x2_bit_teacher_384', pretrained=pretrained, layers=[3, 8, 36, 3], width_factor=2, **kwargs)

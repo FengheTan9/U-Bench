@@ -3,7 +3,7 @@
 Implementations of 2D spatial feature pooling using multi-head attention instead of average pool.
 
 Based on idea in CLIP by OpenAI, licensed Apache 2.0
-[URL]
+https://github.com/openai/CLIP/blob/3b473b0e682c091a9e53623eebc1ca1657385717/clip/model.py
 
 Hacked together by / Copyright 2021 Ross Wightman
 """
@@ -22,7 +22,7 @@ class RotAttentionPool2d(nn.Module):
     This is a multi-head attention based replacement for (spatial) average pooling in NN architectures.
 
     Adapted from the AttentionPool2d in CLIP w/ rotary embedding instead of learned embed.
-    [URL]
+    https://github.com/openai/CLIP/blob/3b473b0e682c091a9e53623eebc1ca1657385717/clip/model.py
 
     NOTE: While this impl does not require a fixed feature size, performance at differeing resolutions from
     train varies widely and falls off dramatically. I'm not sure if there is a way around this... -RW
@@ -81,7 +81,7 @@ class AttentionPool2d(nn.Module):
     This is a multi-head attention based replacement for (spatial) average pooling in NN architectures.
 
     It was based on impl in CLIP by OpenAI
-    [URL]
+    https://github.com/openai/CLIP/blob/3b473b0e682c091a9e53623eebc1ca1657385717/clip/model.py
 
     NOTE: This requires feature size upon construction and well prevent adaptive sizing of the network.
     """

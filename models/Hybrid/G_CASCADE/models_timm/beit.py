@@ -1,15 +1,15 @@
-""" BEIT: BERT Pre-Training of Image Transformers ([URL]
+""" BEIT: BERT Pre-Training of Image Transformers (https://arxiv.org/abs/2106.08254)
 
-Model from official source: [URL]
+Model from official source: https://github.com/microsoft/unilm/tree/master/beit
 and
-[URL]
+https://github.com/microsoft/unilm/tree/master/beit2
 
 @inproceedings{beit,
 title={{BEiT}: {BERT} Pre-Training of Image Transformers},
 author={Hangbo Bao and Li Dong and Songhao Piao and Furu Wei},
 booktitle={International Conference on Learning Representations},
 year={2022},
-url={[URL]
+url={https://openreview.net/forum?id=p-BhZSz59o4}
 }
 
 @article{beitv2,
@@ -27,15 +27,15 @@ see original source above for pre-training models and procedure.
 Modifications by / Copyright 2021 Ross Wightman, original copyrights below
 """
 # --------------------------------------------------------
-# BEIT: BERT Pre-Training of Image Transformers ([URL]
-# Github source: [URL]
+# BEIT: BERT Pre-Training of Image Transformers (https://arxiv.org/abs/2106.08254)
+# Github source: https://github.com/microsoft/unilm/tree/master/beit
 # Copyright (c) 2021 Microsoft
 # Licensed under The MIT License [see LICENSE for details]
 # By Hangbo Bao
 # Based on timm and DeiT code bases
-# [URL]
-# [URL]
-# [URL]
+# https://github.com/rwightman/pytorch-image-models/tree/master/timm
+# https://github.com/facebookresearch/deit/
+# https://github.com/facebookresearch/dino
 # --------------------------------------------------------'
 import math
 from functools import partial
@@ -66,46 +66,46 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'beit_base_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_base_patch16_224_pt22k_ft22kto1k.pth'),
     'beit_base_patch16_384': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_base_patch16_384_pt22k_ft22kto1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0,
     ),
     'beit_base_patch16_224_in22k': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_base_patch16_224_pt22k_ft22k.pth',
         num_classes=21841,
     ),
     'beit_large_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_large_patch16_224_pt22k_ft22kto1k.pth'),
     'beit_large_patch16_384': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_large_patch16_384_pt22k_ft22kto1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0,
     ),
     'beit_large_patch16_512': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_large_patch16_512_pt22k_ft22kto1k.pth',
         input_size=(3, 512, 512), crop_pct=1.0,
     ),
     'beit_large_patch16_224_in22k': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beit/beit_large_patch16_224_pt22k_ft22k.pth',
         num_classes=21841,
     ),
 
     'beitv2_base_patch16_224': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beitv2/beitv2_base_patch16_224_pt1k_ft21kto1k.pth',
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD
     ),
     'beitv2_base_patch16_224_in22k': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beitv2/beitv2_base_patch16_224_pt1k_ft21k.pth',
         num_classes=21841,
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD
     ),
     'beitv2_large_patch16_224': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beitv2/beitv2_large_patch16_224_pt1k_ft21kto1k.pth',
         crop_pct=0.95,
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD
     ),
     'beitv2_large_patch16_224_in22k': _cfg(
-        url='[URL]',
+        url='https://conversationhub.blob.core.windows.net/beit-share-public/beitv2/beitv2_large_patch16_224_pt1k_ft21k.pth',
         num_classes=21841,
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD
     ),

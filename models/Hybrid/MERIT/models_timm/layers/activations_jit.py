@@ -17,14 +17,14 @@ from torch.nn import functional as F
 
 @torch.jit.script
 def swish_jit(x, inplace: bool = False):
-    """Swish - Described in: [URL]
+    """Swish - Described in: https://arxiv.org/abs/1710.05941
     """
     return x.mul(x.sigmoid())
 
 
 @torch.jit.script
 def mish_jit(x, _inplace: bool = False):
-    """Mish: A Self Regularized Non-Monotonic Neural Activation Function - [URL]
+    """Mish: A Self Regularized Non-Monotonic Neural Activation Function - https://arxiv.org/abs/1908.08681
     """
     return x.mul(F.softplus(x).tanh())
 
@@ -77,7 +77,7 @@ class HardSwishJit(nn.Module):
 def hard_mish_jit(x, inplace: bool = False):
     """ Hard Mish
     Experimental, based on notes by Mish author Diganta Misra at
-      [URL]
+      https://github.com/digantamisra98/H-Mish/blob/0da20d4bc58e696b6803f2523c58d3c8a82782d0/README.md
     """
     return 0.5 * x * (x + 2).clamp(min=0, max=2)
 

@@ -1,5 +1,5 @@
 """ Pytorch Inception-Resnet-V2 implementation
-Sourced from [URL] (MIT License) which is
+Sourced from https://github.com/Cadene/tensorflow-model-zoo.torch (MIT License) which is
 based upon Google's Tensorflow implementation and pretrained weights (Apache 2.0 License)
 """
 import torch
@@ -14,18 +14,18 @@ from .registry import register_model
 __all__ = ['InceptionResnetV2']
 
 default_cfgs = {
-    # ported from [URL]
+    # ported from http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz
     'inception_resnet_v2': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/inception_resnet_v2-940b1cd6.pth',
         'num_classes': 1000, 'input_size': (3, 299, 299), 'pool_size': (8, 8),
         'crop_pct': 0.8975, 'interpolation': 'bicubic',
         'mean': IMAGENET_INCEPTION_MEAN, 'std': IMAGENET_INCEPTION_STD,
         'first_conv': 'conv2d_1a.conv', 'classifier': 'classif',
         'label_offset': 1,  # 1001 classes in pretrained weights
     },
-    # ported from [URL]
+    # ported from http://download.tensorflow.org/models/ens_adv_inception_resnet_v2_2017_08_18.tar.gz
     'ens_adv_inception_resnet_v2': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ens_adv_inception_resnet_v2-2592a550.pth',
         'num_classes': 1000, 'input_size': (3, 299, 299), 'pool_size': (8, 8),
         'crop_pct': 0.8975, 'interpolation': 'bicubic',
         'mean': IMAGENET_INCEPTION_MEAN, 'std': IMAGENET_INCEPTION_STD,
@@ -368,7 +368,7 @@ def _create_inception_resnet_v2(variant, pretrained=False, **kwargs):
 @register_model
 def inception_resnet_v2(pretrained=False, **kwargs):
     r"""InceptionResnetV2 model architecture from the
-    `"InceptionV4, Inception-ResNet..." <[URL] paper.
+    `"InceptionV4, Inception-ResNet..." <https://arxiv.org/abs/1602.07261>` paper.
     """
     return _create_inception_resnet_v2('inception_resnet_v2', pretrained=pretrained, **kwargs)
 
@@ -376,7 +376,7 @@ def inception_resnet_v2(pretrained=False, **kwargs):
 @register_model
 def ens_adv_inception_resnet_v2(pretrained=False, **kwargs):
     r""" Ensemble Adversarially trained InceptionResnetV2 model architecture
-    As per [URL] and
-    [URL]
+    As per https://arxiv.org/abs/1705.07204 and
+    https://github.com/tensorflow/models/tree/master/research/adv_imagenet_models.
     """
     return _create_inception_resnet_v2('ens_adv_inception_resnet_v2', pretrained=pretrained, **kwargs)

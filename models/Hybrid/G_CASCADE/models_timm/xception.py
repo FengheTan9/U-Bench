@@ -1,5 +1,5 @@
 """
-Ported to pytorch thanks to [tstandley]([URL]
+Ported to pytorch thanks to [tstandley](https://github.com/tstandley/Xception-PyTorch)
 
 @author: tstandley
 Adapted by cadene
@@ -8,7 +8,7 @@ Creates an Xception Model as defined in:
 
 Francois Chollet
 Xception: Deep Learning with Depthwise Separable Convolutions
-[URL]
+https://arxiv.org/pdf/1610.02357.pdf
 
 This weights ported from the Keras implementation. Achieves the following performance on the validation set:
 
@@ -33,7 +33,7 @@ __all__ = ['Xception']
 
 default_cfgs = {
     'xception': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/xception-43020ad28.pth',
         'input_size': (3, 299, 299),
         'pool_size': (10, 10),
         'crop_pct': 0.8975,
@@ -109,7 +109,7 @@ class Block(nn.Module):
 class Xception(nn.Module):
     """
     Xception optimized for the ImageNet dataset, as specified in
-    [URL]
+    https://arxiv.org/pdf/1610.02357.pdf
     """
 
     def __init__(self, num_classes=1000, in_chans=3, drop_rate=0., global_pool='avg'):

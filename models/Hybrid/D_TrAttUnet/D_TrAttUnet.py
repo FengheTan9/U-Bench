@@ -295,3 +295,4 @@ def d_trattunet(num_classes, input_channel=3):
     model = DTrAttUnet(input_channel=input_channel, num_classes=num_classes)
     return model
 
+

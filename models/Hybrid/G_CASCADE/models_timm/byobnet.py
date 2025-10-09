@@ -5,12 +5,12 @@ A flexible network w/ dataclass based config for stacking those NN blocks.
 This model is currently used to implement the following networks:
 
 GPU Efficient (ResNets) - gernet_l/m/s (original versions called genet, but this was already used (by SENet author)).
-Paper: `Neural Architecture Design for GPU-Efficient Networks` - [URL]
-Code and weights: [URL] licensed Apache 2.0
+Paper: `Neural Architecture Design for GPU-Efficient Networks` - https://arxiv.org/abs/2006.14090
+Code and weights: https://github.com/idstcv/GPU-Efficient-Networks, licensed Apache 2.0
 
 RepVGG - repvgg_*
-Paper: `Making VGG-style ConvNets Great Again` - [URL]
-Code and weights: [URL] licensed MIT
+Paper: `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
+Code and weights: https://github.com/DingXiaoH/RepVGG, licensed MIT
 
 In all cases the models have been modified to fit within the design of ByobNet. I've remapped
 the original weights and verified accuracies.
@@ -65,93 +65,93 @@ def _cfgr(url='', **kwargs):
 default_cfgs = {
     # GPU-Efficient (ResNet) weights
     'gernet_s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-ger-weights/gernet_s-756b4751.pth'),
     'gernet_m': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-ger-weights/gernet_m-0873c53a.pth'),
     'gernet_l': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-ger-weights/gernet_l-f31e2e8d.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
 
     # RepVGG weights
     'repvgg_a2': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_a2-c1ee6d2b.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b0': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b0-80ac3f1b.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b1': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b1-77ca2989.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b1g4': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b1g4-abde5d92.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b2': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b2-25b7494e.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b2g4': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b2g4-165a85f2.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b3': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b3-199bc50d.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
     'repvgg_b3g4': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-repvgg-weights/repvgg_b3g4-73c370bf.pth',
         first_conv=('stem.conv_kxk.conv', 'stem.conv_1x1.conv')),
 
     # experimental configs
     'resnet51q': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet51q_ra2-d47dcc76.pth',
         first_conv='stem.conv1', input_size=(3, 256, 256), pool_size=(8, 8),
         test_input_size=(3, 288, 288), crop_pct=1.0),
     'resnet61q': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet61q_ra2-6afc536c.pth',
         test_input_size=(3, 288, 288), crop_pct=1.0),
 
     'resnext26ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/resnext26ts_256_ra2-8bbd9106.pth'),
     'gcresnext26ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/gcresnext26ts_256-e414378b.pth'),
     'seresnext26ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/seresnext26ts_256-6f0d74a3.pth'),
     'eca_resnext26ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/eca_resnext26ts_256-5a1d030f.pth'),
     'bat_resnext26ts': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/bat_resnext26ts_256-fa6fd595.pth',
         min_input_size=(3, 256, 256)),
 
     'resnet32ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/resnet32ts_256-aacf5250.pth'),
     'resnet33ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/resnet33ts_256-e91b09a4.pth'),
     'gcresnet33ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/gcresnet33ts_256-0e0cd345.pth'),
     'seresnet33ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/seresnet33ts_256-f8ad44d9.pth'),
     'eca_resnet33ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/eca_resnet33ts_256-8f98face.pth'),
 
     'gcresnet50t': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/gcresnet50t_256-96374d1c.pth'),
 
     'gcresnext50ts': _cfgr(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/gcresnext50ts_256-3e0f515e.pth'),
 
     # experimental models, likely to change ot be removed
     'regnetz_b16': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/regnetz_b_raa-677d9606.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5),
         input_size=(3, 224, 224), pool_size=(7, 7), test_input_size=(3, 288, 288), first_conv='stem.conv', crop_pct=0.94),
     'regnetz_c16': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/regnetz_c_rab2_256-a54bf36a.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), first_conv='stem.conv', crop_pct=0.94),
     'regnetz_d32': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/regnetz_d_rab_256-b8073a89.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), crop_pct=0.95),
     'regnetz_d8': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/regnetz_d8_bh-afc03c55.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), crop_pct=1.0),
     'regnetz_e8': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/regnetz_e8_bh-aace8e6e.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), crop_pct=1.0),
 
     'regnetz_b16_evos': _cfgr(
@@ -160,10 +160,10 @@ default_cfgs = {
         input_size=(3, 224, 224), pool_size=(7, 7), test_input_size=(3, 288, 288), first_conv='stem.conv',
         crop_pct=0.94),
     'regnetz_c16_evos': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetz_c16_evos_ch-d8311942.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), first_conv='stem.conv', crop_pct=0.95),
     'regnetz_d8_evos': _cfgr(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetz_d8_evos_ch-2bc12646.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), test_input_size=(3, 320, 320), crop_pct=0.95),
 }
 
@@ -661,7 +661,7 @@ model_cfgs = dict(
 @register_model
 def gernet_l(pretrained=False, **kwargs):
     """ GEResNet-Large (GENet-Large from official impl)
-    `Neural Architecture Design for GPU-Efficient Networks` - [URL]
+    `Neural Architecture Design for GPU-Efficient Networks` - https://arxiv.org/abs/2006.14090
     """
     return _create_byobnet('gernet_l', pretrained=pretrained, **kwargs)
 
@@ -669,7 +669,7 @@ def gernet_l(pretrained=False, **kwargs):
 @register_model
 def gernet_m(pretrained=False, **kwargs):
     """ GEResNet-Medium (GENet-Normal from official impl)
-    `Neural Architecture Design for GPU-Efficient Networks` - [URL]
+    `Neural Architecture Design for GPU-Efficient Networks` - https://arxiv.org/abs/2006.14090
     """
     return _create_byobnet('gernet_m', pretrained=pretrained, **kwargs)
 
@@ -677,7 +677,7 @@ def gernet_m(pretrained=False, **kwargs):
 @register_model
 def gernet_s(pretrained=False, **kwargs):
     """ EResNet-Small (GENet-Small from official impl)
-    `Neural Architecture Design for GPU-Efficient Networks` - [URL]
+    `Neural Architecture Design for GPU-Efficient Networks` - https://arxiv.org/abs/2006.14090
     """
     return _create_byobnet('gernet_s', pretrained=pretrained, **kwargs)
 
@@ -685,7 +685,7 @@ def gernet_s(pretrained=False, **kwargs):
 @register_model
 def repvgg_a2(pretrained=False, **kwargs):
     """ RepVGG-A2
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_a2', pretrained=pretrained, **kwargs)
 
@@ -693,7 +693,7 @@ def repvgg_a2(pretrained=False, **kwargs):
 @register_model
 def repvgg_b0(pretrained=False, **kwargs):
     """ RepVGG-B0
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b0', pretrained=pretrained, **kwargs)
 
@@ -701,7 +701,7 @@ def repvgg_b0(pretrained=False, **kwargs):
 @register_model
 def repvgg_b1(pretrained=False, **kwargs):
     """ RepVGG-B1
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b1', pretrained=pretrained, **kwargs)
 
@@ -709,7 +709,7 @@ def repvgg_b1(pretrained=False, **kwargs):
 @register_model
 def repvgg_b1g4(pretrained=False, **kwargs):
     """ RepVGG-B1g4
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b1g4', pretrained=pretrained, **kwargs)
 
@@ -717,7 +717,7 @@ def repvgg_b1g4(pretrained=False, **kwargs):
 @register_model
 def repvgg_b2(pretrained=False, **kwargs):
     """ RepVGG-B2
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b2', pretrained=pretrained, **kwargs)
 
@@ -725,7 +725,7 @@ def repvgg_b2(pretrained=False, **kwargs):
 @register_model
 def repvgg_b2g4(pretrained=False, **kwargs):
     """ RepVGG-B2g4
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b2g4', pretrained=pretrained, **kwargs)
 
@@ -733,7 +733,7 @@ def repvgg_b2g4(pretrained=False, **kwargs):
 @register_model
 def repvgg_b3(pretrained=False, **kwargs):
     """ RepVGG-B3
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b3', pretrained=pretrained, **kwargs)
 
@@ -741,7 +741,7 @@ def repvgg_b3(pretrained=False, **kwargs):
 @register_model
 def repvgg_b3g4(pretrained=False, **kwargs):
     """ RepVGG-B3g4
-    `Making VGG-style ConvNets Great Again` - [URL]
+    `Making VGG-style ConvNets Great Again` - https://arxiv.org/abs/2101.03697
     """
     return _create_byobnet('repvgg_b3g4', pretrained=pretrained, **kwargs)
 
@@ -1156,7 +1156,7 @@ class EdgeBlock(nn.Module):
 class RepVggBlock(nn.Module):
     """ RepVGG Block.
 
-    Adapted from impl at [URL]
+    Adapted from impl at https://github.com/DingXiaoH/RepVGG
 
     This version does not currently support the deploy optimization. It is currently fixed in 'train' mode.
     """

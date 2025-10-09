@@ -7,15 +7,15 @@ __all__ = ['ResNet', 'resnet26', 'resnet18', 'resnet34', 'resnet50', 'resnet101'
 
 
 model_urls = {
-    'resnet18': '[URL]',
-    'resnet34': '[URL]',
-    'resnet50': '[URL]',
-    'resnet101': '[URL]',
-    'resnet152': '[URL]',
-    'resnext50_32x4d': '[URL]',
-    'resnext101_32x8d': '[URL]',
-    'wide_resnet50_2': '[URL]',
-    'wide_resnet101_2': '[URL]',
+    'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
+    'resnet34': 'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
+    'resnet50': 'https://download.pytorch.org/models/resnet50-19c8e357.pth',
+    'resnet101': 'https://download.pytorch.org/models/resnet101-5d3b4d8f.pth',
+    'resnet152': 'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
+    'resnext50_32x4d': 'https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth',
+    'resnext101_32x8d': 'https://download.pytorch.org/models/resnext101_32x8d-8ba56ff5.pth',
+    'wide_resnet50_2': 'https://download.pytorch.org/models/wide_resnet50_2-95faca4d.pth',
+    'wide_resnet101_2': 'https://download.pytorch.org/models/wide_resnet101_2-32ee1156.pth',
 }
 
 
@@ -73,9 +73,9 @@ class BasicBlock(nn.Module):
 class Bottleneck(nn.Module):
     # Bottleneck in torchvision places the stride for downsampling at 3x3 convolution(self.conv2)
     # while original implementation places the stride at the first 1x1 convolution(self.conv1)
-    # according to "Deep residual learning for image recognition"[URL]
+    # according to "Deep residual learning for image recognition"https://arxiv.org/abs/1512.03385.
     # This variant is also known as ResNet V1.5 and improves accuracy according to
-    # [URL]
+    # https://ngc.nvidia.com/catalog/model-scripts/nvidia:resnet_50_v1_5_for_pytorch.
 
     expansion = 4
 
@@ -164,7 +164,7 @@ class ResNet(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         if zero_init_residual:
             for m in self.modules():
                 if isinstance(m, Bottleneck):
@@ -229,7 +229,7 @@ def _resnet(arch, block, layers, pretrained, progress, **kwargs):
 
 def resnet18(pretrained=False, progress=True, **kwargs):
     r"""ResNet-18 model from
-    `"Deep Residual Learning for Image Recognition" <[URL]
+    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
@@ -240,7 +240,7 @@ def resnet18(pretrained=False, progress=True, **kwargs):
 
 def resnet34(pretrained=False, progress=True, **kwargs):
     r"""ResNet-34 model from
-    `"Deep Residual Learning for Image Recognition" <[URL]
+    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
@@ -256,7 +256,7 @@ def resnet26(pretrained=False, progress=True, **kwargs):
 
 def resnet50(pretrained=False, progress=True, **kwargs):
     r"""ResNet-50 model from
-    `"Deep Residual Learning for Image Recognition" <[URL]
+    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
@@ -267,7 +267,7 @@ def resnet50(pretrained=False, progress=True, **kwargs):
 
 def resnet101(pretrained=False, progress=True, **kwargs):
     r"""ResNet-101 model from
-    `"Deep Residual Learning for Image Recognition" <[URL]
+    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr
@@ -278,7 +278,7 @@ def resnet101(pretrained=False, progress=True, **kwargs):
 
 def resnet152(pretrained=False, progress=True, **kwargs):
     r"""ResNet-152 model from
-    `"Deep Residual Learning for Image Recognition" <[URL]
+    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
         progress (bool): If True, displays a progress bar of the download to stderr

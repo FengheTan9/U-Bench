@@ -169,3 +169,4 @@ def fat_net(input_channel,num_classes):
 
     return FAT_Net(n_channels=input_channel,n_classes=num_classes)
 
+

@@ -1,8 +1,8 @@
 """
  pnasnet5large implementation grabbed from Cadene's pretrained models
- Additional credit to [URL]
+ Additional credit to https://github.com/creafz
 
- [URL]
+ https://github.com/Cadene/pretrained-models.pytorch/blob/master/pretrainedmodels/models/pnasnet.py
 
 """
 from collections import OrderedDict
@@ -20,7 +20,7 @@ __all__ = ['PNASNet5Large']
 
 default_cfgs = {
     'pnasnet5large': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/pnasnet5large-bf079911.pth',
         'input_size': (3, 331, 331),
         'pool_size': (11, 11),
         'crop_pct': 0.911,
@@ -355,7 +355,7 @@ def _create_pnasnet(variant, pretrained=False, **kwargs):
 def pnasnet5large(pretrained=False, **kwargs):
     r"""PNASNet-5 model architecture from the
     `"Progressive Neural Architecture Search"
-    <[URL] paper.
+    <https://arxiv.org/abs/1712.00559>`_ paper.
     """
     model_kwargs = dict(pad_type='same', **kwargs)
     return _create_pnasnet('pnasnet5large', pretrained, **model_kwargs)

@@ -14,8 +14,8 @@ import torch.nn.functional as F
 __all__ = ['Res2Net', 'res2net50_v1b', 'res2net101_v1b', 'res2net50_v1b_26w_4s']
 
 model_urls = {
-    'res2net50_v1b_26w_4s': '[URL]',
-    'res2net101_v1b_26w_4s': '[URL]',
+    'res2net50_v1b_26w_4s': 'https://shanghuagao.oss-cn-beijing.aliyuncs.com/res2net/res2net50_v1b_26w_4s-3cf99910.pth',
+    'res2net101_v1b_26w_4s': 'https://shanghuagao.oss-cn-beijing.aliyuncs.com/res2net/res2net101_v1b_26w_4s-0812c246.pth',
 }
 
 

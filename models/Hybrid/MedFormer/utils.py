@@ -20,3 +20,4 @@ def get_norm(name):
                 }
 
     return norm_map[name]
+

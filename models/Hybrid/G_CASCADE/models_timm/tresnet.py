@@ -1,8 +1,8 @@
 """
 TResNet: High Performance GPU-Dedicated Architecture
-[URL]
+https://arxiv.org/pdf/2003.13630.pdf
 
-Original model: [URL]
+Original model: https://github.com/mrT23/TResNet
 
 """
 from collections import OrderedDict
@@ -29,25 +29,25 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'tresnet_m': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_m_1k_miil_83_1-d236afcb.pth'),
     'tresnet_m_miil_in21k': _cfg(
-        url='[URL]', num_classes=11221),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_m_miil_in21k-901b6ed4.pth', num_classes=11221),
     'tresnet_l': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_l_81_5-235b486c.pth'),
     'tresnet_xl': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_xl_82_0-a2d51b00.pth'),
     'tresnet_m_448': _cfg(
         input_size=(3, 448, 448), pool_size=(14, 14),
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_m_448-bc359d10.pth'),
     'tresnet_l_448': _cfg(
         input_size=(3, 448, 448), pool_size=(14, 14),
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_l_448-940d0cd1.pth'),
     'tresnet_xl_448': _cfg(
         input_size=(3, 448, 448), pool_size=(14, 14),
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_xl_448-8c1815de.pth'),
 
     'tresnet_v2_l': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/tresnet_l_v2_83_9-f36e4445.pth'),
 }
 
 

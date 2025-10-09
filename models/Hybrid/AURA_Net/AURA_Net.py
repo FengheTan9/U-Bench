@@ -234,3 +234,4 @@ def aura_net(num_classes, input_channel=3):
     model = AURA_Net(input_channel=input_channel, num_classes=num_classes)
     return model
 
+

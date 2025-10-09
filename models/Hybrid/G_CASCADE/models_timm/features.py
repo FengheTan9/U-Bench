@@ -4,7 +4,7 @@ A collection of classes, functions, modules to help extract features from models
 and provide a common interface for describing them.
 
 The return_layers, module re-writing idea inspired by torchvision IntermediateLayerGetter
-[URL]
+https://github.com/pytorch/vision/blob/d88d8961ae51507d0cb680329d985b1488b1b76b/torchvision/models/_utils.py
 
 Hacked together by / Copyright 2020 Ross Wightman
 """

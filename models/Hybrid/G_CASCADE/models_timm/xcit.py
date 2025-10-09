@@ -1,10 +1,10 @@
 """ Cross-Covariance Image Transformer (XCiT) in PyTorch
 
 Paper:
-    - [URL]
+    - https://arxiv.org/abs/2106.09681
 
 Same as the official implementation, with some minor adaptations, original copyright below
-    - [URL]
+    - https://github.com/facebookresearch/xcit/blob/master/xcit.py
 
 Modifications and additions for timm hacked together by / Copyright 2021, Ross Wightman
 """
@@ -40,64 +40,64 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     # Patch size 16
-    'xcit_nano_12_p16_224': _cfg(url='[URL]'),  
-    'xcit_nano_12_p16_224_dist': _cfg(url='[URL]'),
+    'xcit_nano_12_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_224.pth'),  
+    'xcit_nano_12_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_224_dist.pth'),
     'xcit_nano_12_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_tiny_12_p16_224': _cfg(url='[URL]'),
-    'xcit_tiny_12_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_tiny_12_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p16_224.pth'),
+    'xcit_tiny_12_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p16_224_dist.pth'),
     'xcit_tiny_12_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_tiny_24_p16_224': _cfg(url='[URL]'),
-    'xcit_tiny_24_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_tiny_24_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p16_224.pth'),
+    'xcit_tiny_24_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p16_224_dist.pth'),
     'xcit_tiny_24_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_small_12_p16_224': _cfg(url='[URL]'),
-    'xcit_small_12_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_small_12_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p16_224.pth'),
+    'xcit_small_12_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p16_224_dist.pth'),
     'xcit_small_12_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_small_24_p16_224': _cfg(url='[URL]'),
-    'xcit_small_24_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_small_24_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p16_224.pth'),
+    'xcit_small_24_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p16_224_dist.pth'),
     'xcit_small_24_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_medium_24_p16_224': _cfg(url='[URL]'),
-    'xcit_medium_24_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_medium_24_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p16_224.pth'),
+    'xcit_medium_24_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p16_224_dist.pth'),
     'xcit_medium_24_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_large_24_p16_224': _cfg(url='[URL]'),
-    'xcit_large_24_p16_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p16_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_large_24_p16_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p16_224.pth'),
+    'xcit_large_24_p16_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p16_224_dist.pth'),
     'xcit_large_24_p16_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p16_384_dist.pth', input_size=(3, 384, 384)),
 
     # Patch size 8
-    'xcit_nano_12_p8_224': _cfg(url='[URL]'),  
-    'xcit_nano_12_p8_224_dist': _cfg(url='[URL]'),
+    'xcit_nano_12_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_224.pth'),  
+    'xcit_nano_12_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_224_dist.pth'),
     'xcit_nano_12_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_tiny_12_p8_224': _cfg(url='[URL]'),
-    'xcit_tiny_12_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_nano_12_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_tiny_12_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p8_224.pth'),
+    'xcit_tiny_12_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p8_224_dist.pth'),
     'xcit_tiny_12_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_tiny_24_p8_224': _cfg(url='[URL]'),
-    'xcit_tiny_24_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_12_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_tiny_24_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p8_224.pth'),
+    'xcit_tiny_24_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p8_224_dist.pth'),
     'xcit_tiny_24_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_small_12_p8_224': _cfg(url='[URL]'),
-    'xcit_small_12_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_tiny_24_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_small_12_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p8_224.pth'),
+    'xcit_small_12_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p8_224_dist.pth'),
     'xcit_small_12_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_small_24_p8_224': _cfg(url='[URL]'),
-    'xcit_small_24_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_small_12_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_small_24_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p8_224.pth'),
+    'xcit_small_24_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p8_224_dist.pth'),
     'xcit_small_24_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_medium_24_p8_224': _cfg(url='[URL]'),
-    'xcit_medium_24_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_small_24_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_medium_24_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p8_224.pth'),
+    'xcit_medium_24_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p8_224_dist.pth'),
     'xcit_medium_24_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
-    'xcit_large_24_p8_224': _cfg(url='[URL]'),
-    'xcit_large_24_p8_224_dist': _cfg(url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_medium_24_p8_384_dist.pth', input_size=(3, 384, 384)),
+    'xcit_large_24_p8_224': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p8_224.pth'),
+    'xcit_large_24_p8_224_dist': _cfg(url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p8_224_dist.pth'),
     'xcit_large_24_p8_384_dist': _cfg(
-        url='[URL]', input_size=(3, 384, 384)),
+        url='https://dl.fbaipublicfiles.com/xcit/xcit_large_24_p8_384_dist.pth', input_size=(3, 384, 384)),
 }
 
 
@@ -106,7 +106,7 @@ class PositionalEncodingFourier(nn.Module):
     """
     Positional encoding relying on a fourier kernel matching the one used in the "Attention is all you Need" paper.
     Based on the official XCiT code
-        - [URL]
+        - https://github.com/facebookresearch/xcit/blob/master/xcit.py
     """
 
     def __init__(self, hidden_dim=32, dim=768, temperature=10000):
@@ -214,7 +214,7 @@ class LPI(nn.Module):
 
 
 class ClassAttentionBlock(nn.Module):
-    """Class Attention Layer as in CaiT [URL]"""
+    """Class Attention Layer as in CaiT https://arxiv.org/abs/2103.17239"""
 
     def __init__(
             self, dim, num_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0., drop_path=0.,
@@ -235,7 +235,7 @@ class ClassAttentionBlock(nn.Module):
         else:
             self.gamma1, self.gamma2 = 1.0, 1.0
 
-        # See [URL]
+        # See https://github.com/rwightman/pytorch-image-models/pull/747#issuecomment-877795721
         self.tokens_norm = tokens_norm
 
     def forward(self, x):
@@ -315,7 +315,7 @@ class XCABlock(nn.Module):
     def forward(self, x, H: int, W: int):
         x = x + self.drop_path(self.gamma1 * self.attn(self.norm1(x)))
         # NOTE official code has 3 then 2, so keeping it the same to be consistent with loaded weights
-        # See [URL]
+        # See https://github.com/rwightman/pytorch-image-models/pull/747#issuecomment-877795721
         x = x + self.drop_path(self.gamma3 * self.local_mp(self.norm3(x), H, W))
         x = x + self.drop_path(self.gamma2 * self.mlp(self.norm2(x)))
         return x
@@ -324,8 +324,8 @@ class XCABlock(nn.Module):
 class XCiT(nn.Module):
     """
     Based on timm and DeiT code bases
-    [URL]
-    [URL]
+    https://github.com/rwightman/pytorch-image-models/tree/master/timm
+    https://github.com/facebookresearch/deit/
     """
 
     def __init__(

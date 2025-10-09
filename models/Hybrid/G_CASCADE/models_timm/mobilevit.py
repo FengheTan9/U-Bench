@@ -1,11 +1,11 @@
 """ MobileViT
 
 Paper:
-V1: `MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer` - [URL]
-V2: `Separable Self-attention for Mobile Vision Transformers` - [URL]
+V1: `MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer` - https://arxiv.org/abs/2110.02178
+V2: `Separable Self-attention for Mobile Vision Transformers` - https://arxiv.org/abs/2206.02680
 
-MobileVitBlock and checkpoints adapted from [URL] (original copyright below)
-License: [URL] (Apple open source)
+MobileVitBlock and checkpoints adapted from https://github.com/apple/ml-cvnets (original copyright below)
+License: https://github.com/apple/ml-cvnets/blob/main/LICENSE (Apple open source)
 
 Rest of code, ByobNet, and Transformer block hacked together by / Copyright 2022, Ross Wightman
 """
@@ -43,53 +43,53 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'mobilevit_xxs': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevit_xxs-ad385b40.pth'),
     'mobilevit_xs': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevit_xs-8fbd6366.pth'),
     'mobilevit_s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevit_s-38a5a959.pth'),
     'semobilevit_s': _cfg(),
 
     'mobilevitv2_050': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_050-49951ee2.pth',
         crop_pct=0.888),
     'mobilevitv2_075': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_075-b5556ef6.pth',
         crop_pct=0.888),
     'mobilevitv2_100': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_100-e464ef3b.pth',
         crop_pct=0.888),
     'mobilevitv2_125': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_125-0ae35027.pth',
         crop_pct=0.888),
     'mobilevitv2_150': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_150-737c5019.pth',
         crop_pct=0.888),
     'mobilevitv2_175': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_175-16462ee2.pth',
         crop_pct=0.888),
     'mobilevitv2_200': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_200-b3422f67.pth',
         crop_pct=0.888),
 
     'mobilevitv2_150_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_150_in22ft1k-0b555d7b.pth',
         crop_pct=0.888),
     'mobilevitv2_175_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_175_in22ft1k-4117fa1f.pth',
         crop_pct=0.888),
     'mobilevitv2_200_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_200_in22ft1k-1d7c8927.pth',
         crop_pct=0.888),
 
     'mobilevitv2_150_384_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_150_384_in22ft1k-9e142854.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     'mobilevitv2_175_384_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_175_384_in22ft1k-059cbe56.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     'mobilevitv2_200_384_in22ft1k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-mvit-weights/mobilevitv2_200_384_in22ft1k-32c87503.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
 }
 
@@ -228,7 +228,7 @@ model_cfgs = dict(
 @register_notrace_module
 class MobileVitBlock(nn.Module):
     """ MobileViT block
-        Paper: [URL]
+        Paper: https://arxiv.org/abs/2110.02178?context=cs.LG
     """
     def __init__(
             self,
@@ -328,7 +328,7 @@ class MobileVitBlock(nn.Module):
 
 class LinearSelfAttention(nn.Module):
     """
-    This layer applies a self-attention with linear complexity, as described in `[URL]
+    This layer applies a self-attention with linear complexity, as described in `https://arxiv.org/abs/2206.02680`
     This layer can be used for self- as well as cross-attention.
     Args:
         embed_dim (int): :math:`C` from an expected input of size :math:`(N, C, H, W)`

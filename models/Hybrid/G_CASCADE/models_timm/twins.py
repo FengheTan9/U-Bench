@@ -1,8 +1,8 @@
 """ Twins
 A PyTorch impl of : `Twins: Revisiting the Design of Spatial Attention in Vision Transformers`
-    - [URL]
+    - https://arxiv.org/pdf/2104.13840.pdf
 
-Code/weights from [URL] original copyright/license info below
+Code/weights from https://github.com/Meituan-AutoML/Twins, original copyright/license info below
 
 """
 # --------------------------------------------------------
@@ -41,22 +41,22 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'twins_pcpvt_small': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_pcpvt_small-e70e7e7a.pth',
         ),
     'twins_pcpvt_base': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_pcpvt_base-e5ecb09b.pth',
         ),
     'twins_pcpvt_large': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_pcpvt_large-d273f802.pth',
         ),
     'twins_svt_small': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_svt_small-42e5f78c.pth',
         ),
     'twins_svt_base': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_svt_base-c2265010.pth',
         ),
     'twins_svt_large': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_svt_large-90f6aaa9.pth',
         ),
 }
 
@@ -221,7 +221,7 @@ class Block(nn.Module):
 
 
 class PosConv(nn.Module):
-    # PEG  from [URL]
+    # PEG  from https://arxiv.org/abs/2102.10882
     def __init__(self, in_chans, embed_dim=768, stride=1):
         super(PosConv, self).__init__()
         self.proj = nn.Sequential(nn.Conv2d(in_chans, embed_dim, 3, stride, 1, bias=True, groups=embed_dim), )
@@ -271,7 +271,7 @@ class PatchEmbed(nn.Module):
 class Twins(nn.Module):
     """ Twins Vision Transfomer (Revisiting Spatial Attention)
 
-    Adapted from PVT (PyramidVisionTransformer) class at [URL]
+    Adapted from PVT (PyramidVisionTransformer) class at https://github.com/whai362/PVT.git
     """
     def __init__(
             self, img_size=224, patch_size=4, in_chans=3, num_classes=1000, global_pool='avg',

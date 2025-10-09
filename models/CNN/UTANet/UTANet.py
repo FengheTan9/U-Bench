@@ -1,7 +1,7 @@
 """
 UTANet: Task-Adaptive Mixture of Skip Connections for Enhanced Medical Image Segmentation
 
-Reference Paper: [URL]
+Reference Paper: https://ojs.aaai.org/index.php/AAAI/article/view/32627
 
 Usage:
     from utanet import UTANet
@@ -312,4 +312,5 @@ if __name__ == "__main__":
     print(f"Output shape: {output.shape}")
     print(f"Auxiliary loss: {loss.item()}")
     print("Model structure:\n", model)
+
 

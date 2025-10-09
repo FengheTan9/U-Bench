@@ -1,7 +1,7 @@
 """RegNet
 
-Paper: `Designing Network Design Spaces` - [URL]
-Original Impl: [URL]
+Paper: `Designing Network Design Spaces` - https://arxiv.org/abs/2003.13678
+Original Impl: https://github.com/facebookresearch/pycls/blob/master/pycls/models/regnet.py
 
 Based on original PyTorch impl linked above, but re-wrote to use my own blocks (adapted from ResNet here)
 and cleaned up with more descriptive variable names.
@@ -116,56 +116,56 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = dict(
-    regnetx_002=_cfg(url='[URL]'),
-    regnetx_004=_cfg(url='[URL]'),
-    regnetx_006=_cfg(url='[URL]'),
-    regnetx_008=_cfg(url='[URL]'),
-    regnetx_016=_cfg(url='[URL]'),
-    regnetx_032=_cfg(url='[URL]'),
-    regnetx_040=_cfg(url='[URL]'),
-    regnetx_064=_cfg(url='[URL]'),
-    regnetx_080=_cfg(url='[URL]'),
-    regnetx_120=_cfg(url='[URL]'),
-    regnetx_160=_cfg(url='[URL]'),
-    regnetx_320=_cfg(url='[URL]'),
+    regnetx_002=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_002-e7e85e5c.pth'),
+    regnetx_004=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_004-7d0e9424.pth'),
+    regnetx_006=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_006-85ec1baa.pth'),
+    regnetx_008=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_008-d8b470eb.pth'),
+    regnetx_016=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_016-65ca972a.pth'),
+    regnetx_032=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_032-ed0c7f7e.pth'),
+    regnetx_040=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_040-73c2a654.pth'),
+    regnetx_064=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_064-29278baa.pth'),
+    regnetx_080=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_080-7c7fcab1.pth'),
+    regnetx_120=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_120-65d5521e.pth'),
+    regnetx_160=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_160-c98c4112.pth'),
+    regnetx_320=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnetx_320-8ea38b93.pth'),
 
-    regnety_002=_cfg(url='[URL]'),
-    regnety_004=_cfg(url='[URL]'),
-    regnety_006=_cfg(url='[URL]'),
-    regnety_008=_cfg(url='[URL]'),
-    regnety_016=_cfg(url='[URL]'),
+    regnety_002=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_002-e68ca334.pth'),
+    regnety_004=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_004-0db870e6.pth'),
+    regnety_006=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_006-c67e57ec.pth'),
+    regnety_008=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_008-dc900dbe.pth'),
+    regnety_016=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_016-54367f74.pth'),
     regnety_032=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/regnety_032_ra-7f2439f9.pth',
         crop_pct=1.0, test_input_size=(3, 288, 288)),
     regnety_040=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnety_040_ra3-670e1166.pth',
         crop_pct=1.0, test_input_size=(3, 288, 288)),
     regnety_064=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnety_064_ra3-aa26dc7d.pth',
         crop_pct=1.0, test_input_size=(3, 288, 288)),
     regnety_080=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnety_080_ra3-1fdc4344.pth',
         crop_pct=1.0, test_input_size=(3, 288, 288)),
-    regnety_120=_cfg(url='[URL]'),
+    regnety_120=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_120-721ba79a.pth'),
     regnety_160=_cfg(
-        url='[URL]',  # from Facebook DeiT GitHub repository
+        url='https://dl.fbaipublicfiles.com/deit/regnety_160-a5fe301d.pth',  # from Facebook DeiT GitHub repository
         crop_pct=1.0, test_input_size=(3, 288, 288)),
-    regnety_320=_cfg(url='[URL]'),
+    regnety_320=_cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-regnet/regnety_320-ba464b29.pth'),
 
     regnety_040s_gn=_cfg(url=''),
     regnetv_040=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetv_040_ra3-c248f51f.pth',
         first_conv='stem', crop_pct=1.0, test_input_size=(3, 288, 288)),
     regnetv_064=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetv_064_ra3-530616c2.pth',
         first_conv='stem', crop_pct=1.0, test_input_size=(3, 288, 288)),
 
     regnetz_005=_cfg(url=''),
     regnetz_040=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetz_040_ra3-9007edf5.pth',
         input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=1.0, test_input_size=(3, 320, 320)),
     regnetz_040h=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/regnetz_040h_ra3-f594343b.pth',
         input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=1.0, test_input_size=(3, 320, 320)),
 )
 
@@ -373,8 +373,8 @@ class RegStage(nn.Module):
 class RegNet(nn.Module):
     """RegNet-X, Y, and Z Models
 
-    Paper: [URL]
-    Original Impl: [URL]
+    Paper: https://arxiv.org/abs/2003.13678
+    Original Impl: https://github.com/facebookresearch/pycls/blob/master/pycls/models/regnet.py
     """
 
     def __init__(
@@ -687,7 +687,7 @@ def regnetv_064(pretrained=False, **kwargs):
 @register_model
 def regnetz_005(pretrained=False, **kwargs):
     """RegNetZ-500MF
-    NOTE: config found in [URL]
+    NOTE: config found in https://github.com/facebookresearch/ClassyVision/blob/main/classy_vision/models/regnet.py
     but it's not clear it is equivalent to paper model as not detailed in the paper.
     """
     return _create_regnet('regnetz_005', pretrained, zero_init_last=False, **kwargs)
@@ -696,7 +696,7 @@ def regnetz_005(pretrained=False, **kwargs):
 @register_model
 def regnetz_040(pretrained=False, **kwargs):
     """RegNetZ-4.0GF
-    NOTE: config found in [URL]
+    NOTE: config found in https://github.com/facebookresearch/ClassyVision/blob/main/classy_vision/models/regnet.py
     but it's not clear it is equivalent to paper model as not detailed in the paper.
     """
     return _create_regnet('regnetz_040', pretrained, zero_init_last=False, **kwargs)
@@ -705,7 +705,7 @@ def regnetz_040(pretrained=False, **kwargs):
 @register_model
 def regnetz_040h(pretrained=False, **kwargs):
     """RegNetZ-4.0GF
-    NOTE: config found in [URL]
+    NOTE: config found in https://github.com/facebookresearch/ClassyVision/blob/main/classy_vision/models/regnet.py
     but it's not clear it is equivalent to paper model as not detailed in the paper.
     """
     return _create_regnet('regnetz_040h', pretrained, zero_init_last=False, **kwargs)

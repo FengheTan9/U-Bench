@@ -486,3 +486,4 @@ class DAEFormer(nn.Module):
 def daeformer(num_classes, input_channel=3):
     model = DAEFormer(num_classes=num_classes, input_channel=input_channel)
     return model
+

@@ -21,7 +21,7 @@ class DepthWiseConv2d(nn.Module):
 
 
 class LayerNorm(nn.Module):
-    r""" From ConvNeXt ([URL]
+    r""" From ConvNeXt (https://arxiv.org/pdf/2201.03545.pdf)
     """
     def __init__(self, normalized_shape, eps=1e-6, data_format="channels_last"):
         super().__init__()

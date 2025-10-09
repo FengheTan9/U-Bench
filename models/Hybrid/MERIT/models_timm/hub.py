@@ -148,7 +148,7 @@ def push_to_hf_hub(
         repo_owner = HfApi().whoami(token)['name']
         repo_name = Path(local_dir).name
 
-    repo_url = f'[URL]'
+    repo_url = f'https://huggingface.co/{repo_owner}/{repo_name}'
 
     repo = Repository(
         local_dir,

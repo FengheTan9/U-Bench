@@ -2,7 +2,7 @@
 
 From scratch implementation of GCViT in the style of timm swin_transformer_v2_cr.py
 
-Global Context Vision Transformers -[URL]
+Global Context Vision Transformers -https://arxiv.org/abs/2206.09959
 
 @article{hatamizadeh2022global,
   title={Global Context Vision Transformers},
@@ -11,11 +11,11 @@ Global Context Vision Transformers -[URL]
   year={2022}
 }
 
-Free of any code related to NVIDIA GCVit impl at [URL]
+Free of any code related to NVIDIA GCVit impl at https://github.com/NVlabs/GCVit.
 The license for this code release is Apache 2.0 with no commercial restrictions.
 
 However, weight files adapted from NVIDIA GCVit impl ARE under a non-commercial share-alike license
-([URL] until I have a chance to train new ones...
+(https://creativecommons.org/licenses/by-nc-sa/4.0/) until I have a chance to train new ones...
 
 Hacked together by / Copyright 2022, Ross Wightman
 """
@@ -51,15 +51,15 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'gcvit_xxtiny': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/gcvit_xxtiny_224_nvidia-d1d86009.pth'),
     'gcvit_xtiny': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/gcvit_xtiny_224_nvidia-274b92b7.pth'),
     'gcvit_tiny': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/gcvit_tiny_224_nvidia-ac783954.pth'),
     'gcvit_small': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/gcvit_small_224_nvidia-4e98afa2.pth'),
     'gcvit_base': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/gcvit_base_224_nvidia-f009139b.pth'),
 }
 
 

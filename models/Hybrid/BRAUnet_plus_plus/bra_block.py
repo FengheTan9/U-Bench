@@ -259,7 +259,7 @@ class Block(nn.Module):
             else:
                 x = x + self.drop_path(self.attn(self.norm1(x)))  # (N, H, W, C)
                 x = x + self.drop_path(self.mlp(self.norm2(x)))  # (N, H, W, C)
-        else:  # [URL]
+        else:  # https://kexue.fm/archives/9009
             if self.use_layer_scale:
                 x = self.norm1(x + self.drop_path(self.gamma1 * self.attn(x)))  # (N, H, W, C)
                 x = self.norm2(x + self.drop_path(self.gamma2 * self.WF(x)))  # (N, H, W, C)

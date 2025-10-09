@@ -1,9 +1,9 @@
 """ Deep Layer Aggregation and DLA w/ Res2Net
 DLA original adapted from Official Pytorch impl at:
-DLA Paper: `Deep Layer Aggregation` - [URL]
+DLA Paper: `Deep Layer Aggregation` - https://arxiv.org/abs/1707.06484
 
-Res2Net additions from: [URL]
-Res2Net Paper: `Res2Net: A New Multi-scale Backbone Architecture` - [URL]
+Res2Net additions from: https://github.com/gasvn/Res2Net/
+Res2Net Paper: `Res2Net: A New Multi-scale Backbone Architecture` - https://arxiv.org/abs/1904.01169
 """
 import math
 from typing import List, Optional
@@ -32,20 +32,20 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'dla34': _cfg(url='[URL]'),
-    'dla46_c': _cfg(url='[URL]'),
-    'dla46x_c': _cfg(url='[URL]'),
-    'dla60x_c': _cfg(url='[URL]'),
-    'dla60': _cfg(url='[URL]'),
-    'dla60x': _cfg(url='[URL]'),
-    'dla102': _cfg(url='[URL]'),
-    'dla102x': _cfg(url='[URL]'),
-    'dla102x2': _cfg(url='[URL]'),
-    'dla169': _cfg(url='[URL]'),
+    'dla34': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla34-2b83ff04.pth'),
+    'dla46_c': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla46_c-9b68d685.pth'),
+    'dla46x_c': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla46x_c-6bc5b5c8.pth'),
+    'dla60x_c': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla60x_c-a38e054a.pth'),
+    'dla60': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla60-9e91bd4d.pth'),
+    'dla60x': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla60x-6818f6bb.pth'),
+    'dla102': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla102-21f57b54.pth'),
+    'dla102x': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla102x-7ec0aa2a.pth'),
+    'dla102x2': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla102x2-ac4239c4.pth'),
+    'dla169': _cfg(url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dla169-7c767967.pth'),
     'dla60_res2net': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net_dla60_4s-d88db7f9.pth'),
     'dla60_res2next': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2next_dla60_4s-d327927b.pth'),
 }
 
 
@@ -123,7 +123,7 @@ class DlaBottleneck(nn.Module):
 
 class DlaBottle2neck(nn.Module):
     """ Res2Net/Res2NeXT DLA Bottleneck
-    Adapted from [URL]
+    Adapted from https://github.com/gasvn/Res2Net/blob/master/dla.py
     """
     expansion = 2
 

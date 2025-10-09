@@ -115,3 +115,4 @@ class SelectAdaptivePool2d(nn.Module):
         return self.__class__.__name__ + ' (' \
                + 'pool_type=' + self.pool_type \
                + ', flatten=' + str(self.flatten) + ')'
+

@@ -1,8 +1,8 @@
 """
 An implementation of GhostNet Model as defined in:
-GhostNet: More Features from Cheap Operations. [URL]
+GhostNet: More Features from Cheap Operations. https://arxiv.org/abs/1911.11907
 The train script of the model is similar to that of MobileNetV3
-Original model: [URL]
+Original model: https://github.com/huawei-noah/CV-backbones/tree/master/ghostnet_pytorch
 """
 import math
 from functools import partial
@@ -35,7 +35,7 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     'ghostnet_050': _cfg(url=''),
     'ghostnet_100': _cfg(
-        url='[URL]'),
+        url='https://github.com/huawei-noah/CV-backbones/releases/download/ghostnet_pth/ghostnet_1x.pth'),
     'ghostnet_130': _cfg(url=''),
 }
 

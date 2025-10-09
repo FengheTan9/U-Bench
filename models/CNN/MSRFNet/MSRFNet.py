@@ -221,7 +221,7 @@ class GSC_block(nn.Module):
         return inpt
 
 ## SHAPE-STREAM
-# [URL]
+# https://github.com/leftthomas/GatedSCNN/blob/master/model.py
 
 class GatedConv(nn.Conv2d):
     def __init__(self, in_channels, out_channels):
@@ -397,7 +397,7 @@ class MSRF(nn.Module):
         x43 = (x43*0.4) + x41
 
         # SHAPE STREAM
-        # [URL] ([URL]
+        # https://github.com/leftthomas/GatedSCNN (https://arxiv.org/pdf/1907.05740.pdf)
         canny_gate, canny_feat = self.shape_stream(x13, x23, x33, x43, canny)
 
         # DECODER
@@ -435,3 +435,4 @@ class MSRF(nn.Module):
 def msrfnet(num_classes, input_channel=3):
     model = MSRF(input_channel=input_channel, num_classes=num_classes)
     return model
+

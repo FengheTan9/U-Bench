@@ -1,7 +1,7 @@
 """ Inception-V3
 
 Originally from torchvision Inception3 model
-Licensed BSD-Clause 3 [URL]
+Licensed BSD-Clause 3 https://github.com/pytorch/vision/blob/master/LICENSE
 """
 import torch
 import torch.nn as nn
@@ -27,21 +27,21 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # original PyTorch weights, ported from Tensorflow but modified
     'inception_v3': _cfg(
-        url='[URL]',
+        url='https://download.pytorch.org/models/inception_v3_google-1a9a5a14.pth',
         has_aux=True),  # checkpoint has aux logit layer weights
-    # my port of Tensorflow SLIM weights ([URL]
+    # my port of Tensorflow SLIM weights (http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz)
     'tf_inception_v3': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_inception_v3-e0069de4.pth',
         num_classes=1000, has_aux=False, label_offset=1),
     # my port of Tensorflow adversarially trained Inception V3 from
-    # [URL]
+    # http://download.tensorflow.org/models/adv_inception_v3_2017_08_18.tar.gz
     'adv_inception_v3': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/adv_inception_v3-9e27bd63.pth',
         num_classes=1000, has_aux=False, label_offset=1),
     # from gluon pretrained models, best performing in terms of accuracy/loss metrics
-    # [URL]
+    # https://gluon-cv.mxnet.io/model_zoo/classification.html
     'gluon_inception_v3': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/gluon_inception_v3-9f746940.pth',
         mean=IMAGENET_DEFAULT_MEAN,  # also works well with inception defaults
         std=IMAGENET_DEFAULT_STD,  # also works well with inception defaults
         has_aux=False,
@@ -454,7 +454,7 @@ def inception_v3(pretrained=False, **kwargs):
 
 @register_model
 def tf_inception_v3(pretrained=False, **kwargs):
-    # my port of Tensorflow SLIM weights ([URL]
+    # my port of Tensorflow SLIM weights (http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz)
     model = _create_inception_v3('tf_inception_v3', pretrained=pretrained, **kwargs)
     return model
 
@@ -462,7 +462,7 @@ def tf_inception_v3(pretrained=False, **kwargs):
 @register_model
 def adv_inception_v3(pretrained=False, **kwargs):
     # my port of Tensorflow adversarially trained Inception V3 from
-    # [URL]
+    # http://download.tensorflow.org/models/adv_inception_v3_2017_08_18.tar.gz
     model = _create_inception_v3('adv_inception_v3', pretrained=pretrained, **kwargs)
     return model
 
@@ -470,6 +470,6 @@ def adv_inception_v3(pretrained=False, **kwargs):
 @register_model
 def gluon_inception_v3(pretrained=False, **kwargs):
     # from gluon pretrained models, best performing in terms of accuracy/loss metrics
-    # [URL]
+    # https://gluon-cv.mxnet.io/model_zoo/classification.html
     model = _create_inception_v3('gluon_inception_v3', pretrained=pretrained, **kwargs)
     return model

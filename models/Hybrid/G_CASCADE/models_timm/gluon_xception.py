@@ -1,8 +1,8 @@
 """Pytorch impl of Gluon Xception
 This is a port of the Gluon Xception code and weights, itself ported from a PyTorch DeepLab impl.
 
-Gluon model: ([URL]
-Original PyTorch DeepLab impl: [URL]
+Gluon model: (https://gluon-cv.mxnet.io/_modules/gluoncv/model_zoo/xception.html)
+Original PyTorch DeepLab impl: https://github.com/jfzhang95/pytorch-deeplab-xception
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -21,7 +21,7 @@ __all__ = ['Xception65']
 
 default_cfgs = {
     'gluon_xception65': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/gluon_xception-7015a15c.pth',
         'input_size': (3, 299, 299),
         'crop_pct': 0.903,
         'pool_size': (10, 10),

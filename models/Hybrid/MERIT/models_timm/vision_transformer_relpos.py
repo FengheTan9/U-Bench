@@ -37,32 +37,32 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'vit_relpos_base_patch32_plus_rpn_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_replos_base_patch32_plus_rpn_256-sw-dd486f51.pth',
         input_size=(3, 256, 256)),
     'vit_relpos_base_patch16_plus_240': _cfg(url='', input_size=(3, 240, 240)),
 
     'vit_relpos_small_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_small_patch16_224-sw-ec2778b4.pth'),
     'vit_relpos_medium_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_medium_patch16_224-sw-11c174af.pth'),
     'vit_relpos_base_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_base_patch16_224-sw-49049aed.pth'),
 
     'vit_srelpos_small_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_srelpos_small_patch16_224-sw-6cdb8849.pth'),
     'vit_srelpos_medium_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_srelpos_medium_patch16_224-sw-ad702b8c.pth'),
 
     'vit_relpos_medium_patch16_cls_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_medium_patch16_cls_224-sw-cfe8e259.pth'),
     'vit_relpos_base_patch16_cls_224': _cfg(
         url=''),
     'vit_relpos_base_patch16_clsgap_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_base_patch16_gapcls_224-sw-1a341d6c.pth'),
 
     'vit_relpos_small_patch16_rpn_224': _cfg(url=''),
     'vit_relpos_medium_patch16_rpn_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/vit_relpos_medium_patch16_rpn_224-sw-5d2befd8.pth'),
     'vit_relpos_base_patch16_rpn_224': _cfg(url=''),
 }
 

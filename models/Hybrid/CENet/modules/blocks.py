@@ -319,3 +319,4 @@ class EUCB(nn.Module):
         x = channel_shuffle(x, self.in_channels)
         x = self.pwc(x)
         return x
+

@@ -8,7 +8,7 @@
   year={2022}
 }
 
-Based on Apache 2.0 licensed code at [URL] Copyright (c) 2022 Snap Inc.
+Based on Apache 2.0 licensed code at https://github.com/snap-research/EfficientFormer, Copyright (c) 2022 Snap Inc.
 
 Modifications and timm support by / Copyright 2022, Ross Wightman
 """
@@ -36,13 +36,13 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     efficientformer_l1=_cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/efficientformer_l1_1000d_224-5b08fab0.pth",
     ),
     efficientformer_l3=_cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/efficientformer_l3_300d_224-6816624f.pth",
     ),
     efficientformer_l7=_cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-morevit/efficientformer_l7_300d_224-e957ab75.pth",
     ),
 )
 
@@ -548,3 +548,4 @@ def efficientformer_l7(pretrained=False, **kwargs):
         num_vit=8,
         **kwargs)
     return _create_efficientformer('efficientformer_l7', pretrained=pretrained, **model_kwargs)
+

@@ -6,9 +6,9 @@ A PyTorch implementation of Cross Stage Partial Networks including:
 * CSPDarkNet53
 * and DarkNet53 for good measure
 
-Based on paper `CSPNet: A New Backbone that can Enhance Learning Capability of CNN` - [URL]
+Based on paper `CSPNet: A New Backbone that can Enhance Learning Capability of CNN` - https://arxiv.org/abs/1911.11929
 
-Reference impl via darknet cfg files at [URL]
+Reference impl via darknet cfg files at https://github.com/WongKinYiu/CrossStagePartialNetworks
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -43,64 +43,64 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'cspresnet50': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/cspresnet50_ra-d3e8d487.pth'),
     'cspresnet50d': _cfg(url=''),
     'cspresnet50w': _cfg(url=''),
     'cspresnext50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/cspresnext50_ra_224-648b4713.pth',
     ),
     'cspdarknet53': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/cspdarknet53_ra_256-d05c7c21.pth'),
 
     'darknet17': _cfg(url=''),
     'darknet21': _cfg(url=''),
     'sedarknet21': _cfg(url=''),
     'darknet53': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/darknet53_256_c2ns-3aeff817.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=1.0),
     'darknetaa53': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/darknetaa53_c2ns-5c28ec8a.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     'cs3darknet_s': _cfg(
         url='', interpolation='bicubic'),
     'cs3darknet_m': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3darknet_m_c2ns-43f06604.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=0.95,
     ),
     'cs3darknet_l': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3darknet_l_c2ns-16220c5d.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=0.95),
     'cs3darknet_x': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3darknet_x_c2ns-4e4490aa.pth',
         interpolation='bicubic', crop_pct=0.95, test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     'cs3darknet_focus_s': _cfg(
         url='', interpolation='bicubic'),
     'cs3darknet_focus_m': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3darknet_focus_m_c2ns-e23bed41.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=0.95),
     'cs3darknet_focus_l': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3darknet_focus_l_c2ns-65ef8888.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=0.95),
     'cs3darknet_focus_x': _cfg(
         url='', interpolation='bicubic'),
 
     'cs3sedarknet_l': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3sedarknet_l_c2ns-e8d1dc13.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=0.95),
     'cs3sedarknet_x': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3sedarknet_x_c2ns-b4d0abc0.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     'cs3sedarknet_xdw': _cfg(
         url='', interpolation='bicubic'),
 
     'cs3edgenet_x': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3edgenet_x_c2-2e1610a9.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), test_crop_pct=1.0),
     'cs3se_edgenet_x': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/cs3se_edgenet_x_c2ns-76f8e3ac.pth',
         interpolation='bicubic', crop_pct=0.95, test_input_size=(3, 320, 320), test_crop_pct=1.0),
 }
 
@@ -854,8 +854,8 @@ def create_csp_stages(
 class CspNet(nn.Module):
     """Cross Stage Partial base model.
 
-    Paper: `CSPNet: A New Backbone that can Enhance Learning Capability of CNN` - [URL]
-    Ref Impl: [URL]
+    Paper: `CSPNet: A New Backbone that can Enhance Learning Capability of CNN` - https://arxiv.org/abs/1911.11929
+    Ref Impl: https://github.com/WongKinYiu/CrossStagePartialNetworks
 
     NOTE: There are differences in the way I handle the 1x1 'expansion' conv in this impl vs the
     darknet impl. I did it this way for simplicity and less special cases.

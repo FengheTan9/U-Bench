@@ -174,7 +174,7 @@ class SS2D(nn.Module):
             torch.rand(d_inner, **factory_kwargs) * (math.log(dt_max) - math.log(dt_min))
             + math.log(dt_min)
         ).clamp(min=dt_init_floor)
-        # Inverse of softplus: [URL]
+        # Inverse of softplus: https://github.com/pytorch/pytorch/issues/72759
         inv_dt = dt + torch.log(-torch.expm1(-dt))
         with torch.no_grad():
             dt_proj.bias.copy_(inv_dt)
@@ -613,7 +613,7 @@ class SwinUMamba(nn.Module):
 
 
 def load_pretrained_ckpt(model):
-    pretrained_path = "[URL]"
+    pretrained_path = "https://huggingface.co/FengheTan9/U-Stone/resolve/main/vmamba_tiny_e292.pth"
     print(f"Loading weights from: {pretrained_path}")
     skip_params = ["norm.weight", "norm.bias", "head.weight", "head.bias", 
                    "patch_embed.proj.weight", "patch_embed.proj.bias", 
@@ -644,3 +644,4 @@ def swin_umamba(num_classes, input_channel=3):
     model = SwinUMamba(input_channel=input_channel, num_classes=num_classes)
     model = load_pretrained_ckpt(model)
     return model 
+

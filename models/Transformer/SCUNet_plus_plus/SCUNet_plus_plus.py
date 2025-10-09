@@ -51,7 +51,7 @@ class SwinUnet(nn.Module):
         return logits
 
     def load_from(self):
-        pretrained_path = '[URL]'
+        pretrained_path = 'https://huggingface.co/FengheTan9/U-Stone/resolve/main/swin_tiny_patch4_window7_224.pth'
         if pretrained_path is not None:
             print("pretrained_path:{}".format(pretrained_path))
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -93,4 +93,5 @@ def scunet_plus_plus(num_classes, input_channel=3):
     model = SwinUnet(input_channel=input_channel, num_classes=num_classes, img_size=224)
     model.load_from()
     return model
+
 

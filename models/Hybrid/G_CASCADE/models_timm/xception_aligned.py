@@ -1,7 +1,7 @@
 """Pytorch impl of Aligned Xception 41, 65, 71
 
 This is a correct, from scratch impl of Aligned Xception (Deeplab) models compatible with TF weights at
-[URL]
+https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/model_zoo.md
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -32,20 +32,20 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     xception41=_cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_xception_41-e6439c97.pth'),
     xception65=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/xception65_ra3-1447db8d.pth',
         crop_pct=0.94,
     ),
     xception71=_cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/tf_xception_71-8eec7df1.pth'),
 
     xception41p=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/xception41p_ra3-33195bc8.pth',
         crop_pct=0.94,
     ),
     xception65p=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/xception65p_ra3-3c6114e4.pth',
         crop_pct=0.94,
     ),
 )

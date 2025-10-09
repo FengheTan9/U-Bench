@@ -1,5 +1,5 @@
 """ Pytorch Inception-V4 implementation
-Sourced from [URL] (MIT License) which is
+Sourced from https://github.com/Cadene/tensorflow-model-zoo.torch (MIT License) which is
 based upon Google's Tensorflow implementation and pretrained weights (Apache 2.0 License)
 """
 import torch
@@ -15,7 +15,7 @@ __all__ = ['InceptionV4']
 
 default_cfgs = {
     'inception_v4': {
-        'url': '[URL]',
+        'url': 'https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-cadene/inceptionv4-8e4777a0.pth',
         'num_classes': 1000, 'input_size': (3, 299, 299), 'pool_size': (8, 8),
         'crop_pct': 0.875, 'interpolation': 'bicubic',
         'mean': IMAGENET_INCEPTION_MEAN, 'std': IMAGENET_INCEPTION_STD,

@@ -148,7 +148,7 @@ def flops_selective_scan_fn(B=1, L=256, D=768, N=16, with_D=True, with_Z=False, 
         [.float(), +, .softplus, .shape, new_zeros, repeat, stack, to(dtype), silu] 
     """
     assert not with_complex
-    # [URL]
+    # https://github.com/state-spaces/mamba/issues/110
     flops = 9 * B * L * D * N
     if with_D:
         flops += B * D * L

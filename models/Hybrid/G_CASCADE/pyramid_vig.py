@@ -1,4 +1,7 @@
-
+# 2022.06.17-Changed for building ViG model
+#            Huawei Technologies Co., Ltd. <foss@huawei.com>
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import math
 import torch
 import torch.nn as nn
@@ -61,7 +64,7 @@ class FFN(nn.Module):
 
 class Stem(nn.Module):
     """ Image to Visual Embedding
-    Overlap: [URL]
+    Overlap: https://arxiv.org/pdf/2106.13797.pdf
     """
     def __init__(self, img_size=224, in_dim=3, out_dim=768, act='relu'):
         super().__init__()        

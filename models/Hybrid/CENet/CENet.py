@@ -68,3 +68,4 @@ def cenet(input_channel=3, num_classes=1):
     return CENet(input_channels=input_channel, num_classes=num_classes)
 
 
+

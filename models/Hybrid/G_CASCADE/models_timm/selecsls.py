@@ -1,13 +1,13 @@
 """PyTorch SelecSLS Net example for ImageNet Classification
-License: CC BY 4.0 ([URL]
-[REDACTED]
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/legalcode)
+Author: Dushyant Mehta (@mehtadushy)
 
 SelecSLS (core) Network Architecture as proposed in "XNect: Real-time Multi-person 3D
 Human Pose Estimation with a Single RGB Camera, Mehta et al."
-[URL]
+https://arxiv.org/abs/1907.00837
 
-Based on ResNet implementation in [URL]
-and SelecSLS Net implementation in [URL]
+Based on ResNet implementation in https://github.com/rwightman/pytorch-image-models
+and SelecSLS Net implementation in https://github.com/mehtadushy/SelecSLS-Pytorch
 """
 from typing import List
 
@@ -39,13 +39,13 @@ default_cfgs = {
         url='',
         interpolation='bicubic'),
     'selecsls42b': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-selecsls/selecsls42b-8af30141.pth',
         interpolation='bicubic'),
     'selecsls60': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-selecsls/selecsls60-bbf87526.pth',
         interpolation='bicubic'),
     'selecsls60b': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-selecsls/selecsls60b-94e619b5.pth',
         interpolation='bicubic'),
     'selecsls84': _cfg(
         url='',

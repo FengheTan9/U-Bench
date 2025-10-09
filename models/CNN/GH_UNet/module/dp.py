@@ -26,7 +26,7 @@ class Conv(nn.Module):
 
 
 class depthwise_separable_conv(nn.Module):
-    # [URL]
+    # https://wingnim.tistory.com/104
     def __init__(self, nin, nout, kernels_per_layer=2, stride=1, padding=1, bias=True):
         super(depthwise_separable_conv, self).__init__()
         self.depthwise = nn.Conv2d(nin, nin * kernels_per_layer, kernel_size=kernels_per_layer, stride=stride,
@@ -40,7 +40,7 @@ class depthwise_separable_conv(nn.Module):
 
 
 def channel_shuffle(x, groups):
-    # [URL]
+    # https://github.com/jaxony/ShuffleNet/blob/master/model.py
     batchsize, num_channels, height, width = x.data.size()
 
     channels_per_group = num_channels // groups
@@ -51,7 +51,7 @@ def channel_shuffle(x, groups):
 
     # transpose
     # - contiguous() required if transpose() is used before view().
-    #   See [URL]
+    #   See https://github.com/pytorch/pytorch/issues/764
     x = torch.transpose(x, 1, 2).contiguous()
 
     # flatten
@@ -61,7 +61,7 @@ def channel_shuffle(x, groups):
 
 
 class GSConv(nn.Module):
-    # GSConv [URL]
+    # GSConv https://github.com/AlanLi1997/slim-neck-by-gsconv
     def __init__(self, c1, c2, k=1, s=1, g=1, act=True):
         super().__init__()
         c_ = c2 // 2

@@ -1,9 +1,9 @@
 """ Selective Kernel Networks (ResNet base)
 
-Paper: Selective Kernel Networks ([URL]
+Paper: Selective Kernel Networks (https://arxiv.org/abs/1903.06586)
 
-This was inspired by reading 'Compounding the Performance Improvements...' ([URL]
-and a streamlined impl at [URL] but I ended up building something closer
+This was inspired by reading 'Compounding the Performance Improvements...' (https://arxiv.org/abs/2001.06268)
+and a streamlined impl at https://github.com/clovaai/assembled-cnn but I ended up building something closer
 to the original paper with some modifications of my own to better balance param count vs accuracy.
 
 Hacked together by / Copyright 2020 Ross Wightman
@@ -32,14 +32,14 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'skresnet18': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/skresnet18_ra-4eec2804.pth'),
     'skresnet34': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/skresnet34_ra-bdc0ccde.pth'),
     'skresnet50': _cfg(),
     'skresnet50d': _cfg(
         first_conv='conv1.0'),
     'skresnext50_32x4d': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/skresnext50_ra-f40e40bf.pth'),
 }
 
 
@@ -203,3 +203,4 @@ def skresnext50_32x4d(pretrained=False, **kwargs):
         block=SelectiveKernelBottleneck, layers=[3, 4, 6, 3], cardinality=32, base_width=4,
         block_args=dict(sk_kwargs=sk_kwargs), zero_init_last=False, **kwargs)
     return _create_skresnet('skresnext50_32x4d', pretrained, **model_args)
+

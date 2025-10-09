@@ -32,7 +32,7 @@ class VMUNet(nn.Module):
 
     
     def load_from(self):
-        pretrained_path = "[URL]"
+        pretrained_path = "https://huggingface.co/FengheTan9/U-Stone/resolve/main/vmamba_small_e238_ema.pth"
         model_dict = self.vmunet.state_dict()
         
         modelCheckpoint = load_state_dict_from_url(pretrained_path, progress=True)

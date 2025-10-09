@@ -414,7 +414,7 @@ class RWKV_UNet(nn.Module):
         super(RWKV_UNet, self).__init__()
         self.encoder = RWKV_UNet_encoder_B(img_size=img_size)
         if pretrained_path:
-            pretrained_dict = load_state_dict_from_url("[URL]", progress=True)
+            pretrained_dict = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/resolve/main/net_B.pth", progress=True)
             self.encoder.load_state_dict(pretrained_dict, strict=False)
         
         self.embed_dims = [48, 72, 144, 240]

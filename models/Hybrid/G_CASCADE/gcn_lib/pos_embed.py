@@ -1,8 +1,23 @@
+# 2022.06.17-Changed for building ViG model
+#            Huawei Technologies Co., Ltd. <foss@huawei.com>
+# modified from https://github.com/facebookresearch/mae/blob/main/util/pos_embed.py
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+# --------------------------------------------------------
+# Position embedding utils
+# --------------------------------------------------------
+
 import numpy as np
 
 import torch
 
-
+# --------------------------------------------------------
+# relative position embedding
+# References: https://arxiv.org/abs/2009.13658
+# --------------------------------------------------------
 def get_2d_relative_pos_embed(embed_dim, grid_size):
     """
     grid_size: int of the grid height and width
@@ -14,7 +29,12 @@ def get_2d_relative_pos_embed(embed_dim, grid_size):
     return relative_pos
 
 
-
+# --------------------------------------------------------
+# 2D sine-cosine position embedding
+# References:
+# Transformer: https://github.com/tensorflow/models/blob/master/official/nlp/transformer/model_utils.py
+# MoCo v3: https://github.com/facebookresearch/moco-v3
+# --------------------------------------------------------
 def get_2d_sincos_pos_embed(embed_dim, grid_size, cls_token=False):
     """
     grid_size: int of the grid height and width

@@ -40,12 +40,12 @@ class CSwinUnet(nn.Module):
         return logits
 
     def load_from(self):
-        pretrained_path = "[URL]"
+        pretrained_path = "https://github.com/eatbeanss/CSWin-UNet/blob/main/pretrained_ckpt/cswin_tiny_224.pth"
         # print('pretrained_path')
         if pretrained_path is not None:
             print("pretrained_path:{}".format(pretrained_path))
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-            pretrained_dict = load_state_dict_from_url("[URL]", progress=True)
+            pretrained_dict = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/resolve/main/TransAttUnet.pth", progress=True)
             model_dict = self.cswin_unet.state_dict()
             full_dict = copy.deepcopy(pretrained_dict)
             for k, v in pretrained_dict.items():

@@ -1,6 +1,6 @@
 """ PyTorch Mixed Convolution
 
-Paper: MixConv: Mixed Depthwise Convolutional Kernels ([URL]
+Paper: MixConv: Mixed Depthwise Convolutional Kernels (https://arxiv.org/abs/1907.09595)
 
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -21,7 +21,7 @@ class MixedConv2d(nn.ModuleDict):
     """ Mixed Grouped Convolution
 
     Based on MDConv and GroupedConv in MixNet impl:
-      [URL]
+      https://github.com/tensorflow/tpu/blob/master/models/official/mnasnet/mixnet/custom_layers.py
     """
     def __init__(self, in_channels, out_channels, kernel_size=3,
                  stride=1, padding='', dilation=1, depthwise=False, **kwargs):

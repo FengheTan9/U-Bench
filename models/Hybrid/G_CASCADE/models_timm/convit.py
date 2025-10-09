@@ -7,8 +7,8 @@
   year={2021}
 }
 
-Paper link: [URL]
-Original code: [URL] original copyright below
+Paper link: https://arxiv.org/abs/2103.10697
+Original code: https://github.com/facebookresearch/convit, original copyright below
 
 Modifications and additions for timm hacked together by / Copyright 2021, Ross Wightman
 """
@@ -19,7 +19,7 @@ Modifications and additions for timm hacked together by / Copyright 2021, Ross W
 # LICENSE file in the root directory of this source tree.
 #
 '''These modules are adapted from those of timm, see
-[URL]
+https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 '''
 
 import torch
@@ -51,11 +51,11 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # ConViT
     'convit_tiny': _cfg(
-        url="[URL]"),
+        url="https://dl.fbaipublicfiles.com/convit/convit_tiny.pth"),
     'convit_small': _cfg(
-        url="[URL]"),
+        url="https://dl.fbaipublicfiles.com/convit/convit_small.pth"),
     'convit_base': _cfg(
-        url="[URL]")
+        url="https://dl.fbaipublicfiles.com/convit/convit_base.pth")
 }
 
 

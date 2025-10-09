@@ -1,6 +1,6 @@
 """ CBAM (sort-of) Attention
 
-Experimental impl of CBAM: Convolutional Block Attention Module: [URL]
+Experimental impl of CBAM: Convolutional Block Attention Module: https://arxiv.org/abs/1807.06521
 
 WARNING: Results with these attention layers have been mixed. They can significantly reduce performance on
 some tasks, especially fine-grained it seems. I may end up removing this impl.
@@ -109,3 +109,4 @@ class LightCbamModule(nn.Module):
         x = self.channel(x)
         x = self.spatial(x)
         return x
+

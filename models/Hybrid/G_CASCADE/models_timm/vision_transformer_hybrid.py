@@ -3,10 +3,10 @@
 A PyTorch implement of the Hybrid Vision Transformers as described in:
 
 'An Image Is Worth 16 x 16 Words: Transformers for Image Recognition at Scale'
-    - [URL]
+    - https://arxiv.org/abs/2010.11929
 
 `How to train your ViT? Data, Augmentation, and Regularization in Vision Transformers`
-    - [URL]
+    - https://arxiv.org/abs/2106.10270
 
 NOTE These hybrid model definitions depend on code in vision_transformer.py.
 They were moved here to keep file sizes sane.
@@ -41,48 +41,48 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # hybrid in-1k models (weights from official JAX impl where they exist)
     'vit_tiny_r_s16_p8_224': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R_Ti_16-i21k-300ep-lr_0.001-aug_none-wd_0.03-do_0.0-sd_0.0--imagenet2012-steps_20k-lr_0.03-res_224.npz',
         first_conv='patch_embed.backbone.conv'),
     'vit_tiny_r_s16_p8_384': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R_Ti_16-i21k-300ep-lr_0.001-aug_none-wd_0.03-do_0.0-sd_0.0--imagenet2012-steps_20k-lr_0.03-res_384.npz',
         first_conv='patch_embed.backbone.conv', input_size=(3, 384, 384), crop_pct=1.0),
     'vit_small_r26_s32_224': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R26_S_32-i21k-300ep-lr_0.001-aug_light0-wd_0.03-do_0.1-sd_0.1--imagenet2012-steps_20k-lr_0.03-res_224.npz',
     ),
     'vit_small_r26_s32_384': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R26_S_32-i21k-300ep-lr_0.001-aug_medium2-wd_0.03-do_0.0-sd_0.0--imagenet2012-steps_20k-lr_0.03-res_384.npz',
         input_size=(3, 384, 384), crop_pct=1.0),
     'vit_base_r26_s32_224': _cfg(),
     'vit_base_r50_s16_224': _cfg(),
     'vit_base_r50_s16_384': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_resnet50_384-9fd3c705.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'vit_large_r50_s32_224': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R50_L_32-i21k-300ep-lr_0.001-aug_medium1-wd_0.1-do_0.1-sd_0.1--imagenet2012-steps_20k-lr_0.01-res_224.npz'
     ),
     'vit_large_r50_s32_384': _cfg(
-        url='[URL]'
+        url='https://storage.googleapis.com/vit_models/augreg/'
             'R50_L_32-i21k-300ep-lr_0.001-aug_medium2-wd_0.1-do_0.0-sd_0.0--imagenet2012-steps_20k-lr_0.01-res_384.npz',
         input_size=(3, 384, 384), crop_pct=1.0
     ),
 
     # hybrid in-21k models (weights from official Google JAX impl where they exist)
     'vit_tiny_r_s16_p8_224_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/vit_models/augreg/R_Ti_16-i21k-300ep-lr_0.001-aug_none-wd_0.03-do_0.0-sd_0.0.npz',
         num_classes=21843, crop_pct=0.9, first_conv='patch_embed.backbone.conv'),
     'vit_small_r26_s32_224_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/vit_models/augreg/R26_S_32-i21k-300ep-lr_0.001-aug_medium2-wd_0.03-do_0.0-sd_0.0.npz',
         num_classes=21843, crop_pct=0.9),
     'vit_base_r50_s16_224_in21k': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_resnet50_224_in21k-6f7c7740.pth',
         num_classes=21843, crop_pct=0.9),
     'vit_large_r50_s32_224_in21k': _cfg(
-        url='[URL]',
+        url='https://storage.googleapis.com/vit_models/augreg/R50_L_32-i21k-300ep-lr_0.001-aug_medium2-wd_0.1-do_0.0-sd_0.0.npz',
         num_classes=21843, crop_pct=0.9),
 
     # hybrid models (using timm resnet backbones)
@@ -227,7 +227,7 @@ def vit_base_r26_s32_224(pretrained=False, **kwargs):
 
 @register_model
 def vit_base_r50_s16_224(pretrained=False, **kwargs):
-    """ R50+ViT-B/S16 hybrid from original paper ([URL]
+    """ R50+ViT-B/S16 hybrid from original paper (https://arxiv.org/abs/2010.11929).
     """
     backbone = _resnetv2((3, 4, 9), **kwargs)
     model_kwargs = dict(embed_dim=768, depth=12, num_heads=12, **kwargs)
@@ -238,8 +238,8 @@ def vit_base_r50_s16_224(pretrained=False, **kwargs):
 
 @register_model
 def vit_base_r50_s16_384(pretrained=False, **kwargs):
-    """ R50+ViT-B/16 hybrid from original paper ([URL]
-    ImageNet-1k weights fine-tuned from in21k @ 384x384, source [URL]
+    """ R50+ViT-B/16 hybrid from original paper (https://arxiv.org/abs/2010.11929).
+    ImageNet-1k weights fine-tuned from in21k @ 384x384, source https://github.com/google-research/vision_transformer.
     """
     backbone = _resnetv2((3, 4, 9), **kwargs)
     model_kwargs = dict(embed_dim=768, depth=12, num_heads=12, **kwargs)
@@ -300,8 +300,8 @@ def vit_small_r26_s32_224_in21k(pretrained=False, **kwargs):
 
 @register_model
 def vit_base_r50_s16_224_in21k(pretrained=False, **kwargs):
-    """ R50+ViT-B/16 hybrid model from original paper ([URL]
-    ImageNet-21k weights @ 224x224, source [URL]
+    """ R50+ViT-B/16 hybrid model from original paper (https://arxiv.org/abs/2010.11929).
+    ImageNet-21k weights @ 224x224, source https://github.com/google-research/vision_transformer.
     """
     backbone = _resnetv2(layers=(3, 4, 9), **kwargs)
     model_kwargs = dict(embed_dim=768, depth=12, num_heads=12, **kwargs)

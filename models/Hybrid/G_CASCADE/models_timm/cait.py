@@ -1,8 +1,8 @@
 """ Class-Attention in Image Transformers (CaiT)
 
-Paper: 'Going deeper with Image Transformers' - [URL]
+Paper: 'Going deeper with Image Transformers' - https://arxiv.org/abs/2103.17239
 
-Original code and weights from [URL] copyright below
+Original code and weights from https://github.com/facebookresearch/deit, copyright below
 
 Modifications and additions for timm hacked together by / Copyright 2021, Ross Wightman
 """
@@ -36,44 +36,44 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = dict(
     cait_xxs24_224=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/XXS24_224.pth',
         input_size=(3, 224, 224),
     ),
     cait_xxs24_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/XXS24_384.pth',
     ),
     cait_xxs36_224=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/XXS36_224.pth',
         input_size=(3, 224, 224),
     ),
     cait_xxs36_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/XXS36_384.pth',
     ),
     cait_xs24_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/XS24_384.pth',
     ),
     cait_s24_224=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/S24_224.pth',
         input_size=(3, 224, 224),
     ),
     cait_s24_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/S24_384.pth',
     ),
     cait_s36_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/S36_384.pth',
     ),
     cait_m36_384=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/M36_384.pth',
     ),
     cait_m48_448=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/M48_448.pth',
         input_size=(3, 448, 448),
     ),
 )
 
 
 class ClassAttn(nn.Module):
-    # taken from [URL]
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     # with slight modifications to do CA 
     def __init__(self, dim, num_heads=8, qkv_bias=False, attn_drop=0., proj_drop=0.):
         super().__init__()
@@ -108,7 +108,7 @@ class ClassAttn(nn.Module):
 
 
 class LayerScaleBlockClassAttn(nn.Module):
-    # taken from [URL]
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     # with slight modifications to add CA and LayerScale
     def __init__(
             self, dim, num_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0.,
@@ -133,8 +133,8 @@ class LayerScaleBlockClassAttn(nn.Module):
 
 
 class TalkingHeadAttn(nn.Module):
-    # taken from [URL]
-    # with slight modifications to add Talking Heads Attention ([URL]
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+    # with slight modifications to add Talking Heads Attention (https://arxiv.org/pdf/2003.02436v1.pdf)
     def __init__(self, dim, num_heads=8, qkv_bias=False, attn_drop=0., proj_drop=0.):
         super().__init__()
 
@@ -175,7 +175,7 @@ class TalkingHeadAttn(nn.Module):
 
 
 class LayerScaleBlock(nn.Module):
-    # taken from [URL]
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     # with slight modifications to add layerScale
     def __init__(
             self, dim, num_heads, mlp_ratio=4., qkv_bias=False, drop=0., attn_drop=0.,
@@ -199,7 +199,7 @@ class LayerScaleBlock(nn.Module):
 
 
 class Cait(nn.Module):
-    # taken from [URL]
+    # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
     # with slight modifications to adapt to our cait models
     def __init__(
             self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, global_pool='token',

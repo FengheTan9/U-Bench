@@ -1,3 +1,5 @@
+# 2022.06.17-Changed for building ViG model
+#            Huawei Technologies Co., Ltd. <foss@huawei.com>
 import numpy as np
 import torch
 from torch import nn
@@ -9,6 +11,9 @@ from timm.models.layers import DropPath
 
 
 class MRConv2d(nn.Module):
+    """
+    Max-Relative Graph Convolution (Paper: https://arxiv.org/abs/1904.03751) for dense data type
+    """
     def __init__(self, in_channels, out_channels, act='relu', norm=None, bias=True, kernel_size=1, padding=0, groups=4):
         super(MRConv2d, self).__init__()
         self.nn = BasicConv([in_channels*2, out_channels], act, norm, bias, kernel_size=1, padding=0, groups=4)
@@ -26,6 +31,9 @@ class MRConv2d(nn.Module):
 
 
 class EdgeConv2d(nn.Module):
+    """
+    Edge convolution layer (with activation, batch normalization) for dense data type
+    """
     def __init__(self, in_channels, out_channels, act='relu', norm=None, bias=True):
         super(EdgeConv2d, self).__init__()
         self.nn = BasicConv([in_channels * 2, out_channels], act, norm, bias)
@@ -41,6 +49,9 @@ class EdgeConv2d(nn.Module):
 
 
 class GraphSAGE(nn.Module):
+    """
+    GraphSAGE Graph Convolution (Paper: https://arxiv.org/abs/1706.02216) for dense data type
+    """
     def __init__(self, in_channels, out_channels, act='relu', norm=None, bias=True):
         super(GraphSAGE, self).__init__()
         self.nn1 = BasicConv([in_channels, in_channels], act, norm, bias)
@@ -57,6 +68,9 @@ class GraphSAGE(nn.Module):
 
 
 class GINConv2d(nn.Module):
+    """
+    GIN Graph Convolution (Paper: https://arxiv.org/abs/1810.00826) for dense data type
+    """
     def __init__(self, in_channels, out_channels, act='relu', norm=None, bias=True):
         super(GINConv2d, self).__init__()
         self.nn = BasicConv([in_channels, out_channels], act, norm, bias)
@@ -165,3 +179,4 @@ class Grapher(nn.Module):
         x = self.fc2(x)
         x = self.drop_path(x) + _tmp
         return x
+

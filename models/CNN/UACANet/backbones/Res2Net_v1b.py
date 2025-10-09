@@ -178,7 +178,7 @@ from torch.hub import load_state_dict_from_url
 def res2net50_v1b_26w_4s(pretrained=False, **kwargs):
     model = Res2Net(Bottle2neck, [3, 4, 6, 3], baseWidth=26, scale=4, **kwargs)
     if pretrained:
-        model_url = '[URL]'
+        model_url = 'https://shanghuagao.oss-cn-beijing.aliyuncs.com/res2net/res2net50_v1b_26w_4s-3cf99910.pth'
         try:
             state_dict = load_state_dict_from_url(model_url, progress=True)#, weights_only=True)
             model.load_state_dict(state_dict)

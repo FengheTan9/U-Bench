@@ -114,7 +114,7 @@ class PyramidFeatures(nn.Module):
         
         #model_path = config.swin_pretrained_path
         self.swin_transformer = SwinTransformer(img_size,in_chans = 3)
-        checkpoint = load_state_dict_from_url('[URL]', progress=True)['model']
+        checkpoint = load_state_dict_from_url('https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth', progress=True)['model']
         #torch.load(model_path, map_location=torch.device(device))['model']
         unexpected = ["patch_embed.proj.weight", "patch_embed.proj.bias", "patch_embed.norm.weight", "patch_embed.norm.bias",
                      "head.weight", "head.bias", "layers.0.downsample.norm.weight", "layers.0.downsample.norm.bias",

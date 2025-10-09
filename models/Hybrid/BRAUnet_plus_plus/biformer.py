@@ -1,3 +1,13 @@
+"""
+BiFormer impl.
+
+author: ZHU Lei
+github: https://github.com/rayleizhu
+email: ray.leizhu@outlook.com
+
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+"""
 
 import torch
 import torch.nn as nn
@@ -87,7 +97,7 @@ class Block(nn.Module):
             else:
                 x = x + self.drop_path(self.attn(self.norm1(x)))  # (N, H, W, C)
                 x = x + self.drop_path(self.mlp(self.norm2(x)))  # (N, H, W, C)
-        else:  # [URL]
+        else:  # https://kexue.fm/archives/9009
             if self.use_layer_scale:
                 x = self.norm1(x + self.drop_path(self.gamma1 * self.attn(x)))  # (N, H, W, C)
                 x = self.norm2(x + self.drop_path(self.gamma2 * self.WF(x)))  # (N, H, W, C)
@@ -99,3 +109,4 @@ class Block(nn.Module):
         x = x.permute(0, 3, 1, 2)  # (N, H, W, C) -> (N, C, H, W)
         x = x.flatten(2).transpose(1, 2)
         return x
+

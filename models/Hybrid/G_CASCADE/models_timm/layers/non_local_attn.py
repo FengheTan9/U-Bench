@@ -1,8 +1,8 @@
 """ Bilinear-Attention-Transform and Non-Local Attention
 
 Paper: `Non-Local Neural Networks With Grouped Bilinear Attentional Transforms`
-    - [URL]
-Adapted from original code: [URL]
+    - https://openaccess.thecvf.com/content_CVPR_2020/html/Chi_Non-Local_Neural_Networks_With_Grouped_Bilinear_Attentional_Transforms_CVPR_2020_paper.html
+Adapted from original code: https://github.com/BA-Transform/BAT-Image-Classification
 """
 import torch
 from torch import nn
@@ -16,8 +16,8 @@ from .trace_utils import _assert
 class NonLocalAttn(nn.Module):
     """Spatial NL block for image classification.
 
-    This was adapted from [URL]
-    Their NonLocal impl inspired by [URL]
+    This was adapted from https://github.com/BA-Transform/BAT-Image-Classification
+    Their NonLocal impl inspired by https://github.com/facebookresearch/video-nonlocal-net.
     """
 
     def __init__(self, in_channels, use_scale=True,  rd_ratio=1/8, rd_channels=None, rd_divisor=8, **kwargs):
@@ -123,7 +123,7 @@ class BilinearAttnTransform(nn.Module):
 
 class BatNonLocalAttn(nn.Module):
     """ BAT
-    Adapted from: [URL]
+    Adapted from: https://github.com/BA-Transform/BAT-Image-Classification
     """
 
     def __init__(

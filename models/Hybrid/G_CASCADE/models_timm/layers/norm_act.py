@@ -114,7 +114,7 @@ class BatchNormAct2d(nn.BatchNorm2d):
 
 
 class SyncBatchNormAct(nn.SyncBatchNorm):
-    # Thanks to Selim Seferbekov ([URL]
+    # Thanks to Selim Seferbekov (https://github.com/rwightman/pytorch-image-models/issues/1254)
     # This is a quick workaround to support SyncBatchNorm for timm BatchNormAct2d layers
     # but ONLY when used in conjunction with the timm conversion function below.
     # Do not create this module directly or use the PyTorch conversion function.

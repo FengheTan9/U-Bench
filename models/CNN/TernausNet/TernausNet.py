@@ -150,7 +150,7 @@ class DecoderBlockV2(nn.Module):
         if is_deconv:
             """
                 Paramaters for Deconvolution were chosen to avoid artifacts, following
-                link [URL]
+                link https://distill.pub/2016/deconv-checkerboard/
             """
 
             self.block = nn.Sequential(
@@ -278,3 +278,4 @@ class UNet16(nn.Module):
 def ternausnet(input_channel, num_classes):
 
     return UNet11(num_classes = num_classes)
+

@@ -178,3 +178,4 @@ class LFU_Net(nn.Module):
 
 def lfu_net(input_channel,num_classes):
     return LFU_Net(input_channel=input_channel,num_classes=num_classes)
+

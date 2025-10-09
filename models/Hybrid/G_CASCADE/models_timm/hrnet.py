@@ -1,3 +1,13 @@
+""" HRNet
+
+Copied from https://github.com/HRNet/HRNet-Image-Classification
+
+Original header:
+  Copyright (c) Microsoft
+  Licensed under the MIT License.
+  Written by Bin Xiao (Bin.Xiao@microsoft.com)
+  Modified by Ke Sun (sunk@mail.ustc.edu.cn)
+"""
 import logging
 from typing import List
 
@@ -29,23 +39,23 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'hrnet_w18_small': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnet_w18_small_v1-f460c6bc.pth'),
     'hrnet_w18_small_v2': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnet_w18_small_v2-4c50a8cb.pth'),
     'hrnet_w18': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w18-8cb57bb9.pth'),
     'hrnet_w30': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w30-8d7f8dab.pth'),
     'hrnet_w32': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w32-90d8c5fb.pth'),
     'hrnet_w40': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w40-7cd397a4.pth'),
     'hrnet_w44': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w44-c9ac8c18.pth'),
     'hrnet_w48': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w48-abd2e6ab.pth'),
     'hrnet_w64': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-hrnet/hrnetv2_w64-b47cc881.pth'),
 }
 
 cfg_cls = dict(

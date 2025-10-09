@@ -1,9 +1,9 @@
 """ 
 CoaT architecture.
 
-Paper: Co-Scale Conv-Attentional Image Transformers - [URL]
+Paper: Co-Scale Conv-Attentional Image Transformers - https://arxiv.org/abs/2104.06399
 
-Official CoaT code at: [URL]
+Official CoaT code at: https://github.com/mlpc-ucsd/CoaT
 
 Modified from timm/models/vision_transformer.py
 """
@@ -44,19 +44,19 @@ def _cfg_coat(url='', **kwargs):
 
 default_cfgs = {
     'coat_tiny': _cfg_coat(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-coat-weights/coat_tiny-473c2a20.pth'
     ),
     'coat_mini': _cfg_coat(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-coat-weights/coat_mini-2c6baf49.pth'
     ),
     'coat_lite_tiny': _cfg_coat(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-coat-weights/coat_lite_tiny-461b07a7.pth'
     ),
     'coat_lite_mini': _cfg_coat(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-coat-weights/coat_lite_mini-d7842000.pth'
     ),
     'coat_lite_small': _cfg_coat(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-coat-weights/coat_lite_small-fea1d5a1.pth'
     ),
 }
 
@@ -91,7 +91,7 @@ class ConvRelPosEnc(nn.Module):
         for cur_window, cur_head_split in window.items():
             dilation = 1
             # Determine padding size.
-            # Ref: [URL]
+            # Ref: https://discuss.pytorch.org/t/how-to-keep-the-shape-of-input-and-output-same-when-dilation-conv/14338
             padding_size = (cur_window + (cur_window - 1) * (dilation - 1)) // 2
             cur_conv = nn.Conv2d(cur_head_split*Ch, cur_head_split*Ch,
                 kernel_size=(cur_window, cur_window), 

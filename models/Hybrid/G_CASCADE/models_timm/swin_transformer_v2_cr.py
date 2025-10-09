@@ -1,9 +1,9 @@
 """ Swin Transformer V2
 
 A PyTorch impl of : `Swin Transformer V2: Scaling Up Capacity and Resolution`
-    - [URL]
+    - https://arxiv.org/pdf/2111.09883
 
-Code adapted from [URL] original copyright/license info below
+Code adapted from https://github.com/ChristophReich1996/Swin-Transformer-V2, original copyright/license info below
 
 This implementation is experimental and subject to change in manners that will break weight compat:
 * Size of the pos embed MLP are not spelled out in paper in terms of dim, fixed for all models? vary with num_heads?
@@ -70,15 +70,15 @@ default_cfgs = {
     'swinv2_cr_tiny_224': _cfg(
         url="", input_size=(3, 224, 224), crop_pct=0.9),
     'swinv2_cr_tiny_ns_224': _cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-swinv2/swin_v2_cr_tiny_ns_224-ba8166c6.pth",
         input_size=(3, 224, 224), crop_pct=0.9),
     'swinv2_cr_small_384': _cfg(
         url="", input_size=(3, 384, 384), crop_pct=1.0, pool_size=(12, 12)),
     'swinv2_cr_small_224': _cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-swinv2/swin_v2_cr_small_224-0813c165.pth",
         input_size=(3, 224, 224), crop_pct=0.9),
     'swinv2_cr_small_ns_224': _cfg(
-        url="[URL]",
+        url="https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-swinv2/swin_v2_cr_small_ns_224_iv-2ce90f8e.pth",
         input_size=(3, 224, 224), crop_pct=0.9),
     'swinv2_cr_base_384': _cfg(
         url="", input_size=(3, 384, 384), crop_pct=1.0, pool_size=(12, 12)),
@@ -619,7 +619,7 @@ class SwinTransformerStage(nn.Module):
 class SwinTransformerV2Cr(nn.Module):
     r""" Swin Transformer V2
         A PyTorch impl of : `Swin Transformer V2: Scaling Up Capacity and Resolution`  -
-          [URL]
+          https://arxiv.org/pdf/2111.09883
 
     Args:
         img_size (Tuple[int, int]): Input resolution.

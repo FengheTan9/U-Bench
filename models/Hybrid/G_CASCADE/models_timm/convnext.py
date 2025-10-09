@@ -1,8 +1,8 @@
 """ ConvNeXt
 
-Paper: `A ConvNet for the 2020s` - [URL]
+Paper: `A ConvNet for the 2020s` - https://arxiv.org/pdf/2201.03545.pdf
 
-Original code and weights from [URL] original copyright below
+Original code and weights from https://github.com/facebookresearch/ConvNeXt, original copyright below
 
 Model defs atto, femto, pico, nano and _ols / _hnf variants are timm specific.
 
@@ -41,88 +41,88 @@ def _cfg(url='', **kwargs):
 default_cfgs = dict(
     # timm specific variants
     convnext_atto=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_atto_d2-01bb0f51.pth',
         test_input_size=(3, 288, 288), test_crop_pct=0.95),
     convnext_atto_ols=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_atto_ols_a2-78d1c8f3.pth',
         test_input_size=(3, 288, 288), test_crop_pct=0.95),
     convnext_femto=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_femto_d1-d71d5b4c.pth',
         test_input_size=(3, 288, 288), test_crop_pct=0.95),
     convnext_femto_ols=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_femto_ols_d1-246bf2ed.pth',
         test_input_size=(3, 288, 288), test_crop_pct=0.95),
     convnext_pico=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_pico_d1-10ad7f0d.pth',
         test_input_size=(3, 288, 288), test_crop_pct=0.95),
     convnext_pico_ols=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_pico_ols_d1-611f0ca7.pth',
         crop_pct=0.95, test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_nano=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_nano_d1h-7eb4bdea.pth',
         crop_pct=0.95, test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_nano_ols=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_nano_ols_d1h-ae424a9a.pth',
         crop_pct=0.95, test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_tiny_hnf=_cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/convnext_tiny_hnf_a2h-ab7e9df2.pth',
         crop_pct=0.95, test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     convnext_tiny=_cfg(
-        url="[URL]",
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_small=_cfg(
-        url="[URL]",
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_base=_cfg(
-        url="[URL]",
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_large=_cfg(
-        url="[URL]",
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth",
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     convnext_tiny_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_224.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_small_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_224.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_base_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_large_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_224.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
     convnext_xlarge_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_224_ema.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0),
 
     convnext_tiny_384_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_384.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     convnext_small_384_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_384.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     convnext_base_384_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_384.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     convnext_large_384_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_384.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
     convnext_xlarge_384_in22ft1k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_384_ema.pth',
         input_size=(3, 384, 384), pool_size=(12, 12), crop_pct=1.0),
 
     convnext_tiny_in22k=_cfg(
-        url="[URL]", num_classes=21841),
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_224.pth", num_classes=21841),
     convnext_small_in22k=_cfg(
-        url="[URL]", num_classes=21841),
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_224.pth", num_classes=21841),
     convnext_base_in22k=_cfg(
-        url="[URL]", num_classes=21841),
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth", num_classes=21841),
     convnext_large_in22k=_cfg(
-        url="[URL]", num_classes=21841),
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth", num_classes=21841),
     convnext_xlarge_in22k=_cfg(
-        url="[URL]", num_classes=21841),
+        url="https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth", num_classes=21841),
 )
 
 
@@ -253,7 +253,7 @@ class ConvNeXtStage(nn.Module):
 
 class ConvNeXt(nn.Module):
     r""" ConvNeXt
-        A PyTorch impl of : `A ConvNet for the 2020s`  - [URL]
+        A PyTorch impl of : `A ConvNet for the 2020s`  - https://arxiv.org/pdf/2201.03545.pdf
 
     Args:
         in_chans (int): Number of input image channels. Default: 3

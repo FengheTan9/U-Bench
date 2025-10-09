@@ -36,7 +36,7 @@ class BRAUnet(nn.Module):
         logits = self.bra_unet(x)
         return logits
     def load_from(self):
-        pretrained_path = '[URL]'
+        pretrained_path = 'https://huggingface.co/FengheTan9/U-Stone/resolve/main/biformer_base_best.pth'
         if pretrained_path is not None:
             print("pretrained_path:{}".format(pretrained_path))
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -56,3 +56,4 @@ class BRAUnet(nn.Module):
 def braunet_plus_plus(num_classes, input_channel=3):
     model = BRAUnet(input_channel=input_channel, num_classes=num_classes, img_size=256)
     return model
+

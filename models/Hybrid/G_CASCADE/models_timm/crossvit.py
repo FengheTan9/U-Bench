@@ -8,8 +8,8 @@
     year={2021}
 }
 
-Paper link: [URL]
-Original code: [URL]
+Paper link: https://arxiv.org/abs/2103.14899
+Original code: https://github.com/IBM/CrossViT/blob/main/models/crossvit.py
 
 NOTE: model names have been renamed from originals to represent actual input res all *_224 -> *_240 and *_384 -> *_408
 
@@ -21,7 +21,7 @@ Modifications and additions for timm hacked together by / Copyright 2021, Ross W
 
 
 """
-Modifed from Timm. [URL]
+Modifed from Timm. https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 
 """
 from typing import Tuple
@@ -53,35 +53,35 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'crossvit_15_240': _cfg(url='[URL]'),
+    'crossvit_15_240': _cfg(url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_15_224.pth'),
     'crossvit_15_dagger_240': _cfg(
-        url='[URL]',
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_15_dagger_224.pth',
         first_conv=('patch_embed.0.proj.0', 'patch_embed.1.proj.0'),
     ),
     'crossvit_15_dagger_408': _cfg(
-        url='[URL]',
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_15_dagger_384.pth',
         input_size=(3, 408, 408), first_conv=('patch_embed.0.proj.0', 'patch_embed.1.proj.0'), crop_pct=1.0,
     ),
-    'crossvit_18_240': _cfg(url='[URL]'),
+    'crossvit_18_240': _cfg(url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_18_224.pth'),
     'crossvit_18_dagger_240': _cfg(
-        url='[URL]',
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_18_dagger_224.pth',
         first_conv=('patch_embed.0.proj.0', 'patch_embed.1.proj.0'),
     ),
     'crossvit_18_dagger_408': _cfg(
-        url='[URL]',
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_18_dagger_384.pth',
         input_size=(3, 408, 408), first_conv=('patch_embed.0.proj.0', 'patch_embed.1.proj.0'), crop_pct=1.0,
     ),
-    'crossvit_9_240': _cfg(url='[URL]'),
+    'crossvit_9_240': _cfg(url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_9_224.pth'),
     'crossvit_9_dagger_240': _cfg(
-        url='[URL]',
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_9_dagger_224.pth',
         first_conv=('patch_embed.0.proj.0', 'patch_embed.1.proj.0'),
     ),
     'crossvit_base_240': _cfg(
-        url='[URL]'),
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_base_224.pth'),
     'crossvit_small_240': _cfg(
-        url='[URL]'),
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_small_224.pth'),
     'crossvit_tiny_240': _cfg(
-        url='[URL]'),
+        url='https://github.com/IBM/CrossViT/releases/download/weights-0.1/crossvit_tiny_224.pth'),
 }
 
 

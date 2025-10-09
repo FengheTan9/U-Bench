@@ -187,3 +187,4 @@ class DC_Unet(torch.nn.Module):
 def dc_unet(input_channel,num_classes):
 
     return DC_Unet(out_channels=num_classes, in_channels=input_channel)
+

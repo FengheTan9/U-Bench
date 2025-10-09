@@ -3,10 +3,10 @@
 An SE implementation originally based on PyTorch SE-Net impl.
 Has since evolved with additional functionality / configuration.
 
-Paper: `Squeeze-and-Excitation Networks` - [URL]
+Paper: `Squeeze-and-Excitation Networks` - https://arxiv.org/abs/1709.01507
 
 Also included is Effective Squeeze-Excitation (ESE).
-Paper: `CenterMask : Real-Time Anchor-Free Instance Segmentation` - [URL]
+Paper: `CenterMask : Real-Time Anchor-Free Instance Segmentation` - https://arxiv.org/abs/1911.06667
 
 Hacked together by / Copyright 2021 Ross Wightman
 """
@@ -54,7 +54,7 @@ SqueezeExcite = SEModule  # alias
 
 class EffectiveSEModule(nn.Module):
     """ 'Effective Squeeze-Excitation
-    From `CenterMask : Real-Time Anchor-Free Instance Segmentation` - [URL]
+    From `CenterMask : Real-Time Anchor-Free Instance Segmentation` - https://arxiv.org/abs/1911.06667
     """
     def __init__(self, channels, add_maxpool=False, gate_layer='hard_sigmoid', **_):
         super(EffectiveSEModule, self).__init__()

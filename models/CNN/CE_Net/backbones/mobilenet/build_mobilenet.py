@@ -5,7 +5,7 @@ import torch.utils.model_zoo as model_zoo
 from .basic_module import ConvBNReLU, InvertedResidual, _make_divisible, load_model
 
 model_urls = {
-    'mobilenetv2_10': '[URL]',
+    'mobilenetv2_10': 'https://download.pytorch.org/models/mobilenet_v2-b0353104.pth',
 }
 
 
@@ -104,6 +104,7 @@ if __name__ == '__main__':
     print(feats[1].size())
     print(feats[2].size())
     print(feats[3].size())
+
 
 
 

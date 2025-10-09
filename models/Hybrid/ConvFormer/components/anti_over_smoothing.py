@@ -288,3 +288,4 @@ class Transformer_Refiner(nn.Module):
             ftokens.append(x)
             attmaps.append(amap)
         return x, ftokens, attmaps
+

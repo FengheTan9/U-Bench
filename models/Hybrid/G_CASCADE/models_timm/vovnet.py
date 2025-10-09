@@ -1,11 +1,11 @@
 """ VoVNet (V1 & V2)
 
 Papers:
-* `An Energy and GPU-Computation Efficient Backbone Network` - [URL]
-* `CenterMask : Real-Time Anchor-Free Instance Segmentation` - [URL]
+* `An Energy and GPU-Computation Efficient Backbone Network` - https://arxiv.org/abs/1904.09730
+* `CenterMask : Real-Time Anchor-Free Instance Segmentation` - https://arxiv.org/abs/1911.06667
 
-Looked at  [URL] &
-[URL]
+Looked at  https://github.com/youngwanLEE/vovnet-detectron2 &
+https://github.com/stigma0617/VoVNet.pytorch/blob/master/models_vovnet/vovnet.py
 for some reference, rewrote most of the code.
 
 Hacked together by / Copyright 2020 Ross Wightman
@@ -24,8 +24,8 @@ from .layers import ConvNormAct, SeparableConvNormAct, BatchNormAct2d, Classifie
     create_attn, create_norm_act_layer, get_norm_act_layer
 
 
-# model cfgs adapted from [URL] &
-# [URL]
+# model cfgs adapted from https://github.com/youngwanLEE/vovnet-detectron2 &
+# https://github.com/stigma0617/VoVNet.pytorch/blob/master/models_vovnet/vovnet.py
 model_cfgs = dict(
     vovnet39a=dict(
         stem_chs=[64, 64, 128],
@@ -150,10 +150,10 @@ default_cfgs = dict(
     vovnet57a=_cfg(url=''),
     ese_vovnet19b_slim_dw=_cfg(url=''),
     ese_vovnet19b_dw=_cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ese_vovnet19b_dw-a8741004.pth'),
     ese_vovnet19b_slim=_cfg(url=''),
     ese_vovnet39b=_cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ese_vovnet39b-f912fe73.pth'),
     ese_vovnet57b=_cfg(url=''),
     ese_vovnet99b=_cfg(url=''),
     eca_vovnet39b=_cfg(url=''),

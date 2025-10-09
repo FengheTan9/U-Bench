@@ -67,3 +67,4 @@ def debug_tile(out, size=(100, 100)):
             debug.append(log)
         debugs.append(np.vstack(debug))
     return np.hstack(debugs)
+

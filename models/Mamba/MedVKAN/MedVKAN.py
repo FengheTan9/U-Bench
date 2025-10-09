@@ -165,7 +165,7 @@ class PatchMerging2D(nn.Module):
 
 class PatchExpand(nn.Module):
     """
-    Reference: [URL]
+    Reference: https://arxiv.org/pdf/2105.05537.pdf
     """
     def __init__(self, input_resolution, dim, dim_scale=2, norm_layer=nn.LayerNorm):
         super().__init__()
@@ -272,7 +272,7 @@ class DW_bn_relu(nn.Module):
 
 class KANLinear(torch.nn.Module):
     r""" Core modules of KAN
-        Reference: [URL]
+        Reference: https://arxiv.org/abs/2404.19756
         """
     def __init__(
         self,
@@ -504,7 +504,7 @@ class KANLinear(torch.nn.Module):
 
 class KANLayer(nn.Module):
     r"""
-        Reference: [URL]
+        Reference: https://arxiv.org/pdf/2406.02918
         """
     def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=torch.nn.SiLU, drop=0., no_kan=False):
         super().__init__()
@@ -604,7 +604,7 @@ class KANBlock(nn.Module):
 
 class SS2D(nn.Module):  # SS2D Block
     r"""
-        Reference: [URL]
+        Reference: https://arxiv.org/abs/2401.10166
         """
     def __init__(
             self,
@@ -701,7 +701,7 @@ class SS2D(nn.Module):  # SS2D Block
             torch.rand(d_inner, **factory_kwargs) * (math.log(dt_max) - math.log(dt_min))
             + math.log(dt_min)
         ).clamp(min=dt_init_floor)
-        # Inverse of softplus: [URL]
+        # Inverse of softplus: https://github.com/pytorch/pytorch/issues/72759
         inv_dt = dt + torch.log(-torch.expm1(-dt))
         with torch.no_grad():
             dt_proj.bias.copy_(inv_dt)

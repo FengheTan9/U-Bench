@@ -190,8 +190,8 @@ class RotaryEmbedding(nn.Module):
     been well tested, and will likely change. It will be moved to its own file.
 
     The following impl/resources were referenced for this impl:
-    * [URL]
-    * [URL]
+    * https://github.com/lucidrains/vit-pytorch/blob/6f3a5fcf0bca1c5ec33a35ef48d97213709df4ba/vit_pytorch/rvt.py
+    * https://blog.eleuther.ai/rotary-embeddings/
     """
     def __init__(self, dim, max_res=224, linear_bands: bool = False):
         super().__init__()

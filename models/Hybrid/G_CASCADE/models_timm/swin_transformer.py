@@ -1,11 +1,11 @@
 """ Swin Transformer
 A PyTorch impl of : `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`
-    - [URL]
+    - https://arxiv.org/pdf/2103.14030
 
-Code/weights from [URL] original copyright/license info below
+Code/weights from https://github.com/microsoft/Swin-Transformer, original copyright/license info below
 
-S3 (AutoFormerV2, [URL] Swin weights from
-    - [URL]
+S3 (AutoFormerV2, https://arxiv.org/abs/2111.14725) Swin weights from
+    - https://github.com/microsoft/Cream/tree/main/AutoFormerV2
 
 Modifications and additions for timm hacked together by / Copyright 2021, Ross Wightman
 """
@@ -47,53 +47,53 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'swin_base_patch4_window12_384': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22kto1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
 
     'swin_base_patch4_window7_224': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22kto1k.pth',
     ),
 
     'swin_large_patch4_window12_384': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22kto1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
 
     'swin_large_patch4_window7_224': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22kto1k.pth',
     ),
 
     'swin_small_patch4_window7_224': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_small_patch4_window7_224.pth',
     ),
 
     'swin_tiny_patch4_window7_224': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth',
     ),
 
     'swin_base_patch4_window12_384_in22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth',
         input_size=(3, 384, 384), crop_pct=1.0, num_classes=21841),
 
     'swin_base_patch4_window7_224_in22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22k.pth',
         num_classes=21841),
 
     'swin_large_patch4_window12_384_in22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window12_384_22k.pth',
         input_size=(3, 384, 384), crop_pct=1.0, num_classes=21841),
 
     'swin_large_patch4_window7_224_in22k': _cfg(
-        url='[URL]',
+        url='https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth',
         num_classes=21841),
 
     'swin_s3_tiny_224': _cfg(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/s3_t-1d53f6a8.pth'
     ),
     'swin_s3_small_224': _cfg(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/s3_s-3bb4c69d.pth'
     ),
     'swin_s3_base_224': _cfg(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/s3_b-a1e95db4.pth'
     )
 }
 
@@ -426,7 +426,7 @@ class BasicLayer(nn.Module):
 class SwinTransformer(nn.Module):
     r""" Swin Transformer
         A PyTorch impl of : `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`  -
-          [URL]
+          https://arxiv.org/pdf/2103.14030
 
     Args:
         img_size (int | tuple(int)): Input image size. Default 224
@@ -671,7 +671,7 @@ def swin_large_patch4_window7_224_in22k(pretrained=False, **kwargs):
 
 @register_model
 def swin_s3_tiny_224(pretrained=False, **kwargs):
-    """ Swin-S3-T @ 224x224, ImageNet-1k. [URL]
+    """ Swin-S3-T @ 224x224, ImageNet-1k. https://arxiv.org/abs/2111.14725
     """
     model_kwargs = dict(
         patch_size=4, window_size=(7, 7, 14, 7), embed_dim=96, depths=(2, 2, 6, 2),
@@ -681,7 +681,7 @@ def swin_s3_tiny_224(pretrained=False, **kwargs):
 
 @register_model
 def swin_s3_small_224(pretrained=False, **kwargs):
-    """ Swin-S3-S @ 224x224, trained ImageNet-1k. [URL]
+    """ Swin-S3-S @ 224x224, trained ImageNet-1k. https://arxiv.org/abs/2111.14725
     """
     model_kwargs = dict(
         patch_size=4, window_size=(14, 14, 14, 7), embed_dim=96, depths=(2, 2, 18, 2),
@@ -691,9 +691,10 @@ def swin_s3_small_224(pretrained=False, **kwargs):
 
 @register_model
 def swin_s3_base_224(pretrained=False, **kwargs):
-    """ Swin-S3-B @ 224x224, trained ImageNet-1k. [URL]
+    """ Swin-S3-B @ 224x224, trained ImageNet-1k. https://arxiv.org/abs/2111.14725
     """
     model_kwargs = dict(
         patch_size=4, window_size=(7, 7, 14, 7), embed_dim=96, depths=(2, 2, 30, 2),
         num_heads=(3, 6, 12, 24), **kwargs)
     return _create_swin_transformer('swin_s3_base_224', pretrained=pretrained, **model_kwargs)
+

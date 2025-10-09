@@ -1,6 +1,6 @@
 """VGG
 
-Adapted from [URL] 'vgg.py' (BSD-3-Clause) with a few changes for
+Adapted from https://github.com/pytorch/vision 'vgg.py' (BSD-3-Clause) with a few changes for
 timm functionality.
 
 Copyright 2021 Ross Wightman
@@ -34,14 +34,14 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'vgg11': _cfg(url='[URL]'),
-    'vgg13': _cfg(url='[URL]'),
-    'vgg16': _cfg(url='[URL]'),
-    'vgg19': _cfg(url='[URL]'),
-    'vgg11_bn': _cfg(url='[URL]'),
-    'vgg13_bn': _cfg(url='[URL]'),
-    'vgg16_bn': _cfg(url='[URL]'),
-    'vgg19_bn': _cfg(url='[URL]'),
+    'vgg11': _cfg(url='https://download.pytorch.org/models/vgg11-bbd30ac9.pth'),
+    'vgg13': _cfg(url='https://download.pytorch.org/models/vgg13-c768596a.pth'),
+    'vgg16': _cfg(url='https://download.pytorch.org/models/vgg16-397923af.pth'),
+    'vgg19': _cfg(url='https://download.pytorch.org/models/vgg19-dcbb9e9d.pth'),
+    'vgg11_bn': _cfg(url='https://download.pytorch.org/models/vgg11_bn-6002323d.pth'),
+    'vgg13_bn': _cfg(url='https://download.pytorch.org/models/vgg13_bn-abd245e5.pth'),
+    'vgg16_bn': _cfg(url='https://download.pytorch.org/models/vgg16_bn-6c64b313.pth'),
+    'vgg19_bn': _cfg(url='https://download.pytorch.org/models/vgg19_bn-c79401a0.pth'),
 }
 
 
@@ -210,7 +210,7 @@ def _create_vgg(variant: str, pretrained: bool, **kwargs: Any) -> VGG:
 @register_model
 def vgg11(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 11-layer model (configuration "A") from
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(**kwargs)
     return _create_vgg('vgg11', pretrained=pretrained, **model_args)
@@ -219,7 +219,7 @@ def vgg11(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg11_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 11-layer model (configuration "A") with batch normalization
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(norm_layer=nn.BatchNorm2d, **kwargs)
     return _create_vgg('vgg11_bn', pretrained=pretrained, **model_args)
@@ -228,7 +228,7 @@ def vgg11_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg13(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 13-layer model (configuration "B")
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(**kwargs)
     return _create_vgg('vgg13', pretrained=pretrained, **model_args)
@@ -237,7 +237,7 @@ def vgg13(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg13_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 13-layer model (configuration "B") with batch normalization
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(norm_layer=nn.BatchNorm2d, **kwargs)
     return _create_vgg('vgg13_bn', pretrained=pretrained, **model_args)
@@ -246,7 +246,7 @@ def vgg13_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg16(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 16-layer model (configuration "D")
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(**kwargs)
     return _create_vgg('vgg16', pretrained=pretrained, **model_args)
@@ -255,7 +255,7 @@ def vgg16(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg16_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 16-layer model (configuration "D") with batch normalization
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(norm_layer=nn.BatchNorm2d, **kwargs)
     return _create_vgg('vgg16_bn', pretrained=pretrained, **model_args)
@@ -264,7 +264,7 @@ def vgg16_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg19(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 19-layer model (configuration "E")
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(**kwargs)
     return _create_vgg('vgg19', pretrained=pretrained, **model_args)
@@ -273,7 +273,7 @@ def vgg19(pretrained: bool = False, **kwargs: Any) -> VGG:
 @register_model
 def vgg19_bn(pretrained: bool = False, **kwargs: Any) -> VGG:
     r"""VGG 19-layer model (configuration 'E') with batch normalization
-    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <[URL]
+    `"Very Deep Convolutional Networks For Large-Scale Image Recognition" <https://arxiv.org/pdf/1409.1556.pdf>`._
     """
     model_args = dict(norm_layer=nn.BatchNorm2d, **kwargs)
     return _create_vgg('vgg19_bn', pretrained=pretrained, **model_args)

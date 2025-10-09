@@ -7,7 +7,7 @@
   year={2022}
 }
 
-Code adapted from original Apache 2.0 licensed impl at [URL]
+Code adapted from original Apache 2.0 licensed impl at https://github.com/facebookresearch/mvit
 Original copyright below.
 
 Modifications and timm support by / Copyright 2022, Ross Wightman
@@ -43,19 +43,19 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = dict(
-    mvitv2_tiny=_cfg(url='[URL]'),
-    mvitv2_small=_cfg(url='[URL]'),
-    mvitv2_base=_cfg(url='[URL]'),
-    mvitv2_large=_cfg(url='[URL]'),
+    mvitv2_tiny=_cfg(url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_T_in1k.pyth'),
+    mvitv2_small=_cfg(url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_S_in1k.pyth'),
+    mvitv2_base=_cfg(url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_B_in1k.pyth'),
+    mvitv2_large=_cfg(url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_L_in1k.pyth'),
 
     mvitv2_base_in21k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_B_in21k.pyth',
         num_classes=19168),
     mvitv2_large_in21k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_L_in21k.pyth',
         num_classes=19168),
     mvitv2_huge_in21k=_cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/mvit/mvitv2_models/MViTv2_H_in21k.pyth',
         num_classes=19168),
 
     mvitv2_small_cls=_cfg(url=''),
@@ -749,12 +749,12 @@ class MultiScaleVit(nn.Module):
     Improved Multiscale Vision Transformers for Classification and Detection
     Yanghao Li*, Chao-Yuan Wu*, Haoqi Fan, Karttikeya Mangalam, Bo Xiong, Jitendra Malik,
         Christoph Feichtenhofer*
-    [URL]
+    https://arxiv.org/abs/2112.01526
 
     Multiscale Vision Transformers
     Haoqi Fan*, Bo Xiong*, Karttikeya Mangalam*, Yanghao Li*, Zhicheng Yan, Jitendra Malik,
         Christoph Feichtenhofer*
-    [URL]
+    https://arxiv.org/abs/2104.11227
     """
 
     def __init__(

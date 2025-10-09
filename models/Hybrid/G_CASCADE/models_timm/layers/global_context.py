@@ -1,9 +1,9 @@
 """ Global Context Attention Block
 
 Paper: `GCNet: Non-local Networks Meet Squeeze-Excitation Networks and Beyond`
-    - [URL]
+    - https://arxiv.org/abs/1904.11492
 
-Official code consulted as reference: [URL]
+Official code consulted as reference: https://github.com/xvjiarui/GCNet
 
 Hacked together by / Copyright 2021 Ross Wightman
 """

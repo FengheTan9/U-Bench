@@ -1,5 +1,5 @@
 """ PyTorch FX Based Feature Extraction Helpers
-Using [URL]
+Using https://pytorch.org/vision/stable/feature_extraction.html
 """
 from typing import Callable, List, Dict, Union, Type
 

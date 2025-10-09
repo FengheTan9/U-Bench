@@ -17,7 +17,7 @@ def get_hiformer_s_configs():
     cfg.num_classes = 9
     if not os.path.isfile('./weights/swin_tiny_patch4_window7_224.pth'):
         print('Downloading Swin-transformer model ...')
-        wget.download("[URL]", "./weights/swin_tiny_patch4_window7_224.pth")    
+        wget.download("https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth", "./weights/swin_tiny_patch4_window7_224.pth")    
     cfg.swin_pretrained_path = './weights/swin_tiny_patch4_window7_224.pth'
 
     # CNN Configs
@@ -51,7 +51,7 @@ def get_hiformer_b_configs():
     cfg.num_classes = 9
     #if not os.path.isfile('./weights/swin_tiny_patch4_window7_224.pth'):
     #    print('Downloading Swin-transformer model ...')
-    #    wget.download("[URL]", "./weights/swin_tiny_patch4_window7_224.pth")    
+    #    wget.download("https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth", "./weights/swin_tiny_patch4_window7_224.pth")    
     #cfg.swin_pretrained_path = './weights/swin_tiny_patch4_window7_224.pth'
 
     # CNN Configs
@@ -84,7 +84,7 @@ def get_hiformer_l_configs():
     cfg.num_classes = 9
     if not os.path.isfile('./weights/swin_tiny_patch4_window7_224.pth'):
         print('Downloading Swin-transformer model ...')
-        wget.download("[URL]", "./weights/swin_tiny_patch4_window7_224.pth")    
+        wget.download("https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth", "./weights/swin_tiny_patch4_window7_224.pth")    
     cfg.swin_pretrained_path = './weights/swin_tiny_patch4_window7_224.pth'
 
     # CNN Configs

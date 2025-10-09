@@ -2,7 +2,7 @@
 
 A convolution based approach to patchifying a 2D image w/ embedding projection.
 
-Based on the impl in [URL]
+Based on the impl in https://github.com/google-research/vision_transformer
 
 Hacked together by / Copyright 2020 Ross Wightman
 """

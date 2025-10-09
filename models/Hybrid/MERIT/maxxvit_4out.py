@@ -3,10 +3,10 @@
 This is a from-scratch implementation of both CoAtNet and MaxVit in PyTorch.
 
 99% of the implementation was done from papers, however last minute some adjustments were made
-based on the (as yet unfinished?) public code release [URL]
+based on the (as yet unfinished?) public code release https://github.com/google-research/maxvit
 
 There are multiple sets of models defined for both architectures. Typically, names with a
- `_rw` suffix are my own original configs prior to referencing [URL]
+ `_rw` suffix are my own original configs prior to referencing https://github.com/google-research/maxvit.
 These configs work well and appear to be a bit faster / lower resource than the paper.
 
 The models without extra prefix / suffix' (coatnet_0_224, maxvit_tiny_224, etc), are intended to
@@ -17,15 +17,15 @@ This impl remains a WIP, some configs and models may vanish or change...
 
 Papers:
 
-MaxViT: Multi-Axis Vision Transformer - [URL]
+MaxViT: Multi-Axis Vision Transformer - https://arxiv.org/abs/2204.01697
 @article{tu2022maxvit,
   title={MaxViT: Multi-Axis Vision Transformer},
-  author={Tu, Zhengzhong and Talebi, Hossein and Zhang, Han and Yang, XXXX-5 and Milanfar, Peyman and Bovik, Alan and Li, Yinxiao},
+  author={Tu, Zhengzhong and Talebi, Hossein and Zhang, Han and Yang, Feng and Milanfar, Peyman and Bovik, Alan and Li, Yinxiao},
   journal={ECCV},
   year={2022},
 }
 
-CoAtNet: Marrying Convolution and Attention for All Data Sizes - [URL]
+CoAtNet: Marrying Convolution and Attention for All Data Sizes - https://arxiv.org/abs/2106.04803
 @article{DBLP:journals/corr/abs-2106-04803,
   author    = {Zihang Dai and Hanxiao Liu and Quoc V. Le and Mingxing Tan},
   title     = {CoAtNet: Marrying Convolution and Attention for All Data Sizes},
@@ -75,33 +75,33 @@ default_cfgs = {
     # Fiddling with configs / defaults / still pretraining
     'coatnet_pico_rw_224': _cfg(url=''),
     'coatnet_nano_rw_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_nano_rw_224_sw-f53093b4.pth',
         crop_pct=0.9),
     'coatnet_0_rw_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_0_rw_224_sw-a6439706.pth'),
     'coatnet_1_rw_224': _cfg(
-        url='[URL]'
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_1_rw_224_sw-5cae1ea8.pth'
     ),
     'coatnet_2_rw_224': _cfg(url=''),
     'coatnet_3_rw_224': _cfg(url=''),
 
     # Highly experimental configs
     'coatnet_bn_0_rw_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_bn_0_rw_224_sw-c228e218.pth',
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD,
         crop_pct=0.95),
     'coatnet_rmlp_nano_rw_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_rmlp_nano_rw_224_sw-bd1d51b3.pth',
         crop_pct=0.9),
     'coatnet_rmlp_0_rw_224': _cfg(url=''),
     'coatnet_rmlp_1_rw_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_rmlp_1_rw_224_sw-9051e6c3.pth'),
     'coatnet_rmlp_2_rw_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnet_rmlp_2_rw_224_sw-5ccfac55.pth'),
     'coatnet_rmlp_3_rw_224': _cfg(url=''),
     'coatnet_nano_cc_224': _cfg(url=''),
     'coatnext_nano_rw_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/coatnext_nano_rw_224_ad-22cb71c2.pth',
         crop_pct=0.9),
 
     # Trying to be like the CoAtNet paper configs
@@ -115,24 +115,24 @@ default_cfgs = {
     # Experimental configs
     'maxvit_pico_rw_256': _cfg(url='', input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_nano_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_nano_rw_256_sw-fb127241.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_tiny_rw_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_tiny_rw_224_sw-7d0dffeb.pth'),
     'maxvit_tiny_rw_256': _cfg(
         url='',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_rmlp_pico_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_pico_rw_256_sw-8d82f2c6.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_rmlp_nano_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_nano_rw_256_sw-c17bb0d6.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_rmlp_tiny_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_tiny_rw_256_sw-bbef0ff5.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxvit_rmlp_small_rw_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth',
         crop_pct=0.9,
     ),
     'maxvit_rmlp_small_rw_256': _cfg(
@@ -142,11 +142,11 @@ default_cfgs = {
     'maxvit_tiny_pm_256': _cfg(url='', input_size=(3, 256, 256), pool_size=(8, 8)),
 
     'maxxvit_rmlp_nano_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxxvit_rmlp_nano_rw_256_sw-0325d459.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxxvit_rmlp_tiny_rw_256': _cfg(url='', input_size=(3, 256, 256), pool_size=(8, 8)),
     'maxxvit_rmlp_small_rw_256': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
 
     # Trying to be like the MaxViT paper configs
@@ -249,7 +249,7 @@ def _rw_coat_cfg(
         rel_pos_type='bias',
         rel_pos_dim=512,
 ):
-    # 'RW' timm variant models were created and trained before seeing [URL]
+    # 'RW' timm variant models were created and trained before seeing https://github.com/google-research/maxvit
     # Common differences for initial timm models:
     # - pre-norm layer in MZBConv included an activation after norm
     # - mbconv expansion calculated from input instead of output chs
@@ -301,7 +301,7 @@ def _rw_max_cfg(
         rel_pos_type='bias',
         rel_pos_dim=512,
 ):
-    # 'RW' timm variant models were created and trained before seeing [URL]
+    # 'RW' timm variant models were created and trained before seeing https://github.com/google-research/maxvit
     # Differences of initial timm models:
     # - mbconv expansion calculated from input instead of output chs
     # - mbconv shortcut and final 1x1 conv did not have a bias

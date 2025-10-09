@@ -81,7 +81,7 @@ class UNet_Attention_Transformer_Multiscale(nn.Module):
 
 def trans_attention_unet(num_classes, input_channel=3):
     model = UNet_Attention_Transformer_Multiscale(input_channel=input_channel, num_classes=num_classes)
-    save_model = load_state_dict_from_url("[URL]", progress=True)
+    save_model = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/resolve/main/TransAttUnet.pth", progress=True)
     save_model.pop('inc.double_conv.0.weight')
     save_model.pop('outc.conv.weight')
     save_model.pop('outc.conv.bias')

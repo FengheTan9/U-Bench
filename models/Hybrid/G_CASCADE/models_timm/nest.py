@@ -3,9 +3,9 @@
 A PyTorch implement of Aggregating Nested Transformers as described in:
 
 'Aggregating Nested Transformers'
-    - [URL]
+    - https://arxiv.org/abs/2105.12723
 
-The official Jax code is released and available at [URL] The weights
+The official Jax code is released and available at https://github.com/google-research/nested-transformer. The weights
 have been converted with convert/convert_nest_flax.py
 
 Acknowledgments:
@@ -52,11 +52,11 @@ default_cfgs = {
     'nest_small': _cfg(),
     'nest_tiny': _cfg(),
     'jx_nest_base': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/jx_nest_base-8bc41011.pth'),
     'jx_nest_small': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/jx_nest_small-422eaded.pth'),
     'jx_nest_tiny': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/jx_nest_tiny-e3428fb9.pth'),
 }
 
 
@@ -219,7 +219,7 @@ class Nest(nn.Module):
     """ Nested Transformer (NesT)
 
     A PyTorch impl of : `Aggregating Nested Transformers`
-        - [URL]
+        - https://arxiv.org/abs/2105.12723
     """
 
     def __init__(
@@ -253,7 +253,7 @@ class Nest(nn.Module):
             - Default values follow NesT-B from the original Jax code.
             - `embed_dims`, `num_heads`, `depths` should be ints or tuples with length `num_levels`.
             - For those following the paper, Table A1 may have errors!
-                - [URL]
+                - https://github.com/google-research/nested-transformer/issues/2
         """
         super().__init__()
 

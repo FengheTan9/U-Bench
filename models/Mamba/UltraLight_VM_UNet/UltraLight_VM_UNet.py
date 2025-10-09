@@ -248,3 +248,4 @@ class UltraLight_VM_UNet(nn.Module):
 def ultralight_vm_unet(num_classes, input_channel=3):
     model = UltraLight_VM_UNet(input_channel=input_channel, num_classes=num_classes)
     return model        
+

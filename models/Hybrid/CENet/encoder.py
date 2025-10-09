@@ -16,7 +16,7 @@ def get_encoder2d(input_channels=1, encoder='pvt_v2_b2', pretrain=False, freeze_
             channels=[512, 320, 128, 64]
         elif encoder == 'pvt_v2_b2':
             backbone = pvt_v2_b2()
-            path = '[URL]'
+            path = 'https://huggingface.co/FengheTan9/U-Stone/resolve/main/pvt_v2_b2.pth'
             channels=[512, 320, 128, 64]
         
 

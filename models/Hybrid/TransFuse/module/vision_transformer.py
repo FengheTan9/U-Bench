@@ -1,7 +1,7 @@
 """ Vision Transformer (ViT) in PyTorch
 A PyTorch implement of Vision Transformers as described in
-'An Image Is Worth 16 x 16 Words: Transformers for Image Recognition at Scale' - [URL]
-The official jax code is released and available at [URL]
+'An Image Is Worth 16 x 16 Words: Transformers for Image Recognition at Scale' - https://arxiv.org/abs/2010.11929
+The official jax code is released and available at https://github.com/google-research/vision_transformer
 Status/TODO:
 * Models updated to be compatible with official impl. Args added to support backward compat for old PyTorch weights.
 * Weights ported from official jax impl for 384x384 base and small models, 16x16 and 32x32 patches.
@@ -9,9 +9,9 @@ Status/TODO:
 * Hopefully find time and GPUs for SSL or unsupervised pretraining on OpenImages w/ ImageNet fine-tune in future.
 Acknowledgments:
 * The paper authors for releasing code and weights, thanks!
-* I fixed my class token impl based on Phil Wang's [URL] ... check it out
+* I fixed my class token impl based on Phil Wang's https://github.com/lucidrains/vit-pytorch ... check it out
 for some einops/einsum fun
-* Simple transformer style inspired by Andrej Karpathy's [URL]
+* Simple transformer style inspired by Andrej Karpathy's https://github.com/karpathy/minGPT
 * Bert reference code checks against Huggingface Transformers and Tensorflow Bert
 Hacked together by / Copyright 2020 Ross Wightman
 """
@@ -41,26 +41,26 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # patch models
     'vit_small_patch16_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/vit_small_p16_224-15ec54c9.pth',
     ),
     'vit_base_patch16_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_224-80ecf9dd.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5),
     ),
     'vit_base_patch16_384': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p16_384-83fb41ba.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0),
     'vit_base_patch32_384': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_base_p32_384-830016f5.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0),
     'vit_large_patch16_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_224-4ee7a4dc.pth',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)),
     'vit_large_patch16_384': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0),
     'vit_large_patch32_384': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p32_384-9b920ba8.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0),
     'vit_huge_patch16_224': _cfg(),
     'vit_huge_patch32_384': _cfg(input_size=(3, 384, 384)),

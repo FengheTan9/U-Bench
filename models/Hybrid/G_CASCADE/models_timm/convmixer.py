@@ -22,9 +22,9 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'convmixer_1536_20': _cfg(url='[URL]'),
-    'convmixer_768_32': _cfg(url='[URL]'),
-    'convmixer_1024_20_ks9_p14': _cfg(url='[URL]')
+    'convmixer_1536_20': _cfg(url='https://github.com/tmp-iclr/convmixer/releases/download/timm-v1.0/convmixer_1536_20_ks9_p7.pth.tar'),
+    'convmixer_768_32': _cfg(url='https://github.com/tmp-iclr/convmixer/releases/download/timm-v1.0/convmixer_768_32_ks7_p7_relu.pth.tar'),
+    'convmixer_1024_20_ks9_p14': _cfg(url='https://github.com/tmp-iclr/convmixer/releases/download/timm-v1.0/convmixer_1024_20_ks9_p14.pth.tar')
 }
 
 

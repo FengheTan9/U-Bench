@@ -881,7 +881,7 @@ class AxialAttentionNet(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         if zero_init_residual:
             for m in self.modules():
                 if isinstance(m, AxialBlock):
@@ -1006,7 +1006,7 @@ class ResAxialAttentionUNet(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -1155,7 +1155,7 @@ class unetplus(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -1310,7 +1310,7 @@ class mix(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -1525,7 +1525,7 @@ class mix_wopos(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -1757,7 +1757,7 @@ class mix_wopos_512(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -1975,7 +1975,7 @@ class mix_512(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):
@@ -2150,7 +2150,7 @@ class ResAxialAttentionUNetshallow(nn.Module):
 
         # Zero-initialize the last BN in each residual branch,
         # so that the residual branch starts with zeros, and each residual block behaves like an identity.
-        # This improves the model by 0.2~0.3% according to [URL]
+        # This improves the model by 0.2~0.3% according to https://arxiv.org/abs/1706.02677
         # if zero_init_residual:
         #     for m in self.modules():
         #         if isinstance(m, AxialBlock):

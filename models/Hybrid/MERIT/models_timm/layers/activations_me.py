@@ -28,7 +28,7 @@ def swish_jit_bwd(x, grad_output):
 class SwishJitAutoFn(torch.autograd.Function):
     """ torch.jit.script optimised Swish w/ memory-efficient checkpoint
     Inspired by conversation btw Jeremy Howard & Adam Pazske
-    [URL]
+    https://twitter.com/jeremyphoward/status/1188251041835315200
     """
     @staticmethod
     def symbolic(g, x):
@@ -70,7 +70,7 @@ def mish_jit_bwd(x, grad_output):
 
 
 class MishJitAutoFn(torch.autograd.Function):
-    """ Mish: A Self Regularized Non-Monotonic Neural Activation Function - [URL]
+    """ Mish: A Self Regularized Non-Monotonic Neural Activation Function - https://arxiv.org/abs/1908.08681
     A memory efficient, jit scripted variant of Mish
     """
     @staticmethod
@@ -190,7 +190,7 @@ def hard_mish_jit_bwd(x, grad_output):
 class HardMishJitAutoFn(torch.autograd.Function):
     """ A memory efficient, jit scripted variant of Hard Mish
     Experimental, based on notes by Mish author Diganta Misra at
-      [URL]
+      https://github.com/digantamisra98/H-Mish/blob/0da20d4bc58e696b6803f2523c58d3c8a82782d0/README.md
     """
     @staticmethod
     def forward(ctx, x):
@@ -213,5 +213,6 @@ class HardMishMe(nn.Module):
 
     def forward(self, x):
         return HardMishJitAutoFn.apply(x)
+
 
 

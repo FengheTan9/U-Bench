@@ -43,12 +43,12 @@ def load_pretrained_weights(img_size, model_scale):
     elif(model_scale=='small'):
         if img_size==224:
             backbone = maxvit_rmlp_small_rw_224_4out()  # [64, 128, 320, 512]
-            state_dict = load_state_dict_from_url("[URL]", progress=True)
+            state_dict = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/blob/main/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth", progress=True)
             
             #print('Loading:', './pretrained_pth/maxvit/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth')
         elif(img_size==256):
             backbone = maxxvit_rmlp_small_rw_256_4out()
-            state_dict = load_state_dict_from_url("[URL]", progress=True)
+            state_dict = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/blob/main/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth", progress=True)
             
             #print('Loading:', './pretrained_pth/maxvit/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth')
             #state_dict = torch.load('./pretrained_pth/maxvit/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth')
@@ -542,11 +542,11 @@ class MERIT_Cascaded(nn.Module):
         self.backbone2 = maxvit_rmlp_small_rw_224_4out()  # [64, 128, 320, 512]
         
         print('Loading:', './pretrained_pth/maxvit/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth')
-        state_dict1 = load_state_dict_from_url("[URL]", progress=True)
+        state_dict1 = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/resolve/main/maxxvit_rmlp_small_rw_256_sw-37e217ff.pth", progress=True)
         self.backbone1.load_state_dict(state_dict1, strict=False)
         
         print('Loading:', './pretrained_pth/maxvit/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth')       
-        state_dict2 = load_state_dict_from_url("[URL]", progress=True)  
+        state_dict2 = load_state_dict_from_url("https://huggingface.co/FengheTan9/U-Stone/resolve/main/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth", progress=True)  
         self.backbone2.load_state_dict(state_dict2, strict=False)
         
         print('Pretrain weights loaded.')
@@ -865,3 +865,4 @@ class MERIT_Cascaded_Small(nn.Module):
 def merit(num_classes, input_channel=3):
     model = MERIT_Cascaded(num_classes=num_classes, input_channel=input_channel)
     return model
+

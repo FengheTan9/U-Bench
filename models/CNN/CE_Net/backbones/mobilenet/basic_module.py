@@ -11,7 +11,7 @@ def _make_divisible(v, divisor, min_value=None):
     This function is taken from the original pytorch repo
     It ensures that all layers have a channel number that is divisable by 8
     it can be seen here:
-    [URL]
+    https://pytorch.org/vision/stable/_modules/torchvision/models/mobilenetv2.html
     :param v:
     :param divisor:
     :param min_value:

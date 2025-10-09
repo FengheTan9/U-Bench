@@ -1,10 +1,10 @@
 """ DeiT - Data-efficient Image Transformers
 
-DeiT model defs and weights from [URL] original copyright below
+DeiT model defs and weights from https://github.com/facebookresearch/deit, original copyright below
 
-paper: `DeiT: Data-efficient Image Transformers` - [URL]
+paper: `DeiT: Data-efficient Image Transformers` - https://arxiv.org/abs/2012.12877
 
-paper: `DeiT III: Revenge of the ViT` - [URL]
+paper: `DeiT III: Revenge of the ViT` - https://arxiv.org/abs/2204.07118
 
 Modifications copyright 2021, Ross Wightman
 """
@@ -36,72 +36,72 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # deit models (FB weights)
     'deit_tiny_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_tiny_patch16_224-a1311bcf.pth'),
     'deit_small_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth'),
     'deit_base_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth'),
     'deit_base_patch16_384': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_base_patch16_384-8de9b5d1.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
 
     'deit_tiny_distilled_patch16_224': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_tiny_distilled_patch16_224-b40b3cf7.pth',
         classifier=('head', 'head_dist')),
     'deit_small_distilled_patch16_224': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_small_distilled_patch16_224-649709d9.pth',
         classifier=('head', 'head_dist')),
     'deit_base_distilled_patch16_224': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth',
         classifier=('head', 'head_dist')),
     'deit_base_distilled_patch16_384': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth',
         input_size=(3, 384, 384), crop_pct=1.0,
         classifier=('head', 'head_dist')),
 
     'deit3_small_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_small_224_1k.pth'),
     'deit3_small_patch16_384': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_small_384_1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_medium_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_medium_224_1k.pth'),
     'deit3_base_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_base_224_1k.pth'),
     'deit3_base_patch16_384': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_base_384_1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_large_patch16_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_large_224_1k.pth'),
     'deit3_large_patch16_384': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_large_384_1k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_huge_patch14_224': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_huge_224_1k.pth'),
 
     'deit3_small_patch16_224_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_small_224_21k.pth',
         crop_pct=1.0),
     'deit3_small_patch16_384_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_small_384_21k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_medium_patch16_224_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_medium_224_21k.pth',
         crop_pct=1.0),
     'deit3_base_patch16_224_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_base_224_21k.pth',
         crop_pct=1.0),
     'deit3_base_patch16_384_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_base_384_21k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_large_patch16_224_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_large_224_21k.pth',
         crop_pct=1.0),
     'deit3_large_patch16_384_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_large_384_21k.pth',
         input_size=(3, 384, 384), crop_pct=1.0),
     'deit3_huge_patch14_224_in21ft1k': _cfg(
-        url='[URL]',
+        url='https://dl.fbaipublicfiles.com/deit/deit_3_huge_224_21k_v1.pth',
         crop_pct=1.0),
 }
 
@@ -110,7 +110,7 @@ class VisionTransformerDistilled(VisionTransformer):
     """ Vision Transformer w/ Distillation Token and Head
 
     Distillation token & head support for `DeiT: Data-efficient Image Transformers`
-        - [URL]
+        - https://arxiv.org/abs/2012.12877
     """
 
     def __init__(self, *args, **kwargs):
@@ -191,8 +191,8 @@ def _create_deit(variant, pretrained=False, distilled=False, **kwargs):
 
 @register_model
 def deit_tiny_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-tiny model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-tiny model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=192, depth=12, num_heads=3, **kwargs)
     model = _create_deit('deit_tiny_patch16_224', pretrained=pretrained, **model_kwargs)
@@ -201,8 +201,8 @@ def deit_tiny_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_small_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-small model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-small model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=384, depth=12, num_heads=6, **kwargs)
     model = _create_deit('deit_small_patch16_224', pretrained=pretrained, **model_kwargs)
@@ -211,8 +211,8 @@ def deit_small_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_base_patch16_224(pretrained=False, **kwargs):
-    """ DeiT base model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT base model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=768, depth=12, num_heads=12, **kwargs)
     model = _create_deit('deit_base_patch16_224', pretrained=pretrained, **model_kwargs)
@@ -221,8 +221,8 @@ def deit_base_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_base_patch16_384(pretrained=False, **kwargs):
-    """ DeiT base model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT base model @ 384x384 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=768, depth=12, num_heads=12, **kwargs)
     model = _create_deit('deit_base_patch16_384', pretrained=pretrained, **model_kwargs)
@@ -231,8 +231,8 @@ def deit_base_patch16_384(pretrained=False, **kwargs):
 
 @register_model
 def deit_tiny_distilled_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-tiny distilled model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-tiny distilled model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=192, depth=12, num_heads=3, **kwargs)
     model = _create_deit(
@@ -242,8 +242,8 @@ def deit_tiny_distilled_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_small_distilled_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-small distilled model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-small distilled model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=384, depth=12, num_heads=6, **kwargs)
     model = _create_deit(
@@ -253,8 +253,8 @@ def deit_small_distilled_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_base_distilled_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-base distilled model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-base distilled model @ 224x224 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=768, depth=12, num_heads=12, **kwargs)
     model = _create_deit(
@@ -264,8 +264,8 @@ def deit_base_distilled_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit_base_distilled_patch16_384(pretrained=False, **kwargs):
-    """ DeiT-base distilled model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-base distilled model @ 384x384 from paper (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(patch_size=16, embed_dim=768, depth=12, num_heads=12, **kwargs)
     model = _create_deit(
@@ -275,8 +275,8 @@ def deit_base_distilled_patch16_384(pretrained=False, **kwargs):
 
 @register_model
 def deit3_small_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-3 small model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 small model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=384, depth=12, num_heads=6, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -286,8 +286,8 @@ def deit3_small_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit3_small_patch16_384(pretrained=False, **kwargs):
-    """ DeiT-3 small model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 small model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=384, depth=12, num_heads=6, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -297,8 +297,8 @@ def deit3_small_patch16_384(pretrained=False, **kwargs):
 
 @register_model
 def deit3_medium_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-3 medium model @ 224x224 ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 medium model @ 224x224 (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=512, depth=12, num_heads=8, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -308,8 +308,8 @@ def deit3_medium_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit3_base_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 base model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -319,8 +319,8 @@ def deit3_base_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit3_base_patch16_384(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 base model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -330,8 +330,8 @@ def deit3_base_patch16_384(pretrained=False, **kwargs):
 
 @register_model
 def deit3_large_patch16_224(pretrained=False, **kwargs):
-    """ DeiT-3 large model @ 224x224 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 large model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=1024, depth=24, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -341,8 +341,8 @@ def deit3_large_patch16_224(pretrained=False, **kwargs):
 
 @register_model
 def deit3_large_patch16_384(pretrained=False, **kwargs):
-    """ DeiT-3 large model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 large model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=1024, depth=24, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -352,8 +352,8 @@ def deit3_large_patch16_384(pretrained=False, **kwargs):
 
 @register_model
 def deit3_huge_patch14_224(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 384x384 from paper ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 base model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=14, embed_dim=1280, depth=32, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -363,8 +363,8 @@ def deit3_huge_patch14_224(pretrained=False, **kwargs):
 
 @register_model
 def deit3_small_patch16_224_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 small model @ 224x224 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 small model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=384, depth=12, num_heads=6, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -374,8 +374,8 @@ def deit3_small_patch16_224_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_small_patch16_384_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 small model @ 384x384 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 small model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=384, depth=12, num_heads=6, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -385,8 +385,8 @@ def deit3_small_patch16_384_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_medium_patch16_224_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 medium model @ 224x224 ([URL]
-    ImageNet-1k weights from [URL]
+    """ DeiT-3 medium model @ 224x224 (https://arxiv.org/abs/2012.12877).
+    ImageNet-1k weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=512, depth=12, num_heads=8, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -396,8 +396,8 @@ def deit3_medium_patch16_224_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_base_patch16_224_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 224x224 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 base model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -407,8 +407,8 @@ def deit3_base_patch16_224_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_base_patch16_384_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 384x384 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 base model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -418,8 +418,8 @@ def deit3_base_patch16_384_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_large_patch16_224_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 large model @ 224x224 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 large model @ 224x224 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=1024, depth=24, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -429,8 +429,8 @@ def deit3_large_patch16_224_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_large_patch16_384_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 large model @ 384x384 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 large model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=16, embed_dim=1024, depth=24, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)
@@ -440,8 +440,8 @@ def deit3_large_patch16_384_in21ft1k(pretrained=False, **kwargs):
 
 @register_model
 def deit3_huge_patch14_224_in21ft1k(pretrained=False, **kwargs):
-    """ DeiT-3 base model @ 384x384 from paper ([URL]
-    ImageNet-21k pretrained weights from [URL]
+    """ DeiT-3 base model @ 384x384 from paper (https://arxiv.org/abs/2204.07118).
+    ImageNet-21k pretrained weights from https://github.com/facebookresearch/deit.
     """
     model_kwargs = dict(
         patch_size=14, embed_dim=1280, depth=32, num_heads=16, no_embed_class=True, init_values=1e-6, **kwargs)

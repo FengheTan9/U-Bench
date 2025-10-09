@@ -402,3 +402,4 @@ class UKAN(nn.Module):
 def u_kan(input_channel=3,num_classes=1):
     return UKAN(input_channel=input_channel,num_classes=num_classes)
 
+

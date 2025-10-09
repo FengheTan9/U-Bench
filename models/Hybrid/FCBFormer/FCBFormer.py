@@ -119,7 +119,7 @@ class TB(nn.Module):
             depths=[3, 4, 18, 3],
             sr_ratios=[8, 4, 2, 1],
         )
-        checkpoint = load_state_dict_from_url('[URL]', progress=True)
+        checkpoint = load_state_dict_from_url('https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b3.pth', progress=True)
         backbone.default_cfg = _cfg()
         backbone.load_state_dict(checkpoint)
         self.backbone = torch.nn.Sequential(*list(backbone.children()))[:-1]
@@ -196,3 +196,4 @@ class FCBFormer(nn.Module):
 def fcbformer(num_classes, input_channel=3):
     model = FCBFormer(num_classes=num_classes)
     return model
+

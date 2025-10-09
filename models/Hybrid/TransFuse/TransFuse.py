@@ -77,7 +77,7 @@ class TransFuse_S(nn.Module):
 
         self.resnet = resnet34()
         if pretrained:
-            ckpt = load_state_dict_from_url('[URL]', progress=True)
+            ckpt = load_state_dict_from_url('https://download.pytorch.org/models/resnet34-333f7ec4.pth', progress=True)
             self.resnet.load_state_dict(ckpt)
         self.resnet.fc = nn.Identity()
         self.resnet.layer4 = nn.Identity()

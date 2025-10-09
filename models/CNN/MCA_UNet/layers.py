@@ -780,3 +780,4 @@ def iou(box0, box1): #计算iou
     intersection = overlap[0] * overlap[1] * overlap[2]
     union = box0[3] * box0[3] * box0[3] + box1[3] * box1[3] * box1[3] - intersection
     return intersection / union
+

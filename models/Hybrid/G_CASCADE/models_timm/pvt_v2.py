@@ -10,7 +10,7 @@
       primaryClass={cs.CV}
 }
 
-Based on Apache 2.0 licensed code at [URL]
+Based on Apache 2.0 licensed code at https://github.com/whai362/PVT
 
 Modifications and timm support by / Copyright 2022, Ross Wightman
 """
@@ -42,13 +42,13 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'pvt_v2_b0': _cfg(url='[URL]'),
-    'pvt_v2_b1': _cfg(url='[URL]'),
-    'pvt_v2_b2': _cfg(url='[URL]'),
-    'pvt_v2_b3': _cfg(url='[URL]'),
-    'pvt_v2_b4': _cfg(url='[URL]'),
-    'pvt_v2_b5': _cfg(url='[URL]'),
-    'pvt_v2_b2_li': _cfg(url='[URL]')
+    'pvt_v2_b0': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b0.pth'),
+    'pvt_v2_b1': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b1.pth'),
+    'pvt_v2_b2': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b2.pth'),
+    'pvt_v2_b3': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b3.pth'),
+    'pvt_v2_b4': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b4.pth'),
+    'pvt_v2_b5': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b5.pth'),
+    'pvt_v2_b2_li': _cfg(url='https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b2_li.pth')
 }
 
 
@@ -473,3 +473,4 @@ def pvt_v2_b2_li(pretrained=False, **kwargs):
         depths=(3, 4, 6, 3), embed_dims=(64, 128, 320, 512), num_heads=(1, 2, 5, 8),
         norm_layer=partial(nn.LayerNorm, eps=1e-6), linear=True, **kwargs)
     return _create_pvt2('pvt_v2_b2_li', pretrained=pretrained, **model_kwargs)
+

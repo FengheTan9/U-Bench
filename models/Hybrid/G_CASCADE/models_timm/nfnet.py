@@ -1,12 +1,12 @@
 """ Normalization Free Nets. NFNet, NF-RegNet, NF-ResNet (pre-activation) Models
 
 Paper: `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-    - [URL]
+    - https://arxiv.org/abs/2101.08692
 
 Paper: `High-Performance Large-Scale Image Recognition Without Normalization`
-    - [URL]
+    - https://arxiv.org/abs/2102.06171
 
-Official Deepmind JAX code: [URL]
+Official Deepmind JAX code: https://github.com/deepmind/deepmind-research/tree/master/nfnets
 
 Status:
 * These models are a work in progress, experiments ongoing.
@@ -46,25 +46,25 @@ def _dcfg(url='', **kwargs):
 
 default_cfgs = dict(
     dm_nfnet_f0=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f0-604f9c3a.pth',
         pool_size=(6, 6), input_size=(3, 192, 192), test_input_size=(3, 256, 256), crop_pct=.9),
     dm_nfnet_f1=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f1-fc540f82.pth',
         pool_size=(7, 7), input_size=(3, 224, 224), test_input_size=(3, 320, 320), crop_pct=0.91),
     dm_nfnet_f2=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f2-89875923.pth',
         pool_size=(8, 8), input_size=(3, 256, 256), test_input_size=(3, 352, 352), crop_pct=0.92),
     dm_nfnet_f3=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f3-d74ab3aa.pth',
         pool_size=(10, 10), input_size=(3, 320, 320), test_input_size=(3, 416, 416), crop_pct=0.94),
     dm_nfnet_f4=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f4-0ac5b10b.pth',
         pool_size=(12, 12), input_size=(3, 384, 384), test_input_size=(3, 512, 512), crop_pct=0.951),
     dm_nfnet_f5=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f5-ecb20ab1.pth',
         pool_size=(13, 13), input_size=(3, 416, 416), test_input_size=(3, 544, 544), crop_pct=0.954),
     dm_nfnet_f6=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-dnf-weights/dm_nfnet_f6-e0f12116.pth',
         pool_size=(14, 14), input_size=(3, 448, 448), test_input_size=(3, 576, 576), crop_pct=0.956),
 
     nfnet_f0=_dcfg(
@@ -85,17 +85,17 @@ default_cfgs = dict(
         url='', pool_size=(15, 15), input_size=(3, 480, 480), test_input_size=(3, 608, 608)),
 
     nfnet_l0=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/nfnet_l0_ra2-45c6688d.pth',
         pool_size=(7, 7), input_size=(3, 224, 224), test_input_size=(3, 288, 288), crop_pct=1.0),
     eca_nfnet_l0=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecanfnet_l0_ra2-e3e9ac50.pth',
         hf_hub_id='timm/eca_nfnet_l0',
         pool_size=(7, 7), input_size=(3, 224, 224), test_input_size=(3, 288, 288), crop_pct=1.0),
     eca_nfnet_l1=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecanfnet_l1_ra2-7dce93cd.pth',
         pool_size=(8, 8), input_size=(3, 256, 256), test_input_size=(3, 320, 320), crop_pct=1.0),
     eca_nfnet_l2=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecanfnet_l2_ra3-da781a61.pth',
         pool_size=(10, 10), input_size=(3, 320, 320), test_input_size=(3, 384, 384), crop_pct=1.0),
     eca_nfnet_l3=_dcfg(
         url='',
@@ -104,7 +104,7 @@ default_cfgs = dict(
     nf_regnet_b0=_dcfg(
         url='', pool_size=(6, 6), input_size=(3, 192, 192), test_input_size=(3, 256, 256), first_conv='stem.conv'),
     nf_regnet_b1=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/nf_regnet_b1_256_ra2-ad85cfef.pth',
         pool_size=(8, 8), input_size=(3, 256, 256), test_input_size=(3, 288, 288), first_conv='stem.conv'),  # NOT to paper spec
     nf_regnet_b2=_dcfg(
         url='', pool_size=(8, 8), input_size=(3, 240, 240), test_input_size=(3, 272, 272), first_conv='stem.conv'),
@@ -117,7 +117,7 @@ default_cfgs = dict(
 
     nf_resnet26=_dcfg(url='', first_conv='stem.conv'),
     nf_resnet50=_dcfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/nf_resnet50_ra2-9f236009.pth',
         pool_size=(8, 8), input_size=(3, 256, 256), test_input_size=(3, 288, 288), crop_pct=0.94, first_conv='stem.conv'),
     nf_resnet101=_dcfg(url='', first_conv='stem.conv'),
 
@@ -291,7 +291,7 @@ class DownsampleAvg(nn.Module):
         return self.conv(self.pool(x))
 
 
-@register_notrace_module  # reason: mul_ causes FX to drop a relevant node. [URL]
+@register_notrace_module  # reason: mul_ causes FX to drop a relevant node. https://github.com/pytorch/pytorch/issues/68301
 class NormFreeBlock(nn.Module):
     """Normalization-Free pre-activation block.
     """
@@ -407,7 +407,7 @@ def create_stem(in_chs, out_chs, stem_type='', conv_layer=None, act_layer=None, 
     return nn.Sequential(stem), stem_stride, stem_feature
 
 
-# from [URL]
+# from https://github.com/deepmind/deepmind-research/tree/master/nfnets
 _nonlin_gamma = dict(
     identity=1.0,
     celu=1.270926833152771,
@@ -432,9 +432,9 @@ class NormFreeNet(nn.Module):
 
     As described in :
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     and
-    `High-Performance Large-Scale Image Recognition Without Normalization` - [URL]
+    `High-Performance Large-Scale Image Recognition Without Normalization` - https://arxiv.org/abs/2102.06171
 
     This model aims to cover both the NFRegNet-Bx models as detailed in the paper's code snippets and
     the (preact) ResNet models described earlier in the paper.
@@ -599,7 +599,7 @@ def _create_normfreenet(variant, pretrained=False, **kwargs):
 def dm_nfnet_f0(pretrained=False, **kwargs):
     """ NFNet-F0 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f0', pretrained=pretrained, **kwargs)
 
@@ -608,7 +608,7 @@ def dm_nfnet_f0(pretrained=False, **kwargs):
 def dm_nfnet_f1(pretrained=False, **kwargs):
     """ NFNet-F1 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f1', pretrained=pretrained, **kwargs)
 
@@ -617,7 +617,7 @@ def dm_nfnet_f1(pretrained=False, **kwargs):
 def dm_nfnet_f2(pretrained=False, **kwargs):
     """ NFNet-F2 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f2', pretrained=pretrained, **kwargs)
 
@@ -626,7 +626,7 @@ def dm_nfnet_f2(pretrained=False, **kwargs):
 def dm_nfnet_f3(pretrained=False, **kwargs):
     """ NFNet-F3 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f3', pretrained=pretrained, **kwargs)
 
@@ -635,7 +635,7 @@ def dm_nfnet_f3(pretrained=False, **kwargs):
 def dm_nfnet_f4(pretrained=False, **kwargs):
     """ NFNet-F4 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f4', pretrained=pretrained, **kwargs)
 
@@ -644,7 +644,7 @@ def dm_nfnet_f4(pretrained=False, **kwargs):
 def dm_nfnet_f5(pretrained=False, **kwargs):
     """ NFNet-F5 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f5', pretrained=pretrained, **kwargs)
 
@@ -653,7 +653,7 @@ def dm_nfnet_f5(pretrained=False, **kwargs):
 def dm_nfnet_f6(pretrained=False, **kwargs):
     """ NFNet-F6 (DeepMind weight compatible)
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('dm_nfnet_f6', pretrained=pretrained, **kwargs)
 
@@ -662,7 +662,7 @@ def dm_nfnet_f6(pretrained=False, **kwargs):
 def nfnet_f0(pretrained=False, **kwargs):
     """ NFNet-F0
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f0', pretrained=pretrained, **kwargs)
 
@@ -671,7 +671,7 @@ def nfnet_f0(pretrained=False, **kwargs):
 def nfnet_f1(pretrained=False, **kwargs):
     """ NFNet-F1
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f1', pretrained=pretrained, **kwargs)
 
@@ -680,7 +680,7 @@ def nfnet_f1(pretrained=False, **kwargs):
 def nfnet_f2(pretrained=False, **kwargs):
     """ NFNet-F2
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f2', pretrained=pretrained, **kwargs)
 
@@ -689,7 +689,7 @@ def nfnet_f2(pretrained=False, **kwargs):
 def nfnet_f3(pretrained=False, **kwargs):
     """ NFNet-F3
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f3', pretrained=pretrained, **kwargs)
 
@@ -698,7 +698,7 @@ def nfnet_f3(pretrained=False, **kwargs):
 def nfnet_f4(pretrained=False, **kwargs):
     """ NFNet-F4
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f4', pretrained=pretrained, **kwargs)
 
@@ -707,7 +707,7 @@ def nfnet_f4(pretrained=False, **kwargs):
 def nfnet_f5(pretrained=False, **kwargs):
     """ NFNet-F5
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f5', pretrained=pretrained, **kwargs)
 
@@ -716,7 +716,7 @@ def nfnet_f5(pretrained=False, **kwargs):
 def nfnet_f6(pretrained=False, **kwargs):
     """ NFNet-F6
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f6', pretrained=pretrained, **kwargs)
 
@@ -725,7 +725,7 @@ def nfnet_f6(pretrained=False, **kwargs):
 def nfnet_f7(pretrained=False, **kwargs):
     """ NFNet-F7
     `High-Performance Large-Scale Image Recognition Without Normalization`
-        - [URL]
+        - https://arxiv.org/abs/2102.06171
     """
     return _create_normfreenet('nfnet_f7', pretrained=pretrained, **kwargs)
 
@@ -774,7 +774,7 @@ def eca_nfnet_l3(pretrained=False, **kwargs):
 def nf_regnet_b0(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B0
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b0', pretrained=pretrained, **kwargs)
 
@@ -783,7 +783,7 @@ def nf_regnet_b0(pretrained=False, **kwargs):
 def nf_regnet_b1(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B1
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b1', pretrained=pretrained, **kwargs)
 
@@ -792,7 +792,7 @@ def nf_regnet_b1(pretrained=False, **kwargs):
 def nf_regnet_b2(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B2
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b2', pretrained=pretrained, **kwargs)
 
@@ -801,7 +801,7 @@ def nf_regnet_b2(pretrained=False, **kwargs):
 def nf_regnet_b3(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B3
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b3', pretrained=pretrained, **kwargs)
 
@@ -810,7 +810,7 @@ def nf_regnet_b3(pretrained=False, **kwargs):
 def nf_regnet_b4(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B4
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b4', pretrained=pretrained, **kwargs)
 
@@ -819,7 +819,7 @@ def nf_regnet_b4(pretrained=False, **kwargs):
 def nf_regnet_b5(pretrained=False, **kwargs):
     """ Normalization-Free RegNet-B5
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_regnet_b5', pretrained=pretrained, **kwargs)
 
@@ -828,7 +828,7 @@ def nf_regnet_b5(pretrained=False, **kwargs):
 def nf_resnet26(pretrained=False, **kwargs):
     """ Normalization-Free ResNet-26
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_resnet26', pretrained=pretrained, **kwargs)
 
@@ -837,7 +837,7 @@ def nf_resnet26(pretrained=False, **kwargs):
 def nf_resnet50(pretrained=False, **kwargs):
     """ Normalization-Free ResNet-50
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_resnet50', pretrained=pretrained, **kwargs)
 
@@ -846,7 +846,7 @@ def nf_resnet50(pretrained=False, **kwargs):
 def nf_resnet101(pretrained=False, **kwargs):
     """ Normalization-Free ResNet-101
     `Characterizing signal propagation to close the performance gap in unnormalized ResNets`
-        - [URL]
+        - https://arxiv.org/abs/2101.08692
     """
     return _create_normfreenet('nf_resnet101', pretrained=pretrained, **kwargs)
 

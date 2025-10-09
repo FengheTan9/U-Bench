@@ -1,6 +1,6 @@
 """Pytorch impl of MxNet Gluon ResNet/(SE)ResNeXt variants
-This file evolved from [URL] 'resnet.py' with (SE)-ResNeXt additions
-and ports of Gluon variations ([URL] 
+This file evolved from https://github.com/pytorch/vision 'resnet.py' with (SE)-ResNeXt additions
+and ports of Gluon variations (https://github.com/dmlc/gluon-cv/blob/master/gluoncv/model_zoo/resnet.py) 
 by Ross Wightman
 """
 
@@ -23,36 +23,36 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = {
-    'gluon_resnet18_v1b': _cfg(url='[URL]'),
-    'gluon_resnet34_v1b': _cfg(url='[URL]'),
-    'gluon_resnet50_v1b': _cfg(url='[URL]'),
-    'gluon_resnet101_v1b': _cfg(url='[URL]'),
-    'gluon_resnet152_v1b': _cfg(url='[URL]'),
-    'gluon_resnet50_v1c': _cfg(url='[URL]',
+    'gluon_resnet18_v1b': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet18_v1b-0757602b.pth'),
+    'gluon_resnet34_v1b': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet34_v1b-c6d82d59.pth'),
+    'gluon_resnet50_v1b': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet50_v1b-0ebe02e2.pth'),
+    'gluon_resnet101_v1b': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet101_v1b-3b017079.pth'),
+    'gluon_resnet152_v1b': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet152_v1b-c1edb0dd.pth'),
+    'gluon_resnet50_v1c': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet50_v1c-48092f55.pth',
                                first_conv='conv1.0'),
-    'gluon_resnet101_v1c': _cfg(url='[URL]',
+    'gluon_resnet101_v1c': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet101_v1c-1f26822a.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnet152_v1c': _cfg(url='[URL]',
+    'gluon_resnet152_v1c': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet152_v1c-a3bb0b98.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnet50_v1d': _cfg(url='[URL]',
+    'gluon_resnet50_v1d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet50_v1d-818a1b1b.pth',
                                first_conv='conv1.0'),
-    'gluon_resnet101_v1d': _cfg(url='[URL]',
+    'gluon_resnet101_v1d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet101_v1d-0f9c8644.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnet152_v1d': _cfg(url='[URL]',
+    'gluon_resnet152_v1d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet152_v1d-bd354e12.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnet50_v1s': _cfg(url='[URL]',
+    'gluon_resnet50_v1s': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet50_v1s-1762acc0.pth',
                                first_conv='conv1.0'),
-    'gluon_resnet101_v1s': _cfg(url='[URL]',
+    'gluon_resnet101_v1s': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet101_v1s-60fe0cc1.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnet152_v1s': _cfg(url='[URL]',
+    'gluon_resnet152_v1s': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnet152_v1s-dcc41b81.pth',
                                 first_conv='conv1.0'),
-    'gluon_resnext50_32x4d': _cfg(url='[URL]'),
-    'gluon_resnext101_32x4d': _cfg(url='[URL]'),
-    'gluon_resnext101_64x4d': _cfg(url='[URL]'),
-    'gluon_seresnext50_32x4d': _cfg(url='[URL]'),
-    'gluon_seresnext101_32x4d': _cfg(url='[URL]'),
-    'gluon_seresnext101_64x4d': _cfg(url='[URL]'),
-    'gluon_senet154': _cfg(url='[URL]',
+    'gluon_resnext50_32x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnext50_32x4d-e6a097c1.pth'),
+    'gluon_resnext101_32x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnext101_32x4d-b253c8c4.pth'),
+    'gluon_resnext101_64x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_resnext101_64x4d-f9a8e184.pth'),
+    'gluon_seresnext50_32x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_seresnext50_32x4d-90cf2d6e.pth'),
+    'gluon_seresnext101_32x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_seresnext101_32x4d-cf52900d.pth'),
+    'gluon_seresnext101_64x4d': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_seresnext101_64x4d-f9926f93.pth'),
+    'gluon_senet154': _cfg(url='https://github.com/rwightman/pytorch-pretrained-gluonresnet/releases/download/v0.1/gluon_senet154-70a1a3c0.pth',
                            first_conv='conv1.0'),
 }
 

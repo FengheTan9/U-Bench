@@ -9,12 +9,12 @@ from .decoders import EMCAD
 
 # 定义不同 PVT 模型的下载链接
 PVT_URLS = {
-    'pvt_v2_b0': '[URL]',
-    'pvt_v2_b1': '[URL]',
-    'pvt_v2_b2': '[URL]',
-    'pvt_v2_b3': '[URL]',
-    'pvt_v2_b4': '[URL]',
-    'pvt_v2_b5': '[URL]'
+    'pvt_v2_b0': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b0.pth',
+    'pvt_v2_b1': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b1.pth',
+    'pvt_v2_b2': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b2.pth',
+    'pvt_v2_b3': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b3.pth',
+    'pvt_v2_b4': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b4.pth',
+    'pvt_v2_b5': 'https://github.com/whai362/PVT/releases/download/v2/pvt_v2_b5.pth'
 }
 
 class EMCADNet(nn.Module):
@@ -131,3 +131,4 @@ if __name__ == '__main__':
 
     P = model(input_tensor)
     print(P[0].size(), P[1].size(), P[2].size(), P[3].size())
+

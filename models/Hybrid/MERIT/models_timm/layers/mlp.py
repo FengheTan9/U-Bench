@@ -34,7 +34,7 @@ class Mlp(nn.Module):
 
 class GluMlp(nn.Module):
     """ MLP w/ GLU style gating
-    See: [URL] [URL]
+    See: https://arxiv.org/abs/1612.08083, https://arxiv.org/abs/2002.05202
     """
     def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=nn.Sigmoid, bias=True, drop=0.):
         super().__init__()

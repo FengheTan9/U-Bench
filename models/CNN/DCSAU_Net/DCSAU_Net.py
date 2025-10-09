@@ -111,3 +111,4 @@ class Model(nn.Module):
 
 def dcsau_net(input_channel,num_classes):
     return Model(img_channels=input_channel,n_classes=num_classes)
+

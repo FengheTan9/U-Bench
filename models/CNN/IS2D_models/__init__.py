@@ -4,11 +4,11 @@ import torch.utils.model_zoo as model_zoo
 # 使用相对导入，一个点表示当前包
 from . import backbone
 model_urls = {
-    'resnet18': '[URL]',
-    'resnet50': '[URL]',
-    'res2net50_v1b_26w_4s': '[URL]',
-    'res2net101_v1b_26w_4s': '[URL]',
-    'resnest50': '[URL]'
+    'resnet18': 'https://download.pytorch.org/models/resnet18-f37072fd.pth',
+    'resnet50': 'https://download.pytorch.org/models/resnet50-0676ba61.pth',
+    'res2net50_v1b_26w_4s': 'https://shanghuagao.oss-cn-beijing.aliyuncs.com/res2net/res2net50_v1b_26w_4s-3cf99910.pth',
+    'res2net101_v1b_26w_4s': 'https://shanghuagao.oss-cn-beijing.aliyuncs.com/res2net/res2net101_v1b_26w_4s-0812c246.pth',
+    'resnest50': 'https://github.com/zhanghang1989/ResNeSt/releases/download/weights_step1/528c19ca-resnest50.pth'
 }
 
 def IS2D_model(args) :
@@ -48,7 +48,7 @@ def load_cnn_backbone_model(backbone_name, pretrained=False, **kwargs):
 
     if pretrained:
         if backbone_name == 'resnest50':
-            _url_format = '[URL]'
+            _url_format = 'https://github.com/zhanghang1989/ResNeSt/releases/download/weights_step1/{}-{}.pth'
 
             _model_sha256 = {name: checksum for checksum, name in [
                 ('528c19ca', 'resnest50'),

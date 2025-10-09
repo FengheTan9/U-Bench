@@ -1,6 +1,6 @@
 """ PyTorch implementation of DualPathNetworks
-Based on original MXNet implementation [URL] with
-many ideas from another PyTorch implementation [URL]
+Based on original MXNet implementation https://github.com/cypw/DPNs with
+many ideas from another PyTorch implementation https://github.com/oyam/pytorch-DPNs.
 
 This implementation is compatible with the pretrained weights from cypw's MXNet implementation.
 
@@ -34,18 +34,18 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'dpn68': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-dpn-pretrained/releases/download/v0.1/dpn68-66bebafa7.pth'),
     'dpn68b': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/dpn68b_ra-a31ca160.pth',
         mean=IMAGENET_DEFAULT_MEAN, std=IMAGENET_DEFAULT_STD),
     'dpn92': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-dpn-pretrained/releases/download/v0.1/dpn92_extra-b040e4a9b.pth'),
     'dpn98': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-dpn-pretrained/releases/download/v0.1/dpn98-5b90dec4d.pth'),
     'dpn131': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-dpn-pretrained/releases/download/v0.1/dpn131-71dfe43e0.pth'),
     'dpn107': _cfg(
-        url='[URL]')
+        url='https://github.com/rwightman/pytorch-dpn-pretrained/releases/download/v0.1/dpn107_extra-1ac7121e2.pth')
 }
 
 

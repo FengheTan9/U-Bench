@@ -1,9 +1,9 @@
 """ Pooling-based Vision Transformer (PiT) in PyTorch
 
 A PyTorch implement of Pooling-based Vision Transformers as described in
-'Rethinking Spatial Dimensions of Vision Transformers' - [URL]
+'Rethinking Spatial Dimensions of Vision Transformers' - https://arxiv.org/abs/2103.16302
 
-This code was adapted from the original version at [URL] original copyright below.
+This code was adapted from the original version at https://github.com/naver-ai/pit, original copyright below.
 
 Modifications for timm by / Copyright 2020 Ross Wightman
 """
@@ -41,24 +41,24 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # deit models (FB weights)
     'pit_ti_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_ti_730.pth'),
     'pit_xs_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_xs_781.pth'),
     'pit_s_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_s_809.pth'),
     'pit_b_224': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_b_820.pth'),
     'pit_ti_distilled_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_ti_distill_746.pth',
         classifier=('head', 'head_dist')),
     'pit_xs_distilled_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_xs_distill_791.pth',
         classifier=('head', 'head_dist')),
     'pit_s_distilled_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_s_distill_819.pth',
         classifier=('head', 'head_dist')),
     'pit_b_distilled_224': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-pit-weights/pit_b_distill_840.pth',
         classifier=('head', 'head_dist')),
 }
 
@@ -145,7 +145,7 @@ class PoolingVisionTransformer(nn.Module):
     """ Pooling-based Vision Transformer
 
     A PyTorch implement of 'Rethinking Spatial Dimensions of Vision Transformers'
-        - [URL]
+        - https://arxiv.org/abs/2103.16302
     """
     def __init__(
             self, img_size, patch_size, stride, base_dims, depth, heads,

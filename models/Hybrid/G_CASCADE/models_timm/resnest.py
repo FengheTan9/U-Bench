@@ -1,8 +1,8 @@
 """ ResNeSt Models
 
-Paper: `ResNeSt: Split-Attention Networks` - [URL]
+Paper: `ResNeSt: Split-Attention Networks` - https://arxiv.org/abs/2004.08955
 
-Adapted from original PyTorch impl w/ weights at [URL] by Hang Zhang
+Adapted from original PyTorch impl w/ weights at https://github.com/zhanghang1989/ResNeSt by Hang Zhang
 
 Modified for torchscript compat, and consistency with timm by Ross Wightman
 """
@@ -28,25 +28,25 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'resnest14d': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/gluon_resnest14-9c8fe254.pth'),
     'resnest26d': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/gluon_resnest26-50eb607c.pth'),
     'resnest50d': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest50-528c19ca.pth'),
     'resnest101e': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest101-22405ba7.pth',
         input_size=(3, 256, 256), pool_size=(8, 8)),
     'resnest200e': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest200-75117900.pth',
         input_size=(3, 320, 320), pool_size=(10, 10), crop_pct=0.909, interpolation='bicubic'),
     'resnest269e': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest269-0cc87c48.pth',
         input_size=(3, 416, 416), pool_size=(13, 13), crop_pct=0.928, interpolation='bicubic'),
     'resnest50d_4s2x40d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest50_fast_4s2x40d-41d14ed0.pth',
         interpolation='bicubic'),
     'resnest50d_1s4x24d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-resnest/resnest50_fast_1s4x24d-d4a4f76f.pth',
         interpolation='bicubic')
 }
 
@@ -163,7 +163,7 @@ def resnest26d(pretrained=False, **kwargs):
 
 @register_model
 def resnest50d(pretrained=False, **kwargs):
-    """ ResNeSt-50d model. Matches paper ResNeSt-50 model, [URL]
+    """ ResNeSt-50d model. Matches paper ResNeSt-50 model, https://arxiv.org/abs/2004.08955
     Since this codebase supports all possible variations, 'd' for deep stem, stem_width 32, avg in downsample.
     """
     model_kwargs = dict(
@@ -175,7 +175,7 @@ def resnest50d(pretrained=False, **kwargs):
 
 @register_model
 def resnest101e(pretrained=False, **kwargs):
-    """ ResNeSt-101e model. Matches paper ResNeSt-101 model, [URL]
+    """ ResNeSt-101e model. Matches paper ResNeSt-101 model, https://arxiv.org/abs/2004.08955
      Since this codebase supports all possible variations, 'e' for deep stem, stem_width 64, avg in downsample.
     """
     model_kwargs = dict(
@@ -187,7 +187,7 @@ def resnest101e(pretrained=False, **kwargs):
 
 @register_model
 def resnest200e(pretrained=False, **kwargs):
-    """ ResNeSt-200e model. Matches paper ResNeSt-200 model, [URL]
+    """ ResNeSt-200e model. Matches paper ResNeSt-200 model, https://arxiv.org/abs/2004.08955
     Since this codebase supports all possible variations, 'e' for deep stem, stem_width 64, avg in downsample.
     """
     model_kwargs = dict(
@@ -199,7 +199,7 @@ def resnest200e(pretrained=False, **kwargs):
 
 @register_model
 def resnest269e(pretrained=False, **kwargs):
-    """ ResNeSt-269e model. Matches paper ResNeSt-269 model, [URL]
+    """ ResNeSt-269e model. Matches paper ResNeSt-269 model, https://arxiv.org/abs/2004.08955
     Since this codebase supports all possible variations, 'e' for deep stem, stem_width 64, avg in downsample.
     """
     model_kwargs = dict(
@@ -211,7 +211,7 @@ def resnest269e(pretrained=False, **kwargs):
 
 @register_model
 def resnest50d_4s2x40d(pretrained=False, **kwargs):
-    """ResNeSt-50 4s2x40d from [URL]
+    """ResNeSt-50 4s2x40d from https://github.com/zhanghang1989/ResNeSt/blob/master/ablation.md
     """
     model_kwargs = dict(
         block=ResNestBottleneck, layers=[3, 4, 6, 3],
@@ -222,7 +222,7 @@ def resnest50d_4s2x40d(pretrained=False, **kwargs):
 
 @register_model
 def resnest50d_1s4x24d(pretrained=False, **kwargs):
-    """ResNeSt-50 1s4x24d from [URL]
+    """ResNeSt-50 1s4x24d from https://github.com/zhanghang1989/ResNeSt/blob/master/ablation.md
     """
     model_kwargs = dict(
         block=ResNestBottleneck, layers=[3, 4, 6, 3],

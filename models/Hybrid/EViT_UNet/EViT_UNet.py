@@ -863,7 +863,7 @@ def _cfg(url='', **kwargs):
     }
 
 def load_from(model):
-    pretrained_path = '[URL]'
+    pretrained_path = 'https://huggingface.co/FengheTan9/U-Stone/resolve/main/eformer_l_450.pth'
     if pretrained_path is not None:
         print("pretrained_path:{}".format(pretrained_path))
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -897,6 +897,7 @@ def evit_unet(num_classes, input_channel=3):
     model = Eff_Unet(input_channel=input_channel, num_classes=num_classes, img_size=256)
     model = load_from(model)
     return model
+
 
 
 

@@ -26,7 +26,7 @@ class DeiT(VisionTransformer):
         self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + 1, self.embed_dim))
 
     def forward(self, x):
-        # taken from [URL]
+        # taken from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
         # with slight modifications to add the dist_token
         B = x.shape[0]
         x = self.patch_embed(x)
@@ -49,7 +49,7 @@ def deit_small_patch16_224(pretrained=False, **kwargs):
         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
     model.default_cfg = _cfg()
     if pretrained:
-        ckpt = load_state_dict_from_url('[URL]')
+        ckpt = load_state_dict_from_url('https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth')
         model.load_state_dict(ckpt['model'], strict=False)
     
     pe = model.pos_embed[:, 1:, :].detach()

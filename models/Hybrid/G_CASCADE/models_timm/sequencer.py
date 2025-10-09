@@ -1,6 +1,6 @@
 """ Sequencer
 
-Paper: `Sequencer: Deep LSTM for Image Classification` - [URL]
+Paper: `Sequencer: Deep LSTM for Image Classification` - https://arxiv.org/pdf/2205.01972.pdf
 
 """
 #  Copyright (c) 2022. Yuki Tatsunami
@@ -32,9 +32,9 @@ def _cfg(url='', **kwargs):
 
 
 default_cfgs = dict(
-    sequencer2d_s=_cfg(url="[URL]"),
-    sequencer2d_m=_cfg(url="[URL]"),
-    sequencer2d_l=_cfg(url="[URL]"),
+    sequencer2d_s=_cfg(url="https://github.com/okojoalg/sequencer/releases/download/weights/sequencer2d_s.pth"),
+    sequencer2d_m=_cfg(url="https://github.com/okojoalg/sequencer/releases/download/weights/sequencer2d_m.pth"),
+    sequencer2d_l=_cfg(url="https://github.com/okojoalg/sequencer/releases/download/weights/sequencer2d_l.pth"),
 )
 
 

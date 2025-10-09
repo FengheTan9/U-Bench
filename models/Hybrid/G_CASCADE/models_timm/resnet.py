@@ -1,6 +1,6 @@
 """PyTorch ResNet
 
-This started as a copy of [URL] 'resnet.py' (BSD-3-Clause) with
+This started as a copy of https://github.com/pytorch/vision 'resnet.py' (BSD-3-Clause) with
 additional dropout and dynamic global avg/max pool.
 
 ResNeXt, SE-ResNeXt, SENet, and MXNet Gluon stem/downsample variants, tiered stems added by Ross Wightman
@@ -36,160 +36,160 @@ def _cfg(url='', **kwargs):
 default_cfgs = {
     # ResNet and Wide ResNet
     'resnet10t': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet10t_176_c3-f3215ab1.pth',
         input_size=(3, 176, 176), pool_size=(6, 6),
         test_crop_pct=0.95, test_input_size=(3, 224, 224),
         first_conv='conv1.0'),
     'resnet14t': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet14t_176_c3-c4ed2c37.pth',
         input_size=(3, 176, 176), pool_size=(6, 6),
         test_crop_pct=0.95, test_input_size=(3, 224, 224),
         first_conv='conv1.0'),
-    'resnet18': _cfg(url='[URL]'),
+    'resnet18': _cfg(url='https://download.pytorch.org/models/resnet18-5c106cde.pth'),
     'resnet18d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet18d_ra2-48a79e06.pth',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnet34': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet34-43635321.pth'),
     'resnet34d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet34d_ra2-f8dcfcaf.pth',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnet26': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet26-9aa10e23.pth',
         interpolation='bicubic'),
     'resnet26d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet26d-69e92c46.pth',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnet26t': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-attn-weights/resnet26t_256_ra2-6f6fa748.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=0.94),
     'resnet50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet50_a1_0-14fe96d1.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnet50d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet50d_ra2-464e36ba.pth',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnet50t': _cfg(
         url='',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnet101': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet101_a1h-36d3f2aa.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnet101d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet101d_ra2-2803ffab.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=1.0, test_input_size=(3, 320, 320)),
     'resnet152': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet152_a1h-dc400468.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnet152d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet152d_ra2-5cac0439.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=1.0, test_input_size=(3, 320, 320)),
     'resnet200': _cfg(url='', interpolation='bicubic'),
     'resnet200d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnet200d_ra2-bdba9bf9.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=1.0, test_input_size=(3, 320, 320)),
-    'tv_resnet34': _cfg(url='[URL]'),
-    'tv_resnet50': _cfg(url='[URL]'),
-    'tv_resnet101': _cfg(url='[URL]'),
-    'tv_resnet152': _cfg(url='[URL]'),
+    'tv_resnet34': _cfg(url='https://download.pytorch.org/models/resnet34-333f7ec4.pth'),
+    'tv_resnet50': _cfg(url='https://download.pytorch.org/models/resnet50-19c8e357.pth'),
+    'tv_resnet101': _cfg(url='https://download.pytorch.org/models/resnet101-5d3b4d8f.pth'),
+    'tv_resnet152': _cfg(url='https://download.pytorch.org/models/resnet152-b121ed2d.pth'),
     'wide_resnet50_2': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/wide_resnet50_racm-8234f177.pth',
         interpolation='bicubic'),
-    'wide_resnet101_2': _cfg(url='[URL]'),
+    'wide_resnet101_2': _cfg(url='https://download.pytorch.org/models/wide_resnet101_2-32ee1156.pth'),
 
     # ResNets w/ alternative norm layers
     'resnet50_gn': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet50_gn_a1h2-8fe6c4d0.pth',
         crop_pct=0.94, interpolation='bicubic'),
 
     # ResNeXt
     'resnext50_32x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnext50_32x4d_a1h-0146ab0a.pth',
         interpolation='bicubic', crop_pct=0.95),
     'resnext50d_32x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnext50d_32x4d-103e99f8.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'resnext101_32x4d': _cfg(url=''),
-    'resnext101_32x8d': _cfg(url='[URL]'),
+    'resnext101_32x8d': _cfg(url='https://download.pytorch.org/models/resnext101_32x8d-8ba56ff5.pth'),
     'resnext101_64x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/resnext101_64x4d_c-0d0e0cc0.pth',
         interpolation='bicubic', crop_pct=1.0,  test_input_size=(3, 288, 288)),
-    'tv_resnext50_32x4d': _cfg(url='[URL]'),
+    'tv_resnext50_32x4d': _cfg(url='https://download.pytorch.org/models/resnext50_32x4d-7cdf4587.pth'),
 
     #  ResNeXt models - Weakly Supervised Pretraining on Instagram Hashtags
-    #  from [URL]
+    #  from https://github.com/facebookresearch/WSL-Images
     #  Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
-    'ig_resnext101_32x8d': _cfg(url='[URL]'),
-    'ig_resnext101_32x16d': _cfg(url='[URL]'),
-    'ig_resnext101_32x32d': _cfg(url='[URL]'),
-    'ig_resnext101_32x48d': _cfg(url='[URL]'),
+    'ig_resnext101_32x8d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x8-c38310e5.pth'),
+    'ig_resnext101_32x16d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x16-c6f796b0.pth'),
+    'ig_resnext101_32x32d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x32-e4b90b00.pth'),
+    'ig_resnext101_32x48d': _cfg(url='https://download.pytorch.org/models/ig_resnext101_32x48-3e41cc8a.pth'),
 
-    #  Semi-Supervised ResNe*t models from [URL]
+    #  Semi-Supervised ResNe*t models from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models
     #  Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
     'ssl_resnet18':  _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnet18-d92f0530.pth'),
     'ssl_resnet50':  _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnet50-08389792.pth'),
     'ssl_resnext50_32x4d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnext50_32x4-ddb3e555.pth'),
     'ssl_resnext101_32x4d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnext101_32x4-dc43570a.pth'),
     'ssl_resnext101_32x8d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnext101_32x8-2cfe2f8b.pth'),
     'ssl_resnext101_32x16d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_supervised_resnext101_32x16-15fffa57.pth'),
 
-    #  Semi-Weakly Supervised ResNe*t models from [URL]
+    #  Semi-Weakly Supervised ResNe*t models from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models
     #  Please note the CC-BY-NC 4.0 license on theses weights, non-commercial use only.
     'swsl_resnet18': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnet18-118f1556.pth'),
     'swsl_resnet50': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnet50-16a12f1b.pth'),
     'swsl_resnext50_32x4d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnext50_32x4-72679e44.pth'),
     'swsl_resnext101_32x4d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnext101_32x4-3f87e46b.pth'),
     'swsl_resnext101_32x8d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnext101_32x8-b4712904.pth'),
     'swsl_resnext101_32x16d': _cfg(
-        url='[URL]'),
+        url='https://dl.fbaipublicfiles.com/semiweaksupervision/model_files/semi_weakly_supervised_resnext101_32x16-f3559a9c.pth'),
 
     #  Efficient Channel Attention ResNets
     'ecaresnet26t': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecaresnet26t_ra2-46609757.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=0.95, test_input_size=(3, 320, 320)),
     'ecaresnetlight': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/ecaresnetlight-75a9c627.pth',
         interpolation='bicubic'),
     'ecaresnet50d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/ecaresnet50d-93c81e3b.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'ecaresnet50d_pruned': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/ecaresnet50d_p-e4fa23c2.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'ecaresnet50t': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecaresnet50t_ra2-f7ac63c4.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=0.95, test_input_size=(3, 320, 320)),
     'ecaresnet101d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/ecaresnet101d-153dad65.pth',
         interpolation='bicubic', first_conv='conv1.0'),
     'ecaresnet101d_pruned': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tresnet/ecaresnet101d_p-9e74cb91.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'ecaresnet200d': _cfg(
         url='',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), crop_pct=0.94, pool_size=(8, 8)),
     'ecaresnet269d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/ecaresnet269d_320_ra2-7baa55cb.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 320, 320), pool_size=(10, 10),
         crop_pct=1.0, test_input_size=(3, 352, 352)),
 
@@ -209,7 +209,7 @@ default_cfgs = {
         url='',
         interpolation='bicubic'),
     'seresnet50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/seresnet50_ra_224-8efdb4bb.pth',
         interpolation='bicubic'),
     'seresnet50t': _cfg(
         url='',
@@ -222,7 +222,7 @@ default_cfgs = {
         url='',
         interpolation='bicubic'),
     'seresnet152d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/seresnet152d_ra2-04464dd2.pth',
         interpolation='bicubic', first_conv='conv1.0', input_size=(3, 256, 256), pool_size=(8, 8),
         crop_pct=1.0, test_input_size=(3, 320, 320)
     ),
@@ -235,24 +235,24 @@ default_cfgs = {
 
     #  Squeeze-Excitation ResNeXts, to eventually replace the models in senet.py
     'seresnext26d_32x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/seresnext26d_32x4d-80fa48a3.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'seresnext26t_32x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/seresnext26tn_32x4d-569cb627.pth',
         interpolation='bicubic',
         first_conv='conv1.0'),
     'seresnext50_32x4d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/seresnext50_32x4d_racm-a304a460.pth',
         interpolation='bicubic'),
     'seresnext101_32x4d': _cfg(
         url='',
         interpolation='bicubic'),
     'seresnext101_32x8d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/seresnext101_32x8d_ah-e6bc4c0a.pth',
         interpolation='bicubic', test_input_size=(3, 288, 288), crop_pct=1.0),
     'seresnext101d_32x8d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/seresnext101d_32x8d_ah-191d7b94.pth',
         interpolation='bicubic', first_conv='conv1.0', test_input_size=(3, 288, 288), crop_pct=1.0),
 
     'senet154': _cfg(
@@ -264,7 +264,7 @@ default_cfgs = {
     'resnetblur18': _cfg(
         interpolation='bicubic'),
     'resnetblur50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/resnetblur50-84f4748f.pth',
         interpolation='bicubic'),
     'resnetblur50d': _cfg(
         url='',
@@ -273,7 +273,7 @@ default_cfgs = {
         url='',
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetaa50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnetaa50_a1h-4cf422b3.pth',
         test_input_size=(3, 288, 288), test_crop_pct=1.0, interpolation='bicubic'),
     'resnetaa50d': _cfg(
         url='',
@@ -285,36 +285,36 @@ default_cfgs = {
         url='',
         interpolation='bicubic', first_conv='conv1.0'),
     'seresnextaa101d_32x8d': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/seresnextaa101d_32x8d_ah-83c8ae12.pth',
         interpolation='bicubic', first_conv='conv1.0', test_input_size=(3, 288, 288), crop_pct=1.0),
 
     # ResNet-RS models
     'resnetrs50': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs50_ema-6b53758b.pth',
         input_size=(3, 160, 160), pool_size=(5, 5), crop_pct=0.91, test_input_size=(3, 224, 224),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs101': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs101_i192_ema-1509bbf6.pth',
         input_size=(3, 192, 192), pool_size=(6, 6), crop_pct=0.94, test_input_size=(3, 288, 288),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs152': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs152_i256_ema-a9aff7f9.pth',
         input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=1.0, test_input_size=(3, 320, 320),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs200': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-tpu-weights/resnetrs200_c-6b698b88.pth',
         input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=1.0, test_input_size=(3, 320, 320),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs270': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs270_ema-b40e674c.pth',
         input_size=(3, 256, 256), pool_size=(8, 8), crop_pct=1.0, test_input_size=(3, 352, 352),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs350': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs350_i256_ema-5a1aa8f1.pth',
         input_size=(3, 288, 288), pool_size=(9, 9), crop_pct=1.0, test_input_size=(3, 384, 384),
         interpolation='bicubic', first_conv='conv1.0'),
     'resnetrs420': _cfg(
-        url='[URL]',
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rs-weights/resnetrs420_ema-972dee69.pth',
         input_size=(3, 320, 320), pool_size=(10, 10), crop_pct=1.0, test_input_size=(3, 416, 416),
         interpolation='bicubic', first_conv='conv1.0'),
 }
@@ -558,7 +558,7 @@ class ResNet(nn.Module):
 
     This ResNet impl supports a number of stem and downsample options based on the v1c, v1d, v1e, and v1s
     variants included in the MXNet Gluon ResNetV1b model. The C and D variants are also discussed in the
-    'Bag of Tricks' paper: [URL] The B variant is equivalent to torchvision default.
+    'Bag of Tricks' paper: https://arxiv.org/pdf/1812.01187. The B variant is equivalent to torchvision default.
 
     ResNet variants (the same modifications can be used in SE/ResNeXt models as well):
       * normal, b - 7x7 stem, stem_width = 64, same as torchvision ResNet, NVIDIA ResNet 'v1.5', Gluon v1b
@@ -1006,8 +1006,8 @@ def tv_resnext50_32x4d(pretrained=False, **kwargs):
 def ig_resnext101_32x8d(pretrained=False, **kwargs):
     """Constructs a ResNeXt-101 32x8 model pre-trained on weakly-supervised data
     and finetuned on ImageNet from Figure 5 in
-    `"Exploring the Limits of Weakly Supervised Pretraining" <[URL]
-    Weights from [URL]
+    `"Exploring the Limits of Weakly Supervised Pretraining" <https://arxiv.org/abs/1805.00932>`_
+    Weights from https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=8, **kwargs)
     return _create_resnet('ig_resnext101_32x8d', pretrained, **model_args)
@@ -1017,8 +1017,8 @@ def ig_resnext101_32x8d(pretrained=False, **kwargs):
 def ig_resnext101_32x16d(pretrained=False, **kwargs):
     """Constructs a ResNeXt-101 32x16 model pre-trained on weakly-supervised data
     and finetuned on ImageNet from Figure 5 in
-    `"Exploring the Limits of Weakly Supervised Pretraining" <[URL]
-    Weights from [URL]
+    `"Exploring the Limits of Weakly Supervised Pretraining" <https://arxiv.org/abs/1805.00932>`_
+    Weights from https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=16, **kwargs)
     return _create_resnet('ig_resnext101_32x16d', pretrained, **model_args)
@@ -1028,8 +1028,8 @@ def ig_resnext101_32x16d(pretrained=False, **kwargs):
 def ig_resnext101_32x32d(pretrained=False, **kwargs):
     """Constructs a ResNeXt-101 32x32 model pre-trained on weakly-supervised data
     and finetuned on ImageNet from Figure 5 in
-    `"Exploring the Limits of Weakly Supervised Pretraining" <[URL]
-    Weights from [URL]
+    `"Exploring the Limits of Weakly Supervised Pretraining" <https://arxiv.org/abs/1805.00932>`_
+    Weights from https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=32, **kwargs)
     return _create_resnet('ig_resnext101_32x32d', pretrained, **model_args)
@@ -1039,8 +1039,8 @@ def ig_resnext101_32x32d(pretrained=False, **kwargs):
 def ig_resnext101_32x48d(pretrained=False, **kwargs):
     """Constructs a ResNeXt-101 32x48 model pre-trained on weakly-supervised data
     and finetuned on ImageNet from Figure 5 in
-    `"Exploring the Limits of Weakly Supervised Pretraining" <[URL]
-    Weights from [URL]
+    `"Exploring the Limits of Weakly Supervised Pretraining" <https://arxiv.org/abs/1805.00932>`_
+    Weights from https://pytorch.org/hub/facebookresearch_WSL-Images_resnext/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=48, **kwargs)
     return _create_resnet('ig_resnext101_32x48d', pretrained, **model_args)
@@ -1049,8 +1049,8 @@ def ig_resnext101_32x48d(pretrained=False, **kwargs):
 @register_model
 def ssl_resnet18(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNet-18 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=BasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('ssl_resnet18', pretrained, **model_args)
@@ -1059,8 +1059,8 @@ def ssl_resnet18(pretrained=False, **kwargs):
 @register_model
 def ssl_resnet50(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNet-50 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 6, 3],  **kwargs)
     return _create_resnet('ssl_resnet50', pretrained, **model_args)
@@ -1069,8 +1069,8 @@ def ssl_resnet50(pretrained=False, **kwargs):
 @register_model
 def ssl_resnext50_32x4d(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNeXt-50 32x4 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 6, 3], cardinality=32, base_width=4, **kwargs)
     return _create_resnet('ssl_resnext50_32x4d', pretrained, **model_args)
@@ -1079,8 +1079,8 @@ def ssl_resnext50_32x4d(pretrained=False, **kwargs):
 @register_model
 def ssl_resnext101_32x4d(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNeXt-101 32x4 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=4, **kwargs)
     return _create_resnet('ssl_resnext101_32x4d', pretrained, **model_args)
@@ -1089,8 +1089,8 @@ def ssl_resnext101_32x4d(pretrained=False, **kwargs):
 @register_model
 def ssl_resnext101_32x8d(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNeXt-101 32x8 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=8, **kwargs)
     return _create_resnet('ssl_resnext101_32x8d', pretrained, **model_args)
@@ -1099,8 +1099,8 @@ def ssl_resnext101_32x8d(pretrained=False, **kwargs):
 @register_model
 def ssl_resnext101_32x16d(pretrained=False, **kwargs):
     """Constructs a semi-supervised ResNeXt-101 32x16 model pre-trained on YFCC100M dataset and finetuned on ImageNet
-    `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-    Weights from [URL]
+    `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+    Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=16, **kwargs)
     return _create_resnet('ssl_resnext101_32x16d', pretrained, **model_args)
@@ -1110,8 +1110,8 @@ def ssl_resnext101_32x16d(pretrained=False, **kwargs):
 def swsl_resnet18(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised Resnet-18 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=BasicBlock, layers=[2, 2, 2, 2], **kwargs)
     return _create_resnet('swsl_resnet18', pretrained, **model_args)
@@ -1121,8 +1121,8 @@ def swsl_resnet18(pretrained=False, **kwargs):
 def swsl_resnet50(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised ResNet-50 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 6, 3],  **kwargs)
     return _create_resnet('swsl_resnet50', pretrained, **model_args)
@@ -1132,8 +1132,8 @@ def swsl_resnet50(pretrained=False, **kwargs):
 def swsl_resnext50_32x4d(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised ResNeXt-50 32x4 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 6, 3], cardinality=32, base_width=4, **kwargs)
     return _create_resnet('swsl_resnext50_32x4d', pretrained, **model_args)
@@ -1143,8 +1143,8 @@ def swsl_resnext50_32x4d(pretrained=False, **kwargs):
 def swsl_resnext101_32x4d(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised ResNeXt-101 32x4 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=4, **kwargs)
     return _create_resnet('swsl_resnext101_32x4d', pretrained, **model_args)
@@ -1154,8 +1154,8 @@ def swsl_resnext101_32x4d(pretrained=False, **kwargs):
 def swsl_resnext101_32x8d(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised ResNeXt-101 32x8 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=8, **kwargs)
     return _create_resnet('swsl_resnext101_32x8d', pretrained, **model_args)
@@ -1165,8 +1165,8 @@ def swsl_resnext101_32x8d(pretrained=False, **kwargs):
 def swsl_resnext101_32x16d(pretrained=False, **kwargs):
     """Constructs a semi-weakly supervised ResNeXt-101 32x16 model pre-trained on 1B weakly supervised
        image dataset and finetuned on ImageNet.
-       `"Billion-scale Semi-Supervised Learning for Image Classification" <[URL]
-       Weights from [URL]
+       `"Billion-scale Semi-Supervised Learning for Image Classification" <https://arxiv.org/abs/1905.00546>`_
+       Weights from https://github.com/facebookresearch/semi-supervised-ImageNet1K-models/
     """
     model_args = dict(block=Bottleneck, layers=[3, 4, 23, 3], cardinality=32, base_width=16, **kwargs)
     return _create_resnet('swsl_resnext101_32x16d', pretrained, **model_args)
@@ -1197,7 +1197,7 @@ def ecaresnet50d(pretrained=False, **kwargs):
 @register_model
 def ecaresnet50d_pruned(pretrained=False, **kwargs):
     """Constructs a ResNet-50-D model pruned with eca.
-        The pruning has been obtained using [URL]
+        The pruning has been obtained using https://arxiv.org/pdf/2002.08258.pdf
     """
     model_args = dict(
         block=Bottleneck, layers=[3, 4, 6, 3], stem_width=32, stem_type='deep', avg_down=True,
@@ -1239,7 +1239,7 @@ def ecaresnet101d(pretrained=False, **kwargs):
 @register_model
 def ecaresnet101d_pruned(pretrained=False, **kwargs):
     """Constructs a ResNet-101-D model pruned with eca.
-       The pruning has been obtained using [URL]
+       The pruning has been obtained using https://arxiv.org/pdf/2002.08258.pdf
     """
     model_args = dict(
         block=Bottleneck, layers=[3, 4, 23, 3], stem_width=32, stem_type='deep', avg_down=True,
@@ -1519,8 +1519,8 @@ def seresnextaa101d_32x8d(pretrained=False, **kwargs):
 @register_model
 def resnetrs50(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-50 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1532,8 +1532,8 @@ def resnetrs50(pretrained=False, **kwargs):
 @register_model
 def resnetrs101(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-101 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1545,8 +1545,8 @@ def resnetrs101(pretrained=False, **kwargs):
 @register_model
 def resnetrs152(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-152 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1558,8 +1558,8 @@ def resnetrs152(pretrained=False, **kwargs):
 @register_model
 def resnetrs200(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-200 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1571,8 +1571,8 @@ def resnetrs200(pretrained=False, **kwargs):
 @register_model
 def resnetrs270(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-270 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1585,8 +1585,8 @@ def resnetrs270(pretrained=False, **kwargs):
 @register_model
 def resnetrs350(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-350 model.
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(
@@ -1598,8 +1598,8 @@ def resnetrs350(pretrained=False, **kwargs):
 @register_model
 def resnetrs420(pretrained=False, **kwargs):
     """Constructs a ResNet-RS-420 model
-    Paper: Revisiting ResNets - [URL]
-    Pretrained weights from [URL]
+    Paper: Revisiting ResNets - https://arxiv.org/abs/2103.07579
+    Pretrained weights from https://github.com/tensorflow/tpu/tree/bee9c4f6/models/official/resnet/resnet_rs
     """
     attn_layer = partial(get_attn('se'), rd_ratio=0.25)
     model_args = dict(

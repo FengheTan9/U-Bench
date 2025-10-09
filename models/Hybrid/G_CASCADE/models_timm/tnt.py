@@ -1,10 +1,10 @@
 """ Transformer in Transformer (TNT) in PyTorch
 
 A PyTorch implement of TNT as described in
-'Transformer in Transformer' - [URL]
+'Transformer in Transformer' - https://arxiv.org/abs/2103.00112
 
 The official mindspore code is released and available at
-[URL]
+https://gitee.com/mindspore/mindspore/tree/master/model_zoo/research/cv/TNT
 """
 import math
 import torch
@@ -32,7 +32,7 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'tnt_s_patch16_224': _cfg(
-        url='[URL]',
+        url='https://github.com/contrastive/pytorch-image-models/releases/download/TNT/tnt_s_patch16_224.pth.tar',
         mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5),
     ),
     'tnt_b_patch16_224': _cfg(
@@ -152,7 +152,7 @@ class PixelEmbed(nn.Module):
 
 
 class TNT(nn.Module):
-    """ Transformer in Transformer - [URL]
+    """ Transformer in Transformer - https://arxiv.org/abs/2103.00112
     """
     def __init__(
             self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, global_pool='token',

@@ -1,5 +1,5 @@
 """
-[REDACTED]
+Author: Omid Nejati Manzari
 Date: Jun  2023
 """
 
@@ -121,7 +121,7 @@ class PyramidFeatures(nn.Module):
         
         model_path = config.swin_pretrained_path
         self.swin_transformer = SwinTransformer(img_size,in_chans = 3)
-        checkpoint = load_state_dict_from_url('[URL]', progress=True)['model']
+        checkpoint = load_state_dict_from_url('https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth', progress=True)['model']
         unexpected = ["patch_embed.proj.weight", "patch_embed.proj.bias", "patch_embed.norm.weight", "patch_embed.norm.bias",
                      "head.weight", "head.bias", "layers.0.downsample.norm.weight", "layers.0.downsample.norm.bias",
                      "layers.0.downsample.reduction.weight", "layers.1.downsample.norm.weight", "layers.1.downsample.norm.bias",
@@ -133,7 +133,7 @@ class PyramidFeatures(nn.Module):
         pidinet = PiDiNet(30, config_model(config.pdcs), dil=12, sa=True).eval()
         
         #load weights
-        #checkpoint_PDC = load_state_dict_from_url("[URL]", progress=True, weights_only=True)
+        #checkpoint_PDC = load_state_dict_from_url("https://raw.githubusercontent.com/hellozhuo/pidinet/refs/heads/master/trained_models/table5_pidinet-small.pth", progress=True, weights_only=True)
         checkpoint_PDC = torch.load("./models/Hybrid/BEFUnet/table5_pidinet-small.pth")
         #print(checkpoint_PDC)
         state_dict = checkpoint_PDC['state_dict']

@@ -1,6 +1,6 @@
 """ Res2Net and Res2NeXt
-Adapted from Official Pytorch impl at: [URL]
-Paper: `Res2Net: A New Multi-scale Backbone Architecture` - [URL]
+Adapted from Official Pytorch impl at: https://github.com/gasvn/Res2Net/
+Paper: `Res2Net: A New Multi-scale Backbone Architecture` - https://arxiv.org/abs/1904.01169
 """
 import math
 
@@ -28,25 +28,25 @@ def _cfg(url='', **kwargs):
 
 default_cfgs = {
     'res2net50_26w_4s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_4s-06e79181.pth'),
     'res2net50_48w_2s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_48w_2s-afed724a.pth'),
     'res2net50_14w_8s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_14w_8s-6527dddc.pth'),
     'res2net50_26w_6s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_6s-19041792.pth'),
     'res2net50_26w_8s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net50_26w_8s-2c7c9f12.pth'),
     'res2net101_26w_4s': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2net101_26w_4s-02a759a1.pth'),
     'res2next50': _cfg(
-        url='[URL]'),
+        url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-res2net/res2next50_4s-6ef7e7bf.pth'),
 }
 
 
 class Bottle2neck(nn.Module):
     """ Res2Net/Res2NeXT Bottleneck
-    Adapted from [URL]
+    Adapted from https://github.com/gasvn/Res2Net/blob/master/res2net.py
     """
     expansion = 4
 
