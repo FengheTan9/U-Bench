@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-MODEL=MEGANet
+MODEL=U_Net
 
 python inference_case.py --max_epochs 300 --gpu 0 --batch_size 8 --just_for_test True --model $MODEL --base_dir ./data/busi --dataset_name busi --zero_shot_base_dir ./data/bus --zero_shot_dataset_name bus
 

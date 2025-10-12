@@ -40,16 +40,16 @@
 
 <br>
 
-  [![project](https://img.shields.io/badge/project-ubench-green)](https://fenghetan9.github.io/ubench)    [![arXiv](https://img.shields.io/badge/arxiv-2510.07041-b31b1b)](https://arxiv.org/pdf/2510.07041)   [![github](https://img.shields.io/badge/github-U_Bench-black)](https://github.com/FengheTan9/U-Bench)  [![huggingface](https://img.shields.io/badge/Huggingface-U_Bench-yellow)](https://huggingface.co/FengheTan9/U-Bench)   <a href="#LICENSE--citation"><img alt="License: Apache2.0" src="https://img.shields.io/badge/LICENSE-Apache%202.0-blue.svg"/></a>
+  [![project](https://img.shields.io/badge/project-ubench-gree)](https://fenghetan9.github.io/ubench)    [![arXiv](https://img.shields.io/badge/arxiv-2510.07041-b31b1b)](https://arxiv.org/pdf/2510.07041)   [![github](https://img.shields.io/badge/github-U_Bench-black)](https://github.com/FengheTan9/U-Bench)  [![huggingface](https://img.shields.io/badge/Huggingface-U_Bench-yellow)](https://huggingface.co/FengheTan9/U Bench)   <a href="#LICENSE--citation"><img alt="License: Apache2.0" src="https://img.shields.io/badge/LICENSE-Apache%202.0-blue.svg"/></a>
 
 
 
 ### Catalog🚀🚀🚀
 
-- [ ] U-Bench data released 🤗🤗🤗
-- [ ] U-Bench model weights released 🤗🤗🤗
-- [x] U-Bench Code released 🤗🤗🤗
-- [x] U-Bench paper released 🤗🤗🤗
+- [ ] U-Bench data 🤗🤗🤗
+- [ ] U-Bench weights 🤗🤗🤗
+- [x] U-Bench code 🤗🤗🤗
+- [x] U-Bench paper 🤗🤗🤗
 
 ### Abstract
 
@@ -121,7 +121,34 @@ Please put the dataset (e.g. BUSI) or your own dataset as the following architec
 ```python
 # BUSI (in-domain)
 python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi
-
+# BUSBRA (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/BUSBRA --dataset_name BUSBRA
+# ISIC18 (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/isic18 --dataset_name isic18
+# SkinCancer (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/uwaterlooskincancer --dataset_name uwaterlooskincancer
+# Kvasir (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/Kvasir-SEG --dataset_name Kvasir-SEG
+# CHASE (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/CHASEDB1 --dataset_name CHASEDB1
+# DRIVE (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/DRIVE --dataset_name DRIVE
+# DSB2018 (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/DSB2018 --dataset_name DSB2018
+# GlaS (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/Glas --dataset_name Glas
+# Monusac (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/monusac --dataset_name monusac
+# Cell (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/cellnuclei --dataset_name cellnuclei
+# Convidquex (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/covidquex --dataset_name covidquex
+# Montgomery (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/Montgomery --dataset_name Montgomery
+# DCA (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/dca1 --dataset_name dca1
+# Cystoidfluid (In-domain)
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/cystoidfluid --dataset_name cystoidfluid
 # Synapse (3D-Slice)
 python main_multi3d.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/synapse --dataset_name synapse --num_classes 9 --input_channel 3 --val_interval 100
 # ACDC (3D-Slice)
@@ -150,14 +177,11 @@ Please refer [U-Score calculator](https://fenghetan9.github.io/ubench)
 If you use this work, please cite:
 
 ```
-@misc{tang2025ubench,
-      title={U-Bench: A Comprehensive Understanding of U-Net through 100-Variant Benchmarking}, 
-      author={Fenghe Tang and Chengqi Dong and Wenxin Ma and Zikang Xu and Heqin Zhu and Zihang Jiang and Rongsheng Wang and Yuhao Wang and Chenxu Wu and Shaohua Kevin Zhou},
-      year={2025},
-      eprint={2510.07041},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2510.07041}, 
+@article{tang2025u,
+  title={U-Bench: A Comprehensive Understanding of U-Net through 100-Variant Benchmarking},
+  author={Tang, Fenghe and Dong, Chengqi and Ma, Wenxin and Xu, Zikang and Zhu, Heqin and Jiang, Zihang and Wang, Rongsheng and Wang, Yuhao and Wu, Chenxu and Zhou, Shaohua Kevin},
+  journal={arXiv preprint arXiv:2510.07041},
+  year={2025}
 }
 ```
 
