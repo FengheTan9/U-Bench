@@ -43,12 +43,13 @@
 
 ## News
 
+- 25-10-16. U-Bench Model Zoo weights released [[Quick Access](https://huggingface.co/datasets/FengheTan9/U-Bench)]  🎉🎉🎉
 - 25-10-15. U-Bench Data Zoo released [[Quick Access](https://huggingface.co/datasets/FengheTan9/U-Bench)]  🎉🎉🎉
 - 25-10-08. U-Bench paper released 🎉🎉🎉
 
 ### Catalog🚀🚀🚀
 
-- [ ] U-Bench Model Zoo 🤗🤗🤗
+- [x] U-Bench [Model Zoo weights](https://huggingface.co/FengheTan9/U-Bench) 🤗🤗🤗
 - [x] U-Bench [Data Zoo](https://huggingface.co/datasets/FengheTan9/U-Bench) 🤗🤗🤗
 - [x] U-Bench code 🤗🤗🤗
 - [x] U-Bench paper 🤗🤗🤗
@@ -72,6 +73,10 @@ Over the past decade, U-Net has been the dominant architecture in medical image 
 ![Teaser](imgs/data_analysis.jpg)
 
 ### Quick Start 🤩🤩🤩
+
+| Model Zoo                                                    | Data Zoo                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Code](https://github.com/FengheTan9/U-Bench) \| [Weights (Hugging Face)](https://huggingface.co/FengheTan9/U-Bench) | [Data (Hugging Face)](https://huggingface.co/datasets/FengheTan9/U-Bench) |
 
 #### 1. Installation
 
@@ -157,11 +162,20 @@ python main_multi3d.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --b
 python main_multi3d.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/ACDC--dataset_name ACDC --num_classes 4 --input_channel 3 --val_interval 100
 ```
 
-#### 4. Zero-shot
+#### 4. In-domain Inference
+
+U-Bench Model Zoo [[Quick Access](https://huggingface.co/FengheTan9/U-Bench)]
+
+```python
+# BUSI
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi --just_for_test True
+```
+
+#### 5. Zero-shot Inference
 
 ```python
 # BUSI -> BUS (zero-shot)
-python inference_case.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi --zero_shot_base_dir ./data/bus --zero_shot_dataset_name bus --just_for_test True
+python main.py --max_epochs 300 --gpu 0 --batch_size 8 --model U_Net --base_dir ./data/busi --dataset_name busi --zero_shot_base_dir ./data/bus --zero_shot_dataset_name bus --just_for_zero_shot
 ```
 
 #### 5. U-Score calculator
@@ -176,7 +190,7 @@ Please refer [U-Score calculator](https://fenghetan9.github.io/ubench)
 
 ## Citation
 
-If you use this work, please cite:
+If using this work (**dataset**, **weights**, or **benchmark results**), please cite:
 
 ```
 @article{tang2025u,
