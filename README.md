@@ -41,7 +41,13 @@
 
   [![project](https://img.shields.io/badge/project-ubench-brightgreen)](https://fenghetan9.github.io/ubench)    [![arXiv](https://img.shields.io/badge/arxiv-2510.07041-b31b1b)](https://arxiv.org/pdf/2510.07041)   [![github](https://img.shields.io/badge/github-U--Bench-black)](https://github.com/FengheTan9/U-Bench)  [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-U--Bench--Data-yellow)](https://huggingface.co/datasets/FengheTan9/U-Bench)  [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-U--Bench--Code-yellow)](https://huggingface.co/FengheTan9/U-Bench)   <a href="#LICENSE--citation"><img alt="License: Apache2.0" src="https://img.shields.io/badge/LICENSE-Apache%202.0-blue.svg"/></a>
 
-## News
+
+
+### SoTA paper & weights sharing  🤗
+
+🔥🔥🔥 Welcome to share the paper, code and weights through the [issues](https://github.com/FengheTan9/U-Bench/issues/9) and [discussions](https://github.com/FengheTan9/U-Bench/discussions/10) ! 🔥🔥🔥 
+
+### News
 
 - 25-10-16. U-Bench Model Zoo weights released [[Quick Access](https://huggingface.co/FengheTan9/U-Bench)]  🎉🎉🎉
 - 25-10-15. U-Bench Data Zoo released [[Quick Access](https://huggingface.co/datasets/FengheTan9/U-Bench)]  🎉🎉🎉
