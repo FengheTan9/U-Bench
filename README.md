@@ -45,7 +45,7 @@
 
 ### SoTA paper & weights sharing  🤗
 
-🔥🔥🔥 Welcome to share the paper, code and weights through the [issues](https://github.com/FengheTan9/U-Bench/issues/9) and [discussions](https://github.com/FengheTan9/U-Bench/discussions/10) ! 🔥🔥🔥 
+🔥🔥🔥 Welcome to share the paper, code and weights through the [Issues](https://github.com/FengheTan9/U-Bench/issues/9) and [Discussions](https://github.com/FengheTan9/U-Bench/discussions/10) ! 🔥🔥🔥 
 
 ### News
 
