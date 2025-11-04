@@ -207,5 +207,5 @@ marimo/_lsp/
 __marimo__/
 
 # User-defined
-data
-weights
+data/
+weights/
