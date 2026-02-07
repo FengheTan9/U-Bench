@@ -94,6 +94,15 @@ conda activate ubench
 pip install -r requirements.txt  
 ```
 
+**For Mamba-based Method**
+```
+pip install torch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install numpy==1.21.2 opencv-python==4.5.5.64 opencv-python-headless==4.5.5.64
+pip install causal_conv1d-1.2.0.post2+cu118torch1.13cxx11abiTRUE-cp38-cp38-linux_x86_64.whl
+pip install mamba_ssm-1.2.0.post1+cu118torch1.13cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+```
+
+
 #### 2. Datasets
 
 Please put the dataset (e.g. BUSI) or your own dataset as the following architecture:
