@@ -86,6 +86,7 @@ def parse_arguments():
     parser.add_argument('--num_classes', type=int, default=1, help='img_size')
     parser.add_argument('--input_channel', type=int, default=3, help='img_size')
     parser.add_argument('--resume', action='store_true', help='Resume training from checkpoint')
+    parser.add_argument('--compile', action='store_true', help='Enable torch.compile')
     parser.add_argument('--exp_name', type=str, default="default_exp", help='Experiment name')
     parser.add_argument('--zero_shot_base_dir', type=str, default="", help='zero_base_dir')
     parser.add_argument('--zero_shot_dataset_name', type=str, default="", help='zero_shot_dataset_name')
@@ -210,6 +211,9 @@ def init_dir(args):
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
     model = build_model(config=args,input_channel=args.input_channel, num_classes=args.num_classes).to(device)
+    if getattr(args, 'compile', False):
+        model = torch.compile(model)
+        logger.info("torch.compile enabled")
 
     return exp_save_dir, writer, logger, model#, wandb
 
