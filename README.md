@@ -48,7 +48,7 @@
 🔥🔥🔥 Welcome to share the paper, code and weights through the [Issues](https://github.com/FengheTan9/U-Bench/issues/9) and [Discussions](https://github.com/FengheTan9/U-Bench/discussions/10) ! 🔥🔥🔥 
 
 ### News
-
+- 26-09   . U-Bench accepted by NeurIPS 2026 🥰
 - 25-10-16. U-Bench Model Zoo weights released [[Quick Access](https://huggingface.co/FengheTan9/U-Bench)]  🎉🎉🎉
 - 25-10-15. U-Bench Data Zoo released [[Quick Access](https://huggingface.co/datasets/FengheTan9/U-Bench)]  🎉🎉🎉
 - 25-10-08. U-Bench paper released 🎉🎉🎉
